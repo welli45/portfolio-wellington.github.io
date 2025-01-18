@@ -1,0 +1,48 @@
+---
+title: 'Projetos em Python'
+subtitle: "Aqui você tem acesso aos projetos que desenvolvi usando a liguagem de programação Python"
+description: "O Python é uma linguagem de programação de alto nível utilizada em diferentes tipos de aplicações, como para o desenvolvimento web, em Machine Learning, no desenvolvimento de jogos e muito mais.[Fonte](https://blog.betrybe.com/python/)"
+comments: false
+margin-header: "[Welli45](https://github.com/welli45) © 2024 by [Wellington S.](https://github.com/welli45)"
+toc: false
+listing:
+  - id: posts
+    contents: posts
+    sort: 
+      - "date desc"
+      - "title asc"
+    categories: true
+    sort-ui: [date, author]
+    filter-ui: [title, date, author]
+    feed: true
+    type: default
+    page-size: 7
+    image-align: left
+    date-format: "DD MMMM YYYY"
+    fields: [title, subtitle, author, description, date, image, reading-time]
+format:
+  html:
+    page-layout: full
+website:
+  back-to-top-navigation: true
+open-graph:
+  description: "Aqui você pode encontrar meus Projetos e Aprendizados."
+twitter-card:
+  description: "Aqui você pode encontrar meus Projetos e Aprendizados."
+---
+![](python.jpg){fig-alt="PY" width=50%}
+
+Aqui você pode encontrar meus Projetos e Aprendizados.
+
+<!-- ### Featured Posts
+:::{#featured}
+:::
+
+<br></br>
+--- -->
+<br></br>
+
+<!-- ### All Posts -->
+:::{#posts}
+:::
+

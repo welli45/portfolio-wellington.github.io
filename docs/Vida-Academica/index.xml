@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Portifólio de Dados</title>
+<link>https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/</link>
+<atom:link href="https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/index.xml" rel="self" type="application/rss+xml"/>
+<description>Estudos</description>
+<image>
+<url>https://welli45.github.io/portifolio-dados.github.io/images/profile.png</url>
+<title>Portifólio de Dados</title>
+<link>https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/</link>
+</image>
+<generator>quarto-1.6.39</generator>
+<lastBuildDate>Sun, 04 Aug 2024 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>Anotações do cursos feitos na plataforma Coursera</title>
+  <dc:creator>Wellington Santos Souza</dc:creator>
+  <link>https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/posts/Cursera.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/images/cursera.svg" class="img-fluid" data-fig-title="Capa" alt="Capa"></p>
+<section id="anotações-dos-cursos-feitos-na-plataforma-coursera" class="level1">
+<h1>Anotações dos cursos feitos na plataforma Coursera</h1>
+<p>Neste arquivo estão as anotações dos cursos feitos na plataforma Coursera.</p>
+<section id="álgebra-linear-para-aprendizado-de-máquina-e-ciência-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="álgebra-linear-para-aprendizado-de-máquina-e-ciência-de-dados"><a href="../../Vida-Academica/Cursera/Algebra.html">Álgebra linear para aprendizado de máquina e ciência de dados</a></h2>
+</section>
+<section id="cálculo-para-aprendizado-de-máquina-e-ciência-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="cálculo-para-aprendizado-de-máquina-e-ciência-de-dados"><a href="../../Vida-Academica/Cursera/Calculo.html">Cálculo para aprendizado de máquina e ciência de dados</a></h2>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>curso</category>
+  <category>coursera</category>
+  <category>Machining Learning</category>
+  <category>Data Science</category>
+  <category>Deep Learning</category>
+  <category>Python</category>
+  <category>R</category>
+  <category>SQL</category>
+  <category>Tableau</category>
+  <category>Excel</category>
+  <category>Power BI</category>
+  <category>Machine Learning</category>
+  <category>Data Science</category>
+  <category>Deep Learning</category>
+  <category>Python</category>
+  <category>R</category>
+  <category>SQL</category>
+  <category>Tableau</category>
+  <category>Excel</category>
+  <category>Power BI</category>
+  <guid>https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/posts/Cursera.html</guid>
+  <pubDate>Sun, 04 Aug 2024 03:00:00 GMT</pubDate>
+  <media:content url="https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/images/cursera.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>Entre redes completas y personales: estrategia de recolección de datos cognitivos con informantes clave</title>
+  <dc:creator>Wellington Santos Souza</dc:creator>
+  <link>https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/posts/redes_completas.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="entre-redes-completas-y-personales-estrategia-de-recolección-de-datos-cognitivos-con-informantes-clave" class="level2">
+<h2 class="anchored" data-anchor-id="entre-redes-completas-y-personales-estrategia-de-recolección-de-datos-cognitivos-con-informantes-clave">Entre redes completas y personales: estrategia de recolección de datos cognitivos con informantes clave</h2>
+<p><strong>Autores</strong></p>
+<p>Dimitri Fazito</p>
+<p>Silvio Salej Higgins</p>
+<p>Antonio Carlos Andrade Ribeiro</p>
+<p>Geraldo Timoteo</p>
+<p>Wellington Santos Souza</p>
+<p><strong>DOI:</strong> https://doi.org/10.5944/empiria.58.2023.37382</p>
+<p><strong>Palabras clave:</strong> análisis de redes sociales, sociología relacional, redes cognitivas, líderes comunitarios, PESCARTE, social network analysis, relational sociology, cognitive networks, communitarian leaders</p>
+</section>
+<section id="resumen" class="level2">
+<h2 class="anchored" data-anchor-id="resumen">Resumen</h2>
+<p>Este trabajo propone una estrategia, denominada como Modelo de Redes Sociales Cognitivas (MRSC), para recolectar datos relacionales a partir de informantes-clave. Ofrecemos una solución para la doble problemática de, por un lado, definir los límites de una red de interaciones y, por el otro, recolectar datos de una red completa basada en la percepción de informantes que son observadores privilegiados del proceso social en estudio. El proyecto fue implementado para diagnosticar la dinámica de las relaciones comunitarias en comunidades de pesquerías tradicionales, por encomienda de un proyecto de investigación-acción (PESCARTE), en el campo de la educación ambiental, en el litoral del estado de Rio de Janeiro (Brasil). La propuesta combina técnicas de recolección de datos de redes personales y de redes completas. Los instrumentos elaborados para la recogida de datos y los procedimientos utilizados para validar la estrategia son detallados. Artículo financiado por el Proyecto de Educación Ambiental (PEA) PESCARTE, iniciativa de mitigación exigida por la Licencia Federal Ambiental conducida por el Instituto Brasilero del Medio Ambiente y de los Recursos Naturales Renovables (IBAMA).</p>
+<p>Para acessar o artigo completo clique <a href="https://revistas.uned.es/index.php/empiria/article/view/37382">AQUI</a>.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>análisis de redes sociales</category>
+  <category>sociología relacional</category>
+  <category>redes cognitivas</category>
+  <category>líderes comunitarios</category>
+  <category>PESCARTE</category>
+  <category>social network analysis</category>
+  <category>relational sociology</category>
+  <category>cognitive networks</category>
+  <category>communitarian leaders</category>
+  <guid>https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/posts/redes_completas.html</guid>
+  <pubDate>Wed, 07 Feb 2024 03:00:00 GMT</pubDate>
+  <media:content url="https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/images/redes.png" medium="image" type="image/png" height="73" width="144"/>
+</item>
+</channel>
+</rss>

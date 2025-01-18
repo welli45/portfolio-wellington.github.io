@@ -1,0 +1,46 @@
+---
+title: "Projetos desenvolvidos na liguagem de programação e estatística R"
+subtitle: "Aqui você tem acesso aos projetos que desenvolvi em R e Rstudio"
+description: "R é uma linguagem versátil, desenvolvida por dois pesquisadores do departamento de Estatística da Universidade Auckland, na Nova Zelândia. Ela surgiu a partir da necessidade de um programa que auxiliasse na manipulação, análise e visualização de dados. [Fonte](https://blog.betrybe.com/linguagem-de-programacao/linguagem-r-tudo-sobre/)"
+comments: false
+margin-header: "[Welli45](https://github.com/welli45) © 2024 by [Wellington S.](https://github.com/welli45)"
+toc: false
+listing:
+  - id: posts
+    contents: posts
+    sort: 
+      - "date desc"
+      - "title asc"
+    categories: true
+    sort-ui: [date, author]
+    filter-ui: [title, date, author]
+    feed: true
+    type: default
+    page-size: 7
+    image-align: left
+    date-format: "DD MMMM YYYY"
+    fields: [title, subtitle, author, description, date, image, reading-time]
+format:
+  html:
+    page-layout: full
+website:
+  back-to-top-navigation: true
+open-graph:
+  description: "Aqui você pode encontrar meus Projetos e Aprendizados."
+twitter-card:
+  description: "Aqui você pode encontrar meus Projetos e Aprendizados."
+---
+![](r.jpg){fig-alt="R" width=50%}
+
+<!-- ### Featured Posts
+:::{#featured}
+:::
+
+<br></br>
+--- -->
+<br></br>
+
+<!-- ### All Posts -->
+:::{#posts}
+:::
+

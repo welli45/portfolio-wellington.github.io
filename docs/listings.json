@@ -1,0 +1,84 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/projetos-R/posts/anova.html",
+      "/projetos-R/posts/algebra-matricial.html",
+      "/projetos-R/posts/Script-Teste-T.html",
+      "/projetos-R/posts/analise-PROUNI.html",
+      "/projetos-R/posts/analise-DataSenado.html",
+      "/projetos-R/posts/projeto-PNADc.html",
+      "/projetos-R/posts/projeto-sidrar.html",
+      "/projetos-R/posts/projeto-ARS.html",
+      "/projetos-R/posts/causa-efeito.html",
+      "/projetos-PBI/posts/projeto-emendas.html",
+      "/projetos-PBI/posts/projeto-dax.html",
+      "/projetos-PBI/posts/projeto-qualidade.html",
+      "/projetos-PBI/posts/projeto-sim.html",
+      "/projetos-PBI/posts/Projeto-G-Data-Analytics.html",
+      "/projetos-PBI/posts/projeto-ipc.html"
+    ]
+  },
+  {
+    "listing": "/projetos-R/index.html",
+    "items": [
+      "/projetos-R/posts/anova.html",
+      "/projetos-R/posts/algebra-matricial.html",
+      "/projetos-R/posts/Script-Teste-T.html",
+      "/projetos-R/posts/analise-PROUNI.html",
+      "/projetos-R/posts/analise-DataSenado.html",
+      "/projetos-R/posts/projeto-PNADc.html",
+      "/projetos-R/posts/projeto-sidrar.html",
+      "/projetos-R/posts/projeto-ARS.html",
+      "/projetos-R/posts/causa-efeito.html"
+    ]
+  },
+  {
+    "listing": "/projetos-PBI/index.html",
+    "items": [
+      "/projetos-PBI/posts/projeto-emendas.html",
+      "/projetos-PBI/posts/projeto-dax.html",
+      "/projetos-PBI/posts/projeto-qualidade.html",
+      "/projetos-PBI/posts/projeto-sim.html",
+      "/projetos-PBI/posts/Projeto-G-Data-Analytics.html",
+      "/projetos-PBI/posts/projeto-ipc.html"
+    ]
+  },
+  {
+    "listing": "/projetos-Python/index.html",
+    "items": [
+      "/projetos-Python/posts/introducao-pandas.html",
+      "/projetos-Python/posts/Derivadas-Python.html",
+      "/projetos-Python/posts/gradien-descent-2-variables.html",
+      "/projetos-Python/posts/gradiente-descent.html",
+      "/projetos-Python/posts/projeto-sidrapy.html"
+    ]
+  },
+  {
+    "listing": "/Vida-Academica/index.html",
+    "items": [
+      "/Vida-Academica/posts/Cursera.html",
+      "/Vida-Academica/posts/redes_completas.html"
+    ]
+  },
+  {
+    "listing": "/ccc/index.html",
+    "items": []
+  },
+  {
+    "listing": "/projetos-excel/index.html",
+    "items": [
+      "/projetos-excel/posts/01-analises.html"
+    ]
+  },
+  {
+    "listing": "/peojetos-SQL/index.html",
+    "items": []
+  },
+  {
+    "listing": "/projetos-SQL/index.html",
+    "items": [
+      "/projetos-SQL/posts/01-consultas-basicas.html"
+    ]
+  }
+]

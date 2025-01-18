@@ -1,0 +1,23 @@
+---
+title: "Diagram de Ishikawa"
+subtitle: "Aplicação em R"
+description: "Como criar um diagrama de Ishikawa/espinha de peixe/causa e efeito usando o R?"
+author: "Wellington Santos Souza"
+date: "2024-01-20"
+format: 
+  html:
+    code-fold: true
+    code-copy: true
+    code-tools: false
+    css: styles.css
+categories: ["Análise de Variância", "ANOVA"]
+open-graph:
+  description: "ANOVA"
+  image: ../images/09-anova/anova.png
+twitter-card:
+  description: "Curva-Normal"
+  image: ../images/09-anova/anova.png
+---
+
+
+

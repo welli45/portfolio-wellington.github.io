@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Portifólio de Dados</title>
+<link>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/</link>
+<atom:link href="https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/index.xml" rel="self" type="application/rss+xml"/>
+<description>O Power BI é uma ferramenta de avaliação e visualização de dados desenvolvida pela Microsoft. Com ela, dados são transformados em informação.Com o Power BI é possível gerar relatórios e dashboards que mostram números, estatísticas, valores, listas e gráficos de maneira simples e intuitiva. Isso porque a ferramenta tem o propósito de facilitar a visualização de dados e promover um maior envolvimento do espectador em relação à maneira como essas informações são apresentadas. [Fonte](https://ebaconline.com.br/blog/o-que-e-power-bi#:~:text=O%20Power%20BI%20%C3%A9%20uma%20ferramenta%20de%20avalia%C3%A7%C3%A3o,listas%20e%20gr%C3%A1ficos%20de%20maneira%20simples%20e%20intuitiva.)</description>
+<image>
+<url>https://welli45.github.io/portifolio-dados.github.io/images/profile.png</url>
+<title>Portifólio de Dados</title>
+<link>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/</link>
+</image>
+<generator>quarto-1.6.39</generator>
+<lastBuildDate>Sat, 18 Jan 2025 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>Dashboard Emendas Parlamentares</title>
+  <dc:creator>Wellington Santos Souza</dc:creator>
+  <link>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-emendas.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><em>Este artigo foi reescrito em Segunda-Feira, 18 de janeiro de 2025.</em></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/images/08-emendas/projeto-emendas-parlamentares.jpg" class="img-fluid"></p>
+<section id="análise-de-emendas-parlamentares-projeto-de-business-intelligence" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-emendas-parlamentares-projeto-de-business-intelligence">Análise de Emendas Parlamentares: Projeto de Business Intelligence</h2>
+<p>Desenvolvi um projeto completo de análise de dados utilizando o Power BI para visualizar e compreender a distribuição e execução das <a href="https://app.powerbi.com/view?r=eyJrIjoiMGI4OTUwY2EtMTNmYS00Yzc1LTkzN2MtMjdjOGVkZDMwMDAzIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9">Emendas Parlamentares</a> no Brasil entre 2014 e 2024.</p>
+<p><strong>Informações importantes</strong></p>
+<p>Você pode acessar os dados brutos no <a href="https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares">Portal da Transparência</a>. Clique <a href="https://portaldatransparencia.gov.br/entenda-a-gestao-publica/emendas-parlamentares">aqui</a> para mais informações.</p>
+<p><strong>Objetivo do Projeto</strong></p>
+<p>Este dashboard foi criado para proporcionar uma visão transparente e detalhada sobre o fluxo de recursos das emendas parlamentares, permitindo análises precisas sobre a execução orçamentária ao longo dos anos.</p>
+<p><strong>Principais Entregas</strong></p>
+<ul>
+<li>Análise temporal da execução das emendas parlamentares</li>
+<li>Visualização da distribuição por função orçamentária</li>
+<li>Acompanhamento dos valores empenhados, liquidados e pagos</li>
+<li>Monitoramento de mais de 6.800 emendas totalizando R$ 43,70 bilhões em recursos</li>
+</ul>
+<p><strong>Tecnologias e Habilidades Aplicadas</strong></p>
+<ul>
+<li>Power BI para desenvolvimento do dashboard</li>
+<li>Power Query para ETL (Extração, Transformação e Carga) dos dados</li>
+<li>Linguagem DAX para criação de métricas avançadas</li>
+<li>Modelagem de dados relacionais</li>
+<li>Design de interface focado em experiência do usuário</li>
+</ul>
+<p><strong>Resultados Alcançados</strong></p>
+<ul>
+<li>Criação de uma ferramenta intuitiva para análise orçamentária</li>
+<li>Automatização do processo de atualização dos dados</li>
+<li>Desenvolvimento de métricas específicas para acompanhamento financeiro</li>
+<li>Interface interativa com filtros dinâmicos para análises personalizadas</li>
+</ul>
+</section>
+<section id="dashboard-interativo" class="level1">
+<h1>Dashboard Interativo</h1>
+<section id="você-pode-explorar-o-dashboard-interativo-abaixo" class="level5">
+<h5 class="anchored" data-anchor-id="você-pode-explorar-o-dashboard-interativo-abaixo">Você pode explorar o Dashboard interativo abaixo</h5>
+<iframe title="projeto-emendas-parlamentares" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiMGI4OTUwY2EtMTNmYS00Yzc1LTkzN2MtMjdjOGVkZDMwMDAzIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9" frameborder="0" allowfullscreen="true">
+</iframe>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>SIM</category>
+  <category>Power BI</category>
+  <category>Saúde Pública</category>
+  <category>Emendas</category>
+  <guid>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-emendas.html</guid>
+  <pubDate>Sat, 18 Jan 2025 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Dashboard - Projeto Majestic</title>
+  <dc:creator>Wellington Santos Souza</dc:creator>
+  <link>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-dax.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><em>Este artigo foi reescrito em Segunda-Feira, 12 de Fevereiro de 2024.</em></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/images/06.dax/dax.png" class="img-fluid" style="width:30.0%" alt="DAX - POWER BI"></p>
+<p>Com o objetivo de aprimorar meus conhecimentos em Linguagem DAX, decidi realizar o curso oferecido pelo instrutor Felipe Mafra na plataforma Udemy. Durante o curso, tive a oportunidade de significativamente aprimorar minha compreensão em DAX, por meio da execução de um projeto abrangente com foco na aplicação prática. Nesse projeto, assumi o papel de analista de Power BI na empresa Majestic, uma exportadora de materiais escolares. Ao longo desse cenário fictício, desenvolvemos relatórios que abrangem áreas como vendas, classificação de gerentes, margem de lucro por continente e país. Além disso, também exploramos a criação de elementos visuais dinâmicos, os quais se adaptam de acordo com as métricas selecionadas. Essa experiência proporcionou um ambiente de aprendizado altamente envolvente, no qual pude não apenas aprimorar minha habilidade com a Linguagem DAX, mas também entender como aplicá-la de maneira eficaz em situações do mundo real.</p>
+<p>Ao compartilhar este projeto, desejo ressaltar a importância da Linguagem DAX como uma ferramenta poderosa para a análise de dados. A capacidade de criar cálculos personalizados e métricas específicas é fundamental para a compreensão aprofundada dos dados e a geração de insights valiosos. Além disso, a utilização do Power BI como ferramenta de visualização ressalta a importância da proficiência em tecnologias contemporâneas para impulsionar a eficácia das análises de vendas.</p>
+<section id="dashboard-interativo" class="level1">
+<h1>Dashboard Interativo</h1>
+<p><strong>Você pode explorar o Dashboard interativo abaixo</strong></p>
+<iframe title="ProjetoMajestic" width="800" height="836" src="https://app.powerbi.com/view?r=eyJrIjoiOGQzNGY0YmEtZjk1MS00ZTgxLTliYTktMWRkMjA2ZTdkZmFiIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9" frameborder="0" allowfullscreen="true">
+</iframe>
+<p><a href="https://app.powerbi.com/view?r=eyJrIjoiOGQzNGY0YmEtZjk1MS00ZTgxLTliYTktMWRkMjA2ZTdkZmFiIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9">Projeto Majestic</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Vendas</category>
+  <category>Dados</category>
+  <category>Power BI</category>
+  <category>DAX</category>
+  <guid>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-dax.html</guid>
+  <pubDate>Mon, 12 Feb 2024 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Dashboard de Qualidade</title>
+  <dc:creator>Wellington Santos Souza</dc:creator>
+  <link>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-qualidade.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><em>Este artigo foi reescrito em Segunda-Feira, 12 de Fevereiro de 2024.</em></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/images/04.qualidade/qualidade.png" class="img-fluid" style="width:50.0%" alt="Qualidade"></p>
+<section id="resumo-do-projeto" class="level2">
+<h2 class="anchored" data-anchor-id="resumo-do-projeto">Resumo do Projeto</h2>
+<p>Visando aplicar os conhecimentos adquiridos no curso técnico em qualidade, concluído em 2017 no COTIL-UNICAMP, e aprimorar minhas habilidades no Power BI, decidi criar um Dashboard fictício como exercício prático. Este Dashboard possui duas páginas distintas, cada uma fornecendo informações relevantes relacionadas à análise de qualidade, permitindo uma compreensão abrangente dos dados.</p>
+<p>A primeira página do Dashboard apresenta uma visão geral das amostras analisadas, abrangendo diferentes métricas essenciais. São exibidos dados como o número de defeitos identificados, o score de qualidade obtido e a quantidade de erros fatais registrados. Além disso, essas informações são desagregadas com base em diversos critérios, como local de trabalho, supervisor, auditor e funcionário responsável. Tudo isso é apresentado num intervalo de datas específico, possibilitando a identificação de tendências ao longo do tempo.</p>
+<p>A segunda página do Dashboard se concentra na avaliação de desempenho individual de cada funcionário e supervisor, mantendo o mesmo intervalo de datas para uma análise comparativa consistente. Nessa seção, é possível examinar de perto a desempenho de cada membro da equipe em relação às métricas de qualidade definidas. Isso permite uma compreensão mais detalhada de como diferentes indivíduos estão contribuindo para os resultados gerais de qualidade.</p>
+<p>É importante destacar que esse Dashboard foi desenvolvido com o propósito de servir como um exercício prático para consolidar minhas habilidades no uso do Power BI, assim como aplicar os princípios de qualidade aprendidos durante o curso no COTIL-UNICAMP. Embora os dados e cenários sejam fictícios, a abordagem e as técnicas empregadas são reflexos da minha busca por um contínuo aprendizado e aprimoramento.</p>
+<p>Ao compartilhar este projeto, desejo ressaltar a relevância da integração entre a gestão da qualidade e a visualização de dados. A capacidade de extrair insights valiosos a partir de informações aparentemente complexas é fundamental para a tomada de decisões informadas e o aprimoramento contínuo dos processos. Além disso, a utilização do Power BI como ferramenta de análise e visualização ressalta a importância da proficiência em tecnologias contemporâneas para impulsionar a eficácia das análises de qualidade.</p>
+</section>
+<section id="dashboard-interativo" class="level1">
+<h1>Dashboard Interativo</h1>
+<p><strong>Você pode explorar o Dashboard interativo abaixo</strong> <iframe title="Quality Dashboard" width="800" height="836" src="https://app.powerbi.com/view?r=eyJrIjoiM2NlZmIwMmEtZTcxNS00ZjJiLWFmYTgtMWJhZTUwNDQwNTUyIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9" frameborder="0" allowfullscreen="true"></iframe></p>
+<p><a href="https://app.powerbi.com/view?r=eyJrIjoiM2NlZmIwMmEtZTcxNS00ZjJiLWFmYTgtMWJhZTUwNDQwNTUyIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9">Dashboard de Qualidade</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Qualidade</category>
+  <category>Power BI</category>
+  <category>Gestão da Qualidade</category>
+  <guid>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-qualidade.html</guid>
+  <pubDate>Mon, 12 Feb 2024 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Dashboard de Sistema de Informações Sobre Mortalidade</title>
+  <dc:creator>Wellington Santos Souza</dc:creator>
+  <link>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-sim.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><em>Este artigo foi reescrito em Segunda-Feira, 12 de Fevereiro de 2024.</em></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/images/05.sim/sim.png" class="img-fluid"></p>
+<p>O Dashboard de hoje foi elaborado utilizando informações provenientes do Sistema de Informações sobre Mortalidade (SIM), obtidas a partir da https://basedosdados.org/ (Base dos Dados). O SIM foi desenvolvido pelo DATASUS com o propósito de adquirir regularmente dados acerca da mortalidade em todo o país. A instauração do SIM possibilitou a coleta abrangente de dados referentes a óbitos, fornecendo um embasamento substancial para as diversas instâncias envolvidas na administração da saúde pública. Com base nisso, foi concebido este Dashboard, estruturando as informações acerca do volume de óbitos por região, Unidade da Federação e município. Adicionalmente, essas informações são segmentadas por gênero e identificação étnico-racial, permitindo uma análise mais detalhada dos dados.</p>
+<p>O Dashboard é composto por quatro páginas distintas, cada uma fornecendo uma perspectiva única dos dados coletados. A primeira página apresenta uma visão geral dos óbitos registrados, permitindo a visualização de tendências ao longo do tempo. Além disso, é possível identificar padrões relevantes relacionados à distribuição dos óbitos por região e Unidade da Federação. A segunda página do Dashboard se concentra na análise dos óbitos por UF e Capitais do Brasil. A terceira se concentra nos dados por UF e Municípios´. Já a quarta página você pode explorar os dados com base em critérios específicos, como gênero, identificação étnico-racial, faixa etária e região. Isso permite uma compreensão mais detalhada da distribuição dos óbitos em relação a esses critérios, fornecendo insights valiosos para a formulação de políticas públicas e ações de saúde.</p>
+<section id="dashboard-interativo" class="level1">
+<h1>Dashboard Interativo</h1>
+<p><strong>Você pode explorar o Dashboard interativo abaixo</strong></p>
+<iframe title="Sistema de Informações sobre Mortalidade" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNzlkNDI3ZmYtMjE0My00ZWY3LTk2M2MtOTQyNDkxMDlhMDBkIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9" frameborder="0" allowfullscreen="true">
+</iframe>
+<p><a href="https://app.powerbi.com/view?r=eyJrIjoiNzlkNDI3ZmYtMjE0My00ZWY3LTk2M2MtOTQyNDkxMDlhMDBkIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9">Dashboard Sistema de Informações sobre Mortalidade</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>SIM</category>
+  <category>Power BI</category>
+  <category>Saúde Pública</category>
+  <category>Mortalidade</category>
+  <guid>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-sim.html</guid>
+  <pubDate>Mon, 12 Feb 2024 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Projeto final de Data Analytics do Google</title>
+  <dc:creator>Wellington Santos Souza</dc:creator>
+  <link>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/Projeto-G-Data-Analytics.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><em>Este artigo foi reescrito em Segunda-Feira, 12 de Fevereiro de 2024.</em></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/images/07.google/sec.png" class="img-fluid"></p>
+<section id="projeto-final-de-data-analytics-do-google" class="level1">
+<h1>Projeto final de Data Analytics do Google</h1>
+<section id="estudo-de-caso" class="level2">
+<h2 class="anchored" data-anchor-id="estudo-de-caso">Estudo de caso</h2>
+<section id="resumo-do-projeto-final-de-data-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="resumo-do-projeto-final-de-data-analytics">Resumo do Projeto Final de Data Analytics</h3>
+<p>O Projeto Final de Data Analytics do Google consistiu em uma análise sobre o perfil religioso do Brasil, utilizando um conjunto de dados público do Censo de 2000 e 2010 do IBGE. O processo começou com a formulação da pergunta de pesquisa, que foi definida como investigar o perfil religioso da população brasileira.</p>
+<p>Após a definição da pergunta, foram pesquisadas fontes de dados adequadas para obter informações relevantes. O conjunto de dados do Censo de 2000 e 2010 do IBGE foi identificado como a fonte ideal para o estudo, pois continha informações sobre a religião da população brasileira.</p>
+<p>Em seguida, os dados foram limpos e processados utilizando a linguagem de programação R, resultando na criação de uma tabela de dados. Com a tabela pronta, foram criadas visualizações utilizando o Microsoft Power BI, facilitando a compreensão dos dados analisados.</p>
+</section>
+<section id="obtenção-dos-dados" class="level3">
+<h3 class="anchored" data-anchor-id="obtenção-dos-dados">Obtenção dos dados</h3>
+<p>Para a obtenção dos dados, foi utilizado o pacote SIDRA, uma API que permite a raspagem (ou coleta) de dados de forma rápida e prática. O SIDRA (Sistema IBGE de Recuperação Automática) é uma ferramenta fornecida pelo Instituto Brasileiro de Geografia e Estatística (IBGE) que possibilita o acesso a diversas informações estatísticas, incluindo os dados do Censo de 2000 e 2010 referentes à religião da população brasileira.</p>
+<p><em>Tenho dois tutoriais em como raspar esses dados usando o <a href="https://welli45.github.io/portifolio-dados.github.io/projetos-R/posts/projeto-sidrar.html">R</a> e <a href="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/projeto-sidrapy.html">Python</a>.</em></p>
+<p>Com o auxílio do pacote SIDRA, os dados necessários para a análise do projeto foram obtidos de maneira automatizada, facilitando o processo de coleta e preparação dos dados para a análise de Data Analytics. Esse tipo de abordagem permite que os dados sejam acessados de forma eficiente e confiável, garantindo a qualidade e a atualização das informações utilizadas no projeto.</p>
+</section>
+<section id="obtendo-os-dados-de-acordo-com-os-parâmetros-estabelecidos" class="level3">
+<h3 class="anchored" data-anchor-id="obtendo-os-dados-de-acordo-com-os-parâmetros-estabelecidos">Obtendo os dados de acordo com os parâmetros estabelecidos</h3>
+<p>Os parâmetros utilizados para a geração das tabelas no projeto foram os seguintes:</p>
+<ol type="1">
+<li><p>Religião: Esse parâmetro permitiu filtrar os dados com base nas diferentes religiões presentes na população brasileira. As religiões consideradas no Censo 2010 podem incluir, por exemplo, católicos, evangélicos, espíritas, entre outras.</p></li>
+<li><p>Período: O período selecionado refere-se ao ano ou intervalo de tempo em que os dados foram coletados. No caso do projeto, o período correspondeu ao Censo 2010, que é a fonte de dados utilizada.</p></li>
+<li><p>Cor ou Raça: Esse parâmetro possibilitou a segmentação dos dados com base na autodeclaração dos indivíduos quanto à sua cor ou raça. As categorias podem abranger brancos, negros, pardos, amarelos e indígenas, seguindo a classificação utilizada pelo IBGE.</p></li>
+<li><p>Sexo: Esse parâmetro permitiu analisar os dados separadamente para homens e mulheres, proporcionando insights sobre possíveis diferenças ou tendências específicas relacionadas à religião.</p></li>
+<li><p>Unidade Geográfica: Esse parâmetro possibilitou a segmentação dos dados por diferentes unidades geográficas, como estados, municípios, regiões, entre outras. Com isso, foi possível identificar padrões e variações regionais no perfil religioso da população brasileira.</p></li>
+</ol>
+<p>A utilização desses parâmetros foi fundamental para uma análise detalhada e completa sobre o perfil religioso do Brasil, permitindo investigar diferentes aspectos socioculturais relacionados à religião em diferentes contextos geográficos e demográficos.</p>
+</section>
+</section>
+</section>
+<section id="resultados" class="level1">
+<h1>Resultados</h1>
+<p>A análise dos dados revelou que a maioria da população brasileira é católica. No entanto, o número de evangélicos está aumentando. A maior parte dos evangélicos está localizada nas regiões Norte e Nordeste do Brasil.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/images/07.google/pagina_inicial.png" class="img-fluid figure-img"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+<p>O gráfico 1 mostra o número de fiéis para cada religião por ano, comparando os anos de 2000 e 2010 no Brasil. A religião Católica teve uma pequena diminuição no número de fiéis, enquanto as “Outras Religiões” e a “Evangélica De Origem Pentecostal” tiveram um aumento significativo. As categorias “Sem Religião”, “Evangélica De Missão”, “Outras Cristãs” e “Religiões Afro-Brasileiras” também apresentaram crescimento, mas em menor escala.</p>
+<p>O gráfico 2 mostra o número de evangélicos por cor/raça e ano no Brasil, comparando os anos 2000 e 2010. Há um aumento notável em todas as categorias, exceto “Sem declaração”. A categoria “Parda” teve o maior aumento absoluto, enquanto a categoria “Amarela” teve o maior aumento percentual.</p>
+<p>O gráfico 3 mostra o número de católicos por cor/raça e ano no Brasil, comparando os anos 2000 e 2010. Há um aumento notável na quantidade de católicos em todas as categorias de cor/raça, exceto “Sem declaração”. A categoria “Branca” tem o maior número de católicos, seguida pela categoria “Parda”. As categorias “Amarela”, “Indígena” e “Sem declaração” têm números significativamente menores.</p>
+<p>O gráfico 4 mostra a distribuição de pessoas que seguem outras religiões ou não têm religião, divididas por cor/raça e ano (2000 e 2010). Há um aumento notável em todas as categorias de cor/raça. A categoria “Parda” viu o maior aumento, de 14 milhões para 125 milhões.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/images/07.google/sec.png" class="img-fluid figure-img"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</section>
+<section id="dashboard-interativo" class="level1">
+<h1>Dashboard Interativo</h1>
+<p><strong>Você pode explorar o Dashboard interativo abaixo</strong> <iframe title="Projeto Final G. Analytics" width="800" height="836" src="https://app.powerbi.com/view?r=eyJrIjoiMjZiNTc0ZTYtNmZiNS00ODlkLWI4MmUtMGM4ODBlYWY0OWNlIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9" frameborder="0" allowfullscreen="true"></iframe></p>
+<p><a href="https://app.powerbi.com/view?r=eyJrIjoiMjZiNTc0ZTYtNmZiNS00ODlkLWI4MmUtMGM4ODBlYWY0OWNlIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9">Dashboard Projeto Final G. Analytics</a></p>
+<p>Além disso, você pode acessar o script R que usei para limpar os dados e criar a tabela de dados.</p>
+<p><a href="https://github.com/welli45/Projeto-final-de-Data-Analytics-do-Google">Link do repositório do GitHub</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Google</category>
+  <category>Power BI</category>
+  <category>Religião</category>
+  <category>Dados</category>
+  <guid>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/Projeto-G-Data-Analytics.html</guid>
+  <pubDate>Mon, 12 Feb 2024 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Índice de Percepção de Corrupção (IPC)</title>
+  <dc:creator>Wellington Santos Souza</dc:creator>
+  <link>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-ipc.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><em>Este artigo foi reescrito em Segunda-Feira, 12 de Fevereiro de 2024.</em></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/images/03.ipc/ipc.png" class="img-fluid" style="width:50.0%" alt="IPC">}</p>
+<p>O Índice de Percepção de Corrupção (IPC) é o ranking global de corrupção mais utilizado no mundo. Mede até que ponto o sector público de cada país é considerado corrupto, de acordo com especialistas e empresários.</p>
+<p>A pontuação de cada país é uma combinação de pelo menos 3 fontes de dados extraídas de 13 pesquisas e avaliações diferentes sobre corrupção. Estas fontes de dados são recolhidas por diversas instituições conceituadas, incluindo o Banco Mundial e o Fórum Económico Mundial.</p>
+<p>A pontuação de um país é o nível percebido de corrupção no sector público numa escala de 0 a 100, onde 0 significa altamente corrupto e 100 significa muito limpo.</p>
+<p>A classificação de um país é a sua posição em relação aos outros países no índice. As classificações podem mudar apenas se o número de países incluídos no índice mudar.</p>
+<p>A classificação não é, portanto, tão importante como a pontuação em termos de indicar o nível de corrupção nesse país.</p>
+<p>A pontuação de um país pode mudar de um ano para o outro, mas as mudanças são geralmente pequenas. As mudanças significativas são raras, mas podem acontecer.</p>
+<p>Fonte: https://www.transparency.org/en/news/how-cpi-scores-are-calculated</p>
+<section id="dashboard-interativo" class="level1">
+<h1>Dashboard Interativo</h1>
+<p><strong>Você pode explorar o Dashboard interativo abaixo</strong></p>
+<iframe title="Corruption Perceptions Index (CPI)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiOTJhZWY4YTYtMTJkYy00NzNkLTlmYTMtNDBkMTQ0YTIzZmM3IiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9" frameborder="0" allowfullscreen="true">
+</iframe>
+<p><a href="https://app.powerbi.com/view?r=eyJrIjoiOTJhZWY4YTYtMTJkYy00NzNkLTlmYTMtNDBkMTQ0YTIzZmM3IiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9">Dashboard Corruption Perceptions Index (CPI)</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>IPC</category>
+  <category>Power BI</category>
+  <category>Transparência Internacional</category>
+  <guid>https://welli45.github.io/portifolio-dados.github.io/projetos-PBI/posts/projeto-ipc.html</guid>
+  <pubDate>Mon, 12 Feb 2024 03:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

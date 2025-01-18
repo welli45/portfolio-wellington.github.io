@@ -1,0 +1,60 @@
+---
+title: "Dashboard Emendas Parlamentares"
+subtitle: "Dashboard Interativo"
+description: "As emendas parlamentares são instrumentos que permitem ao Congresso Nacional participar da elaboração e execução do orçamento anual federal. Por meio delas, deputados e senadores podem influenciar a alocação dos recursos públicos, direcionando verbas para projetos e obras em suas bases eleitorais."
+author: "Wellington Santos Souza"
+date: "2025-01-18"
+categories: [SIM, Power BI, Saúde Pública, Emendas]
+open-graph:
+  description: "Emendas"
+  image: ../images/08-emendas/projeto-emendas-parlamentares.jpg
+twitter-card:
+  description: "Emendas"
+  image: ../images/08-emendas/projeto-emendas-parlamentares.jpg
+---
+*Este artigo foi reescrito em Segunda-Feira, 18 de janeiro de 2025.*
+
+![](../images/08-emendas/projeto-emendas-parlamentares.jpg)
+
+## Análise de Emendas Parlamentares: Projeto de Business Intelligence
+
+Desenvolvi um projeto completo de análise de dados utilizando o Power BI para visualizar e compreender a distribuição e execução das [Emendas Parlamentares](https://app.powerbi.com/view?r=eyJrIjoiMGI4OTUwY2EtMTNmYS00Yzc1LTkzN2MtMjdjOGVkZDMwMDAzIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9) no Brasil entre 2014 e 2024. 
+
+**Informações importantes**
+
+Você pode acessar os dados brutos no [Portal da Transparência](https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares). Clique [aqui](https://portaldatransparencia.gov.br/entenda-a-gestao-publica/emendas-parlamentares) para mais informações.
+
+**Objetivo do Projeto**
+
+Este dashboard foi criado para proporcionar uma visão transparente e detalhada sobre o fluxo de recursos das emendas parlamentares, permitindo análises precisas sobre a execução orçamentária ao longo dos anos.
+
+**Principais Entregas**
+
+- Análise temporal da execução das emendas parlamentares
+- Visualização da distribuição por função orçamentária
+- Acompanhamento dos valores empenhados, liquidados e pagos
+- Monitoramento de mais de 6.800 emendas totalizando R$ 43,70 bilhões em recursos
+
+**Tecnologias e Habilidades Aplicadas**
+
+- Power BI para desenvolvimento do dashboard
+- Power Query para ETL (Extração, Transformação e Carga) dos dados
+- Linguagem DAX para criação de métricas avançadas
+- Modelagem de dados relacionais
+- Design de interface focado em experiência do usuário
+
+**Resultados Alcançados**
+
+- Criação de uma ferramenta intuitiva para análise orçamentária
+- Automatização do processo de atualização dos dados
+- Desenvolvimento de métricas específicas para acompanhamento financeiro
+- Interface interativa com filtros dinâmicos para análises personalizadas
+
+
+# Dashboard Interativo
+
+##### Você pode explorar o Dashboard interativo abaixo
+
+
+
+<iframe title="projeto-emendas-parlamentares" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiMGI4OTUwY2EtMTNmYS00Yzc1LTkzN2MtMjdjOGVkZDMwMDAzIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9" frameborder="0" allowFullScreen="true"></iframe>
