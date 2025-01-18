@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 website:
   title: "Portifólio de Dados"
   site-url: https://welli45.github.io/portifolio-dados.github.io/
@@ -72,3 +73,79 @@ website:
     site: "@welli45"
   open-graph:
     description: "Portifólio // Wellington S. Souza"
+=======
+website:
+  title: "Portifólio de Dados"
+  site-url: https://welli45.github.io/portifolio-dados.github.io/
+  description: "Portifólio de Wellington S. Souza!"
+  favicon: bar-chart-line.svg
+  image: images/profile.png
+  back-to-top-navigation: true
+  navbar:
+    background: blue 
+    pinned: False
+    left:
+      - icon: house-door
+        text: Página Inicial
+        href: index.qmd
+      - icon: file-person
+        text: Sobre
+        href: about.qmd
+      - icon: clipboard-data-fill
+        text: Projetos
+        menu:
+        - icon: r-circle-fill
+          text: Projetos em R
+          href: projetos-R/index.qmd
+        - icon: file-bar-graph-fill
+          text: Projetos em Power BI
+          href: projetos-PBI/index.qmd
+        - icon: filetype-py
+          text: Projetos em Python
+          href: projetos-Python/index.qmd
+        - icon: filetype-sql
+          text: Projetos em SQL
+          href: projetos-SQL/index.qmd
+        - icon: file-earmark-excel-fill
+          text: Projetos em Excel
+          href: projetos-excel/index.qmd
+      - icon: mortarboard-fill
+        text: Estudos e Projetos Acadêmicos
+        href: Vida-Academica/index.qmd
+    tools:
+      - icon: code-slash
+        href: https://welli45.github.io/portifolio-dados.github.io/
+      - icon: rss
+        href: projetos-PBI/index.xml
+  page-footer:
+    left: "[Portifólio de Wellington S. Souza](https://welli45.github.io/portifolio-dados.github.io/)"
+    center:
+    - icon: twitter
+      text: "Twitter"
+      href: https://twitter.com/Wellington_s_sS
+    - icon: linkedin
+      text: "Linkedin"
+      href: https://www.linkedin.com/in/wellington-santos-souza/
+    - icon: clipboard-data
+      text: "Kaggle"
+      href: https://www.kaggle.com/wellingtonstssza
+    - icon: github
+      text: "GitHub"
+      href: https://github.com/welli45
+    - icon: Lattes
+      text: "Lattes"
+      href: http://lattes.cnpq.br/6574776498457184
+    - icon: envelope
+      text: "Email"
+      href: mailto:wellingtonstssza@gmail.com
+    right: "© 2024 Wellington S. Souza"
+  twitter-card:
+    title: "Portifólio // Wellington S. Souza"
+    description: "Bem vindo (a) ao meu portifólio!"
+    image: cover.png
+    card-style: summary_large_image
+    creator: "@welli45"
+    site: "@welli45"
+  open-graph:
+    description: "Portifólio // Wellington S. Souza"
+>>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
