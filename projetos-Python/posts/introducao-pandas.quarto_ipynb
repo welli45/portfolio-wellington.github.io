@@ -35,7 +35,7 @@
         "Com o pandas instalado, podemos carrega-lo com o comando `import pandas as pd`. \n",
         "Vamos importar a biblioteca seaborn para plotar gráficos com o comando `import seaborn as sns`.\n"
       ],
-      "id": "de353120"
+      "id": "12efa3c9"
     },
     {
       "cell_type": "code",
@@ -44,7 +44,7 @@
         "import pandas as pd\n",
         "import seaborn as sns"
       ],
-      "id": "260fa7d8",
+      "id": "af4f8ba5",
       "execution_count": null,
       "outputs": []
     },
@@ -54,7 +54,7 @@
       "source": [
         "Agora que temos o pandas carregado podemos importar um arquivo CSV para análise. Além disso, podemos usar o pandas para coletar dados em diversos formatos, como JSON, HTML, SQL, Excel, entre outros. Para mais informações sobre como carregar dados com o pandas, clique [aqui!](https://pandas.pydata.org/pandas-docs/stable/reference/io.html).\n"
       ],
-      "id": "11ecb914"
+      "id": "ed0359bd"
     },
     {
       "cell_type": "code",
@@ -62,7 +62,7 @@
       "source": [
         "df = pd.read_csv('../dados/world_happiness.csv')"
       ],
-      "id": "9f7d10f7",
+      "id": "1eecb528",
       "execution_count": null,
       "outputs": []
     },
@@ -74,7 +74,7 @@
         "\n",
         "Podemos visualizar as primeiras linhas do nosso DataFrame com o comando `df.head()`. Para visualizar as últimas linhas, basta usar o comando `df.tail()`."
       ],
-      "id": "37dca0d5"
+      "id": "e32a3ff7"
     },
     {
       "cell_type": "code",
@@ -83,7 +83,7 @@
         "# Visualizando as primeiras linhas do DataFrame\n",
         "df.head()"
       ],
-      "id": "5e76f221",
+      "id": "af845b2f",
       "execution_count": null,
       "outputs": []
     },
@@ -94,7 +94,7 @@
         "# Visualizando as últimas linhas do DataFrame\n",
         "df.tail()"
       ],
-      "id": "d780910a",
+      "id": "f502422f",
       "execution_count": null,
       "outputs": []
     },
@@ -104,7 +104,7 @@
       "source": [
         "Podemos visualizar os índices e nome das colunas do DataFrame com os comandos `df.index` e `df.columns`, respectivamente."
       ],
-      "id": "5ede1cbb"
+      "id": "f90f9901"
     },
     {
       "cell_type": "code",
@@ -113,7 +113,7 @@
         "# Visualizando os índices do DataFrame\n",
         "df.index"
       ],
-      "id": "cd637184",
+      "id": "da3a01ec",
       "execution_count": null,
       "outputs": []
     },
@@ -124,7 +124,7 @@
         "# Visualizando os nomes das colunas do DataFrame\n",
         "df.columns"
       ],
-      "id": "c633a7c2",
+      "id": "c8485f24",
       "execution_count": null,
       "outputs": []
     },
@@ -134,7 +134,7 @@
       "source": [
         "Como vimos as colunas possuem espaços em seus nomes, para remover esses espaços podemos usar o comando `df.columns = df.columns.str.replace(' ', '_')`."
       ],
-      "id": "e167965b"
+      "id": "8861b4eb"
     },
     {
       "cell_type": "code",
@@ -143,7 +143,7 @@
         "# Removendo os espaços dos nomes das colunas\n",
         "df.columns = df.columns.str.replace(' ', '_')"
       ],
-      "id": "bc3c0251",
+      "id": "5cae72aa",
       "execution_count": null,
       "outputs": []
     },
@@ -153,7 +153,7 @@
       "source": [
         "Além disso, podemos colocar os nomes das colunas em minúsculo."
       ],
-      "id": "83d53676"
+      "id": "b78be423"
     },
     {
       "cell_type": "code",
@@ -162,7 +162,7 @@
         "# Colocando os nomes das colunas em minúsculo\n",
         "df.columns = df.columns.str.lower()"
       ],
-      "id": "63ceca2b",
+      "id": "9deb0902",
       "execution_count": null,
       "outputs": []
     },
@@ -173,7 +173,7 @@
         "# Visualizando os nomes das colunas do DataFrame\n",
         "df.columns"
       ],
-      "id": "1dc9d479",
+      "id": "00cf0001",
       "execution_count": null,
       "outputs": []
     },
@@ -183,7 +183,7 @@
       "source": [
         "Podemos visualizar as informações do DataFrame com o comando `df.info()`. Além disso, podemos visualizar o tipo dos dados de cada coluna com o comando `df.dtypes`."
       ],
-      "id": "2ae776cd"
+      "id": "0fbf0a73"
     },
     {
       "cell_type": "code",
@@ -192,7 +192,7 @@
         "# Visualizando as informações do DataFrame\n",
         "df.info()"
       ],
-      "id": "a88b7441",
+      "id": "b94ba4d9",
       "execution_count": null,
       "outputs": []
     },
@@ -203,7 +203,7 @@
         "# Visualizando o tipo dos dados de cada coluna\n",
         "df.dtypes"
       ],
-      "id": "e4983d1f",
+      "id": "db68a8a0",
       "execution_count": null,
       "outputs": []
     },
@@ -217,7 +217,7 @@
         "\n",
         "Podemos selecionar a coluna `life_ladder` do DataFrame com o comando `df.life_ladder`. Além disso, podemos selecionar mais de uma coluna passando uma lista com os nomes das colunas desejadas."
       ],
-      "id": "ef41ba6a"
+      "id": "24818fe0"
     },
     {
       "cell_type": "code",
@@ -227,7 +227,7 @@
         "x = df.life_ladder\n",
         "print(x)"
       ],
-      "id": "46adaf65",
+      "id": "bad5c045",
       "execution_count": null,
       "outputs": []
     },
@@ -237,7 +237,7 @@
       "source": [
         "Uma outra forma é passar o nome da coluna entre colchetes, como no exemplo abaixo."
       ],
-      "id": "1e4c99e3"
+      "id": "a8d16a63"
     },
     {
       "cell_type": "code",
@@ -247,7 +247,7 @@
         "x = df['life_ladder']\n",
         "print(x)"
       ],
-      "id": "fb0760bc",
+      "id": "c014629f",
       "execution_count": null,
       "outputs": []
     },
@@ -259,7 +259,7 @@
         "\n",
         "Podemos selecionar as linhas de um DataFrame com o comando `df[1:5]`. "
       ],
-      "id": "1a79c37d"
+      "id": "2164288b"
     },
     {
       "cell_type": "code",
@@ -269,7 +269,7 @@
         "x = df[1:5]\n",
         "print(x)"
       ],
-      "id": "94f57daa",
+      "id": "5067c601",
       "execution_count": null,
       "outputs": []
     },
@@ -281,7 +281,7 @@
         "\n",
         "Podemos usar operadores lógicos para selecionar linhas do DataFrame. Por exemplo, podemos selecionar as linhas onde o valor da coluna `year` é igual a 2018."
       ],
-      "id": "38135f0f"
+      "id": "a60d55ef"
     },
     {
       "cell_type": "code",
@@ -291,7 +291,7 @@
         "x = df[df.year == 2018]\n",
         "print(x)"
       ],
-      "id": "fbea9812",
+      "id": "19dcb0d1",
       "execution_count": null,
       "outputs": []
     },
@@ -301,7 +301,7 @@
       "source": [
         "Selecioando linhas onde life_ladder é maior que 5."
       ],
-      "id": "198f5f26"
+      "id": "4c62a1e4"
     },
     {
       "cell_type": "code",
@@ -311,7 +311,7 @@
         "x = df[df.life_ladder > 5]\n",
         "x"
       ],
-      "id": "8de47d42",
+      "id": "955c056a",
       "execution_count": null,
       "outputs": []
     },
@@ -321,7 +321,7 @@
       "source": [
         "Resetando o índice do DataFrame filtrado."
       ],
-      "id": "1af38963"
+      "id": "1111586e"
     },
     {
       "cell_type": "code",
@@ -331,7 +331,7 @@
         "new_df = new_df.reset_index(drop=True)\n",
         "new_df"
       ],
-      "id": "3977c828",
+      "id": "d702539a",
       "execution_count": null,
       "outputs": []
     },
@@ -342,7 +342,7 @@
         "# Visualizando dados faltantes\n",
         "Podemos visualizar os dados faltantes do DataFrame com o comando `df.isnull().sum()`."
       ],
-      "id": "45bdeb3c"
+      "id": "345299fd"
     },
     {
       "cell_type": "code",
@@ -350,7 +350,7 @@
       "source": [
         "df.isnull().sum()"
       ],
-      "id": "6e9aee3e",
+      "id": "81fdca8e",
       "execution_count": null,
       "outputs": []
     },
@@ -361,7 +361,7 @@
         "# Estatísticas descritivas\n",
         "Podemos visualizar as estatísticas descritivas do DataFrame com o comando `df.describe()`."
       ],
-      "id": "c3ba19e7"
+      "id": "f230db15"
     },
     {
       "cell_type": "code",
@@ -369,7 +369,7 @@
       "source": [
         "df.describe()"
       ],
-      "id": "595f9387",
+      "id": "fa2e68a9",
       "execution_count": null,
       "outputs": []
     },
@@ -379,7 +379,7 @@
       "source": [
         "# Plotando gráficos\n"
       ],
-      "id": "3fd84247"
+      "id": "043ff0f5"
     },
     {
       "cell_type": "code",
@@ -387,7 +387,7 @@
       "source": [
         "df.plot()"
       ],
-      "id": "642c28a0",
+      "id": "5ff226b5",
       "execution_count": null,
       "outputs": []
     },
@@ -397,7 +397,7 @@
       "source": [
         "Como pudemos notar a plotagem do gráfico não ficou muito legível. Podemos melhorar a visualização do gráfico. Para isso, vamos plotar um gráfico de dispersão com a coluna `log_gdp_per_capita` no eixo x e a coluna `life_ladder` no eixo y."
       ],
-      "id": "c66b4271"
+      "id": "a62e719d"
     },
     {
       "cell_type": "code",
@@ -405,7 +405,7 @@
       "source": [
         "df.plot(kind='scatter', x='log_gdp_per_capita', y='life_ladder')"
       ],
-      "id": "7fbe7d07",
+      "id": "c261b455",
       "execution_count": null,
       "outputs": []
     },
@@ -415,7 +415,7 @@
       "source": [
         "Podemos melhorar a visualização do gráfico adicionando cores e alterando o tamanho dos pontos. Para isso, vamos criar um dicionário com as cores que queremos usar e passar esse dicionário para o parâmetro `c` do método `plot`."
       ],
-      "id": "29e30b7f"
+      "id": "1a12ac7c"
     },
     {
       "cell_type": "code",
@@ -435,7 +435,7 @@
         "    s=2 # Set the size of the points\n",
         "    )"
       ],
-      "id": "4c770c29",
+      "id": "763fa828",
       "execution_count": null,
       "outputs": []
     },
@@ -445,7 +445,7 @@
       "source": [
         "Podemos plotar um histograma da coluna `life_ladder` com o comando `df.hist(\"life_ladder\")`."
       ],
-      "id": "ff324947"
+      "id": "a01c6097"
     },
     {
       "cell_type": "code",
@@ -453,7 +453,7 @@
       "source": [
         "df.hist(\"life_ladder\")"
       ],
-      "id": "a5591f74",
+      "id": "7b30ec7b",
       "execution_count": null,
       "outputs": []
     },
@@ -463,7 +463,7 @@
       "source": [
         "Além disso podemos criar gráficos com o seaborn. Por exemplo, podemos criar um gráfico de dispersão com a coluna `log_gdp_per_capita` no eixo x e a coluna `life_ladder` no eixo y."
       ],
-      "id": "c3a63613"
+      "id": "4d08234b"
     },
     {
       "cell_type": "code",
@@ -471,7 +471,7 @@
       "source": [
         "sns.scatterplot(data=df, x='log_gdp_per_capita', y='life_ladder')"
       ],
-      "id": "187c8d9c",
+      "id": "f7f7ee8d",
       "execution_count": null,
       "outputs": []
     },
@@ -481,7 +481,7 @@
       "source": [
         "Podemos plotar vários gráficos ao mesmo tempo com o seaborn. "
       ],
-      "id": "0ed5d171"
+      "id": "def88ae7"
     },
     {
       "cell_type": "code",
@@ -489,7 +489,7 @@
       "source": [
         "sns.pairplot(df)"
       ],
-      "id": "7466403f",
+      "id": "44594d23",
       "execution_count": null,
       "outputs": []
     },
@@ -501,7 +501,7 @@
         "\n",
         "Podemos criar uma nova coluna no DataFrame com o comando `df['nova_coluna'] = df['coluna1'] + df['coluna2']`."
       ],
-      "id": "90d43fb1"
+      "id": "cafc423b"
     },
     {
       "cell_type": "code",
@@ -512,7 +512,7 @@
         "\n",
         "df.head()"
       ],
-      "id": "4bf29895",
+      "id": "0ff6dec8",
       "execution_count": null,
       "outputs": []
     }

@@ -23,7 +23,7 @@
         "\n",
         "Vamos carregar os pacotes que utilizaremos aqui:\n"
       ],
-      "id": "de859fed"
+      "id": "56c67d1e"
     },
     {
       "cell_type": "code",
@@ -35,7 +35,7 @@
         "                      f_example_3, dfdx_example_3, dfdy_example_3, \n",
         "                      f_example_4, dfdx_example_4, dfdy_example_4)"
       ],
-      "id": "68888188",
+      "id": "bb530abd",
       "execution_count": null,
       "outputs": []
     },
@@ -45,7 +45,7 @@
       "source": [
         "Agora vamos explorar um exemplo simples de uma função em duas variáveis $f(x,y)$ com um mínimo global.\n"
       ],
-      "id": "cadc5fca"
+      "id": "e0dd35f4"
     },
     {
       "cell_type": "code",
@@ -53,7 +53,7 @@
       "source": [
         "plot_f_cont_and_surf([0, 5], [0, 5], [74, 85], f_example_3, cmap='coolwarm', view={'azim':-60,'elev':28})"
       ],
-      "id": "9ccbdcac",
+      "id": "472b088c",
       "execution_count": null,
       "outputs": []
     },
@@ -73,7 +73,7 @@
         "\n",
         "em que $\\alpha>0$ é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:\n"
       ],
-      "id": "7718facf"
+      "id": "67172068"
     },
     {
       "cell_type": "code",
@@ -84,7 +84,7 @@
         "        x, y = x - learning_rate * dfdx(x, y), y - learning_rate * dfdy(x, y)\n",
         "    return x, y"
       ],
-      "id": "26b80ed5",
+      "id": "db1874c2",
       "execution_count": null,
       "outputs": []
     },
@@ -94,7 +94,7 @@
       "source": [
         "Agora, para otimizar a função, configuramos os parâmetros `num_iterations`, `learning_rate`, `x_initial`, `y_initial` e executar o **gradient descent**:\n"
       ],
-      "id": "7e0ff206"
+      "id": "adf3c162"
     },
     {
       "cell_type": "code",
@@ -104,7 +104,7 @@
         "print(\"Gradient descent result: x_min, y_min =\", \n",
         "      gradient_descent(dfdx_example_3, dfdy_example_3, x_initial, y_initial, learning_rate, num_iterations)) "
       ],
-      "id": "6395059f",
+      "id": "15929189",
       "execution_count": null,
       "outputs": []
     },
@@ -114,7 +114,7 @@
       "source": [
         "Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente $\\begin{bmatrix}\\frac{\\partial f}{\\partial x}(x_0, y_0) \\\\ \\frac{\\partial f}{\\partial y}(x_0, y_0)\\end{bmatrix}$ com a taxa de aprendizado $\\alpha$ como um fator de escala.\n"
       ],
-      "id": "51a3644c"
+      "id": "005b0de0"
     },
     {
       "cell_type": "code",
@@ -132,7 +132,7 @@
         "                                              [0.1, 0.1, 81.5], 2, [4, 1, 171], \n",
         "                                              cmap='coolwarm', view={'azim':-60,'elev':28})"
       ],
-      "id": "27bd3405",
+      "id": "76722c95",
       "execution_count": null,
       "outputs": []
     },
@@ -142,7 +142,7 @@
       "source": [
         "Vamos dar uma olhada nessa outra função\n"
       ],
-      "id": "c36e3daf"
+      "id": "395f03c0"
     },
     {
       "cell_type": "code",
@@ -150,7 +150,7 @@
       "source": [
         "plot_f_cont_and_surf([0, 5], [0, 5], [6, 9.5], f_example_4, cmap='terrain', view={'azim':-63,'elev':21})"
       ],
-      "id": "f9bb7551",
+      "id": "83e12f58",
       "execution_count": null,
       "outputs": []
     },
@@ -160,7 +160,7 @@
       "source": [
         "Podemos encontrar o mínimo global com:\n"
       ],
-      "id": "f87b68c6"
+      "id": "0f528e1d"
     },
     {
       "cell_type": "code",
@@ -171,7 +171,7 @@
         "print(\"Gradient descent result: x_min, y_min =\", \n",
         "      gradient_descent(dfdx_example_4, dfdy_example_4, x_initial, y_initial, learning_rate, num_iterations)) "
       ],
-      "id": "033fec4e",
+      "id": "eaba0850",
       "execution_count": null,
       "outputs": []
     },
@@ -181,7 +181,7 @@
       "source": [
         "Visualizando\n"
       ],
-      "id": "78c62eb0"
+      "id": "22f341d4"
     },
     {
       "cell_type": "code",
@@ -201,7 +201,7 @@
         "                                              [2, 2, 6], 0.5, [2, 1, 63], \n",
         "                                              cmap='terrain', view={'azim':-63,'elev':21})"
       ],
-      "id": "1f085f50",
+      "id": "8d4e2460",
       "execution_count": null,
       "outputs": []
     }

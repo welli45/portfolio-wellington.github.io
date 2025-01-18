@@ -24,7 +24,7 @@
         "\n",
         "Para isso vamos utilizar os pacotes `numpy` e `matplotlib`."
       ],
-      "id": "fe59c2d7"
+      "id": "e29cc7d2"
     },
     {
       "cell_type": "code",
@@ -34,7 +34,7 @@
         "import matplotlib.pyplot as plt\n",
         "from w2_tools import plot_f, gradient_descent_one_variable, f_example_2, dfdx_example_2"
       ],
-      "id": "5b974e5e",
+      "id": "406e1720",
       "execution_count": null,
       "outputs": []
     },
@@ -58,7 +58,7 @@
         "\n",
         "Primeiro, defina a função $f(x)=e^2-log(x)$ e sua derivada $\\dfrac{df}{dx}=e^x-\\dfrac{1}{x}$:\n"
       ],
-      "id": "ec8bb173"
+      "id": "11677bf7"
     },
     {
       "cell_type": "code",
@@ -70,7 +70,7 @@
         "def dfdx_example_1(x):\n",
         "    return np.exp(x) - 1/x"
       ],
-      "id": "bbe0f608",
+      "id": "62e77444",
       "execution_count": null,
       "outputs": []
     },
@@ -80,7 +80,7 @@
       "source": [
         "A função $f(x)$ tem um mínimo global. Vamos traçar o gráfico da função:"
       ],
-      "id": "3c30ab6e"
+      "id": "89b7858b"
     },
     {
       "cell_type": "code",
@@ -88,7 +88,7 @@
       "source": [
         "plot_f([0.001, 2.5], [-0.3, 13], f_example_1, 0.0)"
       ],
-      "id": "4ddd305f",
+      "id": "41f949fc",
       "execution_count": null,
       "outputs": []
     },
@@ -98,7 +98,7 @@
       "source": [
         "O Gradient Descent pode ser implementado da seguinte forma:"
       ],
-      "id": "1a275474"
+      "id": "29fd8448"
     },
     {
       "cell_type": "code",
@@ -109,7 +109,7 @@
         "        x = x - learning_rate * dfdx(x)\n",
         "    return x"
       ],
-      "id": "19677a67",
+      "id": "b3451bbd",
       "execution_count": null,
       "outputs": []
     },
@@ -119,7 +119,7 @@
       "source": [
         "Observe que há três parâmetros nessa implementação: num_iterations, learning_rate, ponto inicial x_initial. Para otimizar a função, configure os parâmetros e chame a função definida gradient_descent:"
       ],
-      "id": "8f9c08e4"
+      "id": "cd4a7525"
     },
     {
       "cell_type": "code",
@@ -128,7 +128,7 @@
         "num_iterations = 25; learning_rate = 0.1; x_initial = 1.6\n",
         "print(\"Gradient descent result: x_min =\", gradient_descent(dfdx_example_1, x_initial, learning_rate, num_iterations)) "
       ],
-      "id": "101c829c",
+      "id": "8448687c",
       "execution_count": null,
       "outputs": []
     },
@@ -138,7 +138,7 @@
       "source": [
         "O código na célula a seguir o ajudará a visualizar e entender melhor o método de descida de gradiente."
       ],
-      "id": "de9ccec0"
+      "id": "84ed0881"
     },
     {
       "cell_type": "code",
@@ -156,7 +156,7 @@
         "gd_example_1 = gradient_descent_one_variable([0.001, 2.5], [-0.3, 13], f_example_1, dfdx_example_1, \n",
         "                                   gradient_descent, num_iterations, learning_rate, x_initial, 0.0, [0.35, 9.5])"
       ],
-      "id": "907364f7",
+      "id": "4e40a5a2",
       "execution_count": null,
       "outputs": []
     },
@@ -168,7 +168,7 @@
         "\n",
         "Plotando a função"
       ],
-      "id": "8fe0daed"
+      "id": "c72f6a14"
     },
     {
       "cell_type": "code",
@@ -176,7 +176,7 @@
       "source": [
         "plot_f([0.001, 2], [-6.3, 5], f_example_2, -6)"
       ],
-      "id": "12730598",
+      "id": "02e3873a",
       "execution_count": null,
       "outputs": []
     },
@@ -186,7 +186,7 @@
       "source": [
         "Rodando o gradient descent"
       ],
-      "id": "eb8eba23"
+      "id": "2a365a49"
     },
     {
       "cell_type": "code",
@@ -196,7 +196,7 @@
         "print(\"Global minimum: x_min =\", gradient_descent(dfdx_example_2, x=1.3, learning_rate=0.005, num_iterations=35)) \n",
         "print(\"Local minimum: x_min =\", gradient_descent(dfdx_example_2, x=0.25, learning_rate=0.005, num_iterations=35)) "
       ],
-      "id": "61984931",
+      "id": "a3c3580c",
       "execution_count": null,
       "outputs": []
     },
@@ -206,7 +206,7 @@
       "source": [
         "Testando diferentes pontos:"
       ],
-      "id": "ce078717"
+      "id": "94c65e21"
     },
     {
       "cell_type": "code",
@@ -219,7 +219,7 @@
         "gd_example_2 = gradient_descent_one_variable([0.001, 2], [-6.3, 5], f_example_2, dfdx_example_2, \n",
         "                                      gradient_descent, num_iterations, learning_rate, x_initial, -6, [0.1, -0.5])"
       ],
-      "id": "5961fe9c",
+      "id": "f7972b4f",
       "execution_count": null,
       "outputs": []
     }
