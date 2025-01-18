@@ -1,0 +1,32 @@
+---
+title: "Cálculo para aprendizado de máquina e ciência de dados"
+image: ../../Vida-Academica/images/capa_calculo.png
+description: "Anotações do curso de Cálculo para aprendizado de máquina e ciência de dados"
+author: "Wellington Santos Souza"
+date: "2024-08-04"
+categories: ["curso", "coursera", "Cálculo", "Machine Learning", "Data Science", "Deep Learning", "Python"]
+---
+
+*Este artigo foi reescrito em Quarta, 21 de agosto de 2024.*
+
+![](../images/calculo/capa_calculo.png){fig-alt="Capa" fig-title="Capa"}
+
+Link do curso: [Cálculo para aprendizado de máquina e ciência de dados](https://www.coursera.org/learn/machine-learning-calculus)
+
+O que Aprendi:
+
+- Otimizar diferentes tipos de funções comumente usadas no aprendizado de máquina usando propriedades de derivadas e gradientes 
+
+- Otimizar diferentes tipos de funções comumente usadas no aprendizado de máquina
+
+- Interpretar visualmente a diferenciação de diferentes tipos de funções comumente usadas no aprendizado de máquina
+
+- Executar a descida de gradiente em redes neurais com diferentes funções de ativação e custo
+
+**Acesse as anotações clicando nos links contidos no título de cada módulo abaixo:**
+
+## [Módulo 1: Derivadas e otimização](01-mod-derivadas-otimização.qmd)
+
+## [Módulo 2: Gradientes e Gradient Descent](02-mod-gradientes.qmd)
+
+## [Módulo 3: Otimização em redes neurais e método de Newton](03-mod-otimizacao-redes-neurais.qmd)

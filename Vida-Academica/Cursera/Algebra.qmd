@@ -1,0 +1,66 @@
+---
+title: "Álgebra linear para aprendizado de máquina e ciência de dados"
+image: ../../Vida-Academica/images/algebra/capa-04.png
+description: "Anotações do curso de Álgebra linear para aprendizado de máquina e ciência de dados"
+author: "Wellington Santos Souza"
+date: "2024-08-04"
+categories: ["curso", "coursera", "Algebra Linear", "Machine Learning", "Data Science", "Deep Learning", "Python", "R"]
+---
+
+*Este artigo foi reescrito em Quarta, 21 de agosto de 2024.*
+
+![](../images/algebra/capa-04.png){fig-alt="Capa" fig-title="Capa"}
+
+Link do curso: [Álgebra linear para aprendizado de máquina e ciência de dados](https://www.coursera.org/learn/machine-learning-linear-algebra)
+
+O que Aprendi:
+
+- Representar dados como vetores e matrizes e identificar suas propriedades usando conceitos de singularidade, classificação e independência linear
+
+- Aplicar operações comuns de álgebra de vetores e matrizes, como produto escalar, inverso e determinantes
+
+- Expressar certos tipos de operações de matriz como transformação linear e aplicar conceitos de valores próprios e vetores próprios a problemas de aprendizado de máquina
+
+**Acesse as anotações clicando nos links contidos no título de cada módulo abaixo:**
+
+## [Módulo 1: Sistema de equações lineares](01-mod-algebra.qmd)
+
++ Formar e interpretar graficamente sistemas de equações lineares.
+
++ Determinar o número de soluções para um sistema de equações lineares 2x2 e 3x3
+
++ Distinguir entre sistemas de equações singulares e não-singulares 
+
++ Determinar a singularidade de um sistema de equações 2x2 e 3x3 calculando o determinante
+
+
+## [Módulo 2: Vetores e matrizes](02-mod-vetores-matrizes.qmd)
+
++ Resolver um sistema de equações lineares usando o método de eliminação.
+
++ Usar uma matriz para representar um sistema de equações lineares e resolvê-lo usando a redução da linha da matriz.
+
++ Resolver um sistema de equações lineares calculando a matriz na forma de linha escalonada.
+
++ Calcular a classificação de um sistema de equações lineares e usar a classificação para determinar o número de soluções do sistema.
+
+## [Módulo 3: Transformações lineares](03-mod-transformacoes-lineares.qmd)
+
+- Realizar operações comuns em vetores, como soma, diferença e produto escalar.
+
+- Multiplicar matrizes e vetores. 
+
+- Representar um sistema de equações lineares como uma transformação linear em um vetor. 
+
+- Calcular a inversa de uma matriz, se ela existir.
+
+
+## [Módulo 4: Espaços vetoriais](04-mod-espacos-vetoriais.qmd)
+
+- Interpretar o determinante de uma matriz como uma área e calcular o determinante de uma inversa de uma matriz e um produto de matrizes.
+
+- Determinar as bases e a amplitude dos vetores.
+
+- Encontrar bases próprias para um tipo especial de transformações lineares comumente usadas no aprendizado de máquina.
+
+- Calcular os valores próprios e os vetores próprios de uma transformação linear (matriz).

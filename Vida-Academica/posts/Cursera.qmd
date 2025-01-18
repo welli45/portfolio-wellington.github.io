@@ -1,0 +1,22 @@
+---
+title: "Anotações do cursos feitos na plataforma Coursera"
+image: ../../Vida-Academica/images/cursera.svg
+description: "Anotações dos cursos feitos na plataforma Coursera"
+author: "Wellington Santos Souza"
+date: "2024-08-04"
+categories: ["curso", "coursera", "Machining Learning", "Data Science", "Deep Learning", "Python", "R", "SQL", "Tableau", "Excel", "Power BI", "Machine Learning", "Data Science", "Deep Learning", "Python", "R", "SQL", "Tableau", "Excel", "Power BI"]
+---
+
+![](../images/cursera.svg){fig-alt="Capa" fig-title="Capa"}
+
+# Anotações dos cursos feitos na plataforma Coursera
+
+Neste arquivo estão as anotações dos cursos feitos na plataforma Coursera.
+
+## [Álgebra linear para aprendizado de máquina e ciência de dados](../Cursera/Algebra.qmd)
+
+## [Cálculo para aprendizado de máquina e ciência de dados](../Cursera/Calculo.qmd)
+
+
+
+
