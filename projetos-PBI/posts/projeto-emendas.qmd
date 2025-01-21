@@ -4,7 +4,7 @@ subtitle: "Dashboard Interativo"
 description: "As emendas parlamentares são instrumentos que permitem ao Congresso Nacional participar da elaboração e execução do orçamento anual federal. Por meio delas, deputados e senadores podem influenciar a alocação dos recursos públicos, direcionando verbas para projetos e obras em suas bases eleitorais."
 author: "Wellington Santos Souza"
 date: "2025-01-18"
-categories: [SIM, Power BI, Saúde Pública, Emendas]
+categories: [Deputados, Power BI, Saúde Pública, Emendas, Senado]
 open-graph:
   description: "Emendas"
   image: ../images/08-emendas/projeto-emendas-parlamentares.jpg
@@ -12,7 +12,7 @@ twitter-card:
   description: "Emendas"
   image: ../images/08-emendas/projeto-emendas-parlamentares.jpg
 ---
-*Este artigo foi reescrito em Segunda-Feira, 18 de janeiro de 2025.*
+*Este artigo foi reescrito em Segunda-Feira, 21 de janeiro de 2025.*
 
 ![](../images/08-emendas/projeto-emendas-parlamentares.jpg)
 
