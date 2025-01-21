@@ -3,7 +3,7 @@ title: "Dashboard de Sistema de Informações Sobre Mortalidade"
 subtitle: "Dashboard Interativo"
 description: "O SIM é um sistema de informação que coleta dados sobre mortalidade em todo o território nacional. Este Dashboard foi desenvolvido para fornecer uma visão abrangente dos dados coletados, permitindo a análise de tendências e a identificação de padrões relevantes."
 author: "Wellington Santos Souza"
-date: "2024-02-12"
+date: "2024-12-28"
 categories: [SIM, Power BI, Saúde Pública, Mortalidade]
 open-graph:
   description: "Em constru..."
@@ -12,7 +12,6 @@ twitter-card:
   description: "Em constru..."
   image: ../images/05.sim/sim.png
 ---
-*Este artigo foi reescrito em Segunda-Feira, 12 de Fevereiro de 2024.*
 
 ![](../images/05.sim/sim.png)
 
@@ -24,5 +23,3 @@ O Dashboard é composto por quatro páginas distintas, cada uma fornecendo uma p
 
 **Você pode explorar o Dashboard interativo abaixo**
 <iframe title="Sistema de Informações sobre Mortalidade" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiNzlkNDI3ZmYtMjE0My00ZWY3LTk2M2MtOTQyNDkxMDlhMDBkIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9" frameborder="0" allowFullScreen="true"></iframe>
-
-[Dashboard Sistema de Informações sobre Mortalidade](https://app.powerbi.com/view?r=eyJrIjoiNzlkNDI3ZmYtMjE0My00ZWY3LTk2M2MtOTQyNDkxMDlhMDBkIiwidCI6ImVkYzRiYTQ1LTQ3NDItNDNhMy04MTYzLWY3MTY1MDFmMzZkNyJ9)

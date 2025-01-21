@@ -12,7 +12,6 @@ twitter-card:
   description: "Em constru..."
   image: ../images/07.google/sec.png
 ---
-*Este artigo foi reescrito em Segunda-Feira, 12 de Fevereiro de 2024.*
 
 ![](../images/07.google/sec.png)
 

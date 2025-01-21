@@ -1,5 +1,4 @@
 toc: true
-# TODO: Tweak ToC depth
 toc-depth: 4
 number-sections: false
 reference-location: margin
@@ -7,7 +6,6 @@ date-format: "dddd, DD MMMM YYYY"
 reading-time: true
 website:
   reader-mode: true
-  # TODO: Not able to get per page footers.
   page-footer: 
     left: "[Projetos](https://github.com/welli45) © 2024 by [Wellington S. Souza](https://github.com/welli45) | Foi desenvolvido com [Quarto](https://quarto.org)."
     right:
@@ -19,5 +17,3 @@ website:
         href: https://www.linkedin.com/in/wellington-santos-souza/
       - icon: envelope
         href: mailto:wellingtonstssza@gmail.com
-
-# TODO: Try a word cloud for categories listing.

@@ -3,7 +3,7 @@ title: "Índice de Percepção de Corrupção (IPC)"
 subtitle: "Dashboard Interativo"
 description: "O Índice de Percepção de Corrupção (IPC) é o ranking global de corrupção mais utilizado no mundo. Mede até que ponto o sector público de cada país é considerado corrupto, de acordo com especialistas e empresários."
 author: "Wellington Santos Souza"
-date: "2024-02-12"
+date: "2024-03-20"
 categories: [IPC, Power BI, Transparência Internacional]
 open-graph:
   description: "IPC"
@@ -12,8 +12,6 @@ twitter-card:
   description: "IPC"
   image: ../images/03.ipc/ipc.png
 ---
-
-*Este artigo foi reescrito em Segunda-Feira, 12 de Fevereiro de 2024.* 
 
 ![](../images/03.ipc/ipc.png){fig-alt="IPC" width=50%}} 
 

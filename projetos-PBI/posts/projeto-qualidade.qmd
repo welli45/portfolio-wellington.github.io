@@ -3,7 +3,7 @@ title: "Dashboard de Qualidade"
 subtitle: "Dashboard Interativo"
 description: "O relatorio de qualidade é um conjunto de dados que permite a visualização de indicadores de qualidade de uma empresa."
 author: "Wellington Santos Souza"
-date: "2024-02-12"
+date: "2024-05-22"
 categories: [Qualidade, Power BI, Gestão da Qualidade]
 open-graph:
   description: "Dashboard de Qualidade"
@@ -12,8 +12,6 @@ twitter-card:
   description: "Dashboard de Qualidade"
   image: ../images/04.qualidade/qualidade.png
 ---
-
-*Este artigo foi reescrito em Segunda-Feira, 12 de Fevereiro de 2024.*
 
 ![](../images/04.qualidade/qualidade.png){fig-alt="Qualidade" width=50%}
 
