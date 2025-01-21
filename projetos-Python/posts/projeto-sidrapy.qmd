@@ -6,7 +6,7 @@ author: "Wellington Santos Souza"
 date: "2024-02-12"
 format: 
   html:
-    code-fold: true
+    code-fold: false
 categories: [sidrapy, Python]
 open-graph:
   description: "IPC"

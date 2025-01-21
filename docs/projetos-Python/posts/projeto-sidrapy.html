@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.35">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -65,17 +65,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../bar-chart-line.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-383d4a065b21370043bc4709e21900a7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d182d65b571323b614243c7f329abfa8.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8845dd64c113d4fdcfd9858cf925e8d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-cd8bae22340798ec5d27f5a8ebe03610.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-c673f34e15cdee94befc4d0424d30270.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-70e11ed3cea8f8148b8fb6889169fcb3.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,10 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <style>html{ scroll-behavior: smooth; }</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
-
-
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -256,16 +254,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>COLETANDO DADOS DO SIDRA COM O PYTHON</p>
 <p>O primeiro passo será instalar a biblioteca sidrapy, se estiver usando o VSCode pode digitar o código <code>pip install sidrapy</code> no termianl que você irá instalar a biblioteca usada para fazer o download dos dados.</p>
 <p>O segundo passo será importar essa biblioteca para isso faça;</p>
-<div id="956e1315" class="cell" data-message="false" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
+<div id="204e4a68" class="cell" data-message="false" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sidrapy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Agora que temos nossa biblioteca instalada vamos baixar nossos dados.</p>
-<div id="b9651e7f" class="cell" data-execution_count="2">
-<details class="code-fold">
-<summary>Code</summary>
+<div id="7e6b8bd0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa os dados do SIDRA</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pib_sa_raw <span class="op">=</span> sidrapy.get_table(table_code<span class="op">=</span> <span class="st">"1621"</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                            territorial_level <span class="op">=</span> <span class="st">"1"</span>,</span>
@@ -275,7 +268,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Checamos a importação</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>pib_sa_raw.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -322,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>99.42</td>
+<td>99.40</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199601</td>
@@ -338,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>100.65</td>
+<td>100.66</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199602</td>
@@ -354,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>104.16</td>
+<td>104.15</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199603</td>
@@ -386,9 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="7cd37adb" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
+<div id="25d914f3" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Substitui as colunas pela primeira observação</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pib_sa_raw.columns <span class="op">=</span> pib_sa_raw.iloc[<span class="dv">0</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -398,7 +388,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Altera para float a coluna do valor</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>pib_sa_raw[<span class="st">'Valor'</span>] <span class="op">=</span> pib_sa_raw[<span class="st">'Valor'</span>].astype(<span class="bu">float</span>)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>pib_sa_raw.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
@@ -429,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>99.42</td>
+<td>99.40</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199601</td>
@@ -445,7 +434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>100.65</td>
+<td>100.66</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199602</td>
@@ -461,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>104.16</td>
+<td>104.15</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199603</td>
@@ -493,7 +482,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>104.41</td>
+<td>104.42</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199701</td>

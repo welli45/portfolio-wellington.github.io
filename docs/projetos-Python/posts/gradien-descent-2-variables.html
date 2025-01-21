@@ -2,14 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Wellington Santos Souza">
+<meta name="dcterms.date" content="2024-08-04">
 <meta name="description" content="Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados">
 
-<title>Portifólio de Dados - Otimização usando Gradient Descent em duas variáveis usando Python</title>
+<title>Otimização usando Gradient Descent em duas variáveis usando Python – Portifólio de Dados</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +36,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,17 +67,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../bar-chart-line.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-7d3c093a5437776bc308203de3e79d08.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-40d839717c0c4fdc0792b4616e7cab70.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -137,7 +139,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Portifólio de Dados - Otimização usando Gradient Descent em duas variáveis usando Python">
+<meta property="og:title" content="Otimização usando Gradient Descent em duas variáveis usando Python – Portifólio de Dados">
 <meta property="og:description" content="Portifólio // Wellington S. Souza">
 <meta property="og:image" content="https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/images/calculo/07-gradiente-descida.png">
 <meta property="og:site_name" content="Portifólio de Dados">
@@ -165,7 +167,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -181,7 +183,7 @@ window.Quarto = {
 <span class="menu-text">Sobre</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projetos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projetos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-clipboard-data-fill" role="img">
 </i> 
  <span class="menu-text">Projetos</span>
@@ -202,6 +204,16 @@ window.Quarto = {
 </i> 
  <span class="dropdown-text">Projetos em Python</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../projetos-SQL/index.html"><i class="bi bi-filetype-sql" role="img">
+</i> 
+ <span class="dropdown-text">Projetos em SQL</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../projetos-excel/index.html"><i class="bi bi-file-earmark-excel-fill" role="img">
+</i> 
+ <span class="dropdown-text">Projetos em Excel</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -211,7 +223,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools tools-wide">
+            <div class="quarto-navbar-tools tools-wide">
     <a href="https://welli45.github.io/portifolio-dados.github.io/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-code-slash"></i></a>
     <a href="../../projetos-PBI/index.xml" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-rss"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -223,7 +235,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
@@ -265,7 +277,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Sunday, 04 August 2024</p>
+      <p class="date">2024-08-04</p>
     </div>
   </div>
   
@@ -277,9 +289,10 @@ window.Quarto = {
 </header>
 
 
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>Método de <strong>Gradient Descent</strong> otimizando algumas funções em duas variáveis.</p>
 <p>Vamos carregar os pacotes que utilizaremos aqui:</p>
-<div id="2f029156" class="cell" data-execution_count="1">
+<div id="dc4020f7" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -290,7 +303,7 @@ window.Quarto = {
 </details>
 </div>
 <p>Agora vamos explorar um exemplo simples de uma função em duas variáveis <span class="math inline">\(f(x,y)\)</span> com um mínimo global.</p>
-<div id="ba1ddf23" class="cell" data-execution_count="2">
+<div id="76323d74" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">74</span>, <span class="dv">85</span>], f_example_3, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">60</span>,<span class="st">'elev'</span>:<span class="dv">28</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -316,7 +329,7 @@ x_1 = x_0 - \alpha \frac{\partial f}{\partial x}(x_0, y_0),
 y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}
 \]</span></p>
 <p>em que <span class="math inline">\(\alpha&gt;0\)</span> é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:</p>
-<div id="08ae7431" class="cell" data-execution_count="3">
+<div id="8b6e6c69" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gradient_descent(dfdx, dfdy, x, y, learning_rate <span class="op">=</span> <span class="fl">0.1</span>, num_iterations <span class="op">=</span> <span class="dv">100</span>):</span>
@@ -326,7 +339,7 @@ y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}
 </details>
 </div>
 <p>Agora, para otimizar a função, configuramos os parâmetros <code>num_iterations</code>, <code>learning_rate</code>, <code>x_initial</code>, <code>y_initial</code> e executar o <strong>gradient descent</strong>:</p>
-<div id="0b8ff1de" class="cell" data-execution_count="4">
+<div id="ba0b6880" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
@@ -338,7 +351,7 @@ y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}
 </div>
 </div>
 <p>Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente <span class="math inline">\(\begin{bmatrix}\frac{\partial f}{\partial x}(x_0, y_0) \\ \frac{\partial f}{\partial y}(x_0, y_0)\end{bmatrix}\)</span> com a taxa de aprendizado <span class="math inline">\(\alpha\)</span> como um fator de escala.</p>
-<div id="298747ce" class="cell" data-execution_count="5">
+<div id="57e1849c" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
@@ -362,7 +375,7 @@ y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}
 </div>
 </div>
 <p>Vamos dar uma olhada nessa outra função</p>
-<div id="e269b0ef" class="cell" data-execution_count="6">
+<div id="e3451010" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="fl">9.5</span>], f_example_4, cmap<span class="op">=</span><span class="st">'terrain'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">63</span>,<span class="st">'elev'</span>:<span class="dv">21</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -381,7 +394,7 @@ y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}
 </div>
 </div>
 <p>Podemos encontrar o mínimo global com:</p>
-<div id="388a488a" class="cell" data-execution_count="7">
+<div id="bd3fc0ea" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="dv">3</span></span>
@@ -394,7 +407,7 @@ y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}
 </div>
 </div>
 <p>Visualizando</p>
-<div id="f2b480c2" class="cell" data-execution_count="8">
+<div id="15d3e47e" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to the global minimum point.</span></span>
@@ -419,6 +432,167 @@ y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}
 </div>
 </div>
 </div>
+<p>=======</p>
+<hr>
+<p>title: “Otimização usando Gradient Descent em duas variáveis usando Python” image: ../../Vida-Academica/images/calculo/07-gradiente-descida.png description: “Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados” author: “Wellington Santos Souza” date: “2024-08-04” format: html: code-fold: true code-copy: true code-tools: true categories: [“curso”, “coursera”, “Algebra Linear”, “calculo”, “Machine Learning”, “Data Science”, “Deep Learning”, “Python”, “R”, “Algebra Linear”]</p>
+<hr>
+<p>Método de <strong>Gradient Descent</strong> otimizando algumas funções em duas variáveis.</p>
+<p>Vamos carregar os pacotes que utilizaremos aqui:</p>
+<div id="14acbe58" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> w2_tools <span class="im">import</span> (plot_f_cont_and_surf, gradient_descent_two_variables, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                      f_example_3, dfdx_example_3, dfdy_example_3, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                      f_example_4, dfdx_example_4, dfdy_example_4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Agora vamos explorar um exemplo simples de uma função em duas variáveis <span class="math inline">\(f(x,y)\)</span> com um mínimo global.</p>
+<div id="0a212f93" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">74</span>, <span class="dv">85</span>], f_example_3, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">60</span>,<span class="st">'elev'</span>:<span class="dv">28</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>(&lt;Figure size 960x480 with 2 Axes&gt;,
+ &lt;Axes: xlabel='$x$', ylabel='$y$'&gt;,
+ &lt;Axes3D: xlabel='$x$', ylabel='$y$', zlabel='$f$'&gt;)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="gradien-descent-2-variables_files/figure-html/cell-11-output-2.png" width="817" height="403" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Para encontrarmos o mínimo, você podemos implementar a <strong>gradient descent</strong> a partir do ponto inicial <span class="math inline">\((x_0,y_0)\)</span> e realizar etapas iteração por iteração usando as seguintes equações:</p>
+<p><span class="math display">\[
+x_1 = x_0 - \alpha \frac{\partial f}{\partial x}(x_0, y_0),
+\]</span></p>
+<p><span class="math display">\[
+y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}
+\]</span></p>
+<p>em que <span class="math inline">\(\alpha&gt;0\)</span> é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:</p>
+<div id="d1019d73" class="cell" data-execution_count="11">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gradient_descent(dfdx, dfdy, x, y, learning_rate <span class="op">=</span> <span class="fl">0.1</span>, num_iterations <span class="op">=</span> <span class="dv">100</span>):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(num_iterations):</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        x, y <span class="op">=</span> x <span class="op">-</span> learning_rate <span class="op">*</span> dfdx(x, y), y <span class="op">-</span> learning_rate <span class="op">*</span> dfdy(x, y)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x, y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Agora, para otimizar a função, configuramos os parâmetros <code>num_iterations</code>, <code>learning_rate</code>, <code>x_initial</code>, <code>y_initial</code> e executar o <strong>gradient descent</strong>:</p>
+<div id="8bfab86b" class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gradient descent result: x_min, y_min ="</span>, </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>      gradient_descent(dfdx_example_3, dfdy_example_3, x_initial, y_initial, learning_rate, num_iterations)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gradient descent result: x_min, y_min = (4.0, 4.0)</code></pre>
+</div>
+</div>
+<p>Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente <span class="math inline">\(\begin{bmatrix}\frac{\partial f}{\partial x}(x_0, y_0) \\ \frac{\partial f}{\partial y}(x_0, y_0)\end{bmatrix}\)</span> com a taxa de aprendizado <span class="math inline">\(\alpha\)</span> como um fator de escala.</p>
+<div id="062f59ac" class="cell" data-execution_count="13">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.15</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.15</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">3.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">3.6</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>gd_example_3 <span class="op">=</span> gradient_descent_two_variables([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">74</span>, <span class="dv">85</span>], </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                                              f_example_3, dfdx_example_3, dfdy_example_3, </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                                              gradient_descent, num_iterations, learning_rate, </span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                                              x_initial, y_initial, </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>                                              [<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">81.5</span>], <span class="dv">2</span>, [<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">171</span>], </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>                                              cmap<span class="op">=</span><span class="st">'coolwarm'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">60</span>,<span class="st">'elev'</span>:<span class="dv">28</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="gradien-descent-2-variables_files/figure-html/cell-14-output-1.png" width="817" height="403" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Vamos dar uma olhada nessa outra função</p>
+<div id="724e38e5" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="fl">9.5</span>], f_example_4, cmap<span class="op">=</span><span class="st">'terrain'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">63</span>,<span class="st">'elev'</span>:<span class="dv">21</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>(&lt;Figure size 960x480 with 2 Axes&gt;,
+ &lt;Axes: xlabel='$x$', ylabel='$y$'&gt;,
+ &lt;Axes3D: xlabel='$x$', ylabel='$y$', zlabel='$f$'&gt;)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="gradien-descent-2-variables_files/figure-html/cell-15-output-2.png" width="815" height="403" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Podemos encontrar o mínimo global com:</p>
+<div id="72824f76" class="cell" data-execution_count="15">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gradient descent result: x_min, y_min ="</span>, </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>      gradient_descent(dfdx_example_4, dfdy_example_4, x_initial, y_initial, learning_rate, num_iterations)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gradient descent result: x_min, y_min = (0.5230322579358745, 0.5169891562802605)</code></pre>
+</div>
+</div>
+<p>Visualizando</p>
+<div id="367a3b21" class="cell" data-execution_count="16">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to the global minimum point.</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to a local minimum point.</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># num_iterations = 20; learning_rate = 0.2; x_initial = 2; y_initial = 3</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to another local minimum point.</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># num_iterations = 20; learning_rate = 0.2; x_initial = 4; y_initial = 0.5</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>gd_example_4 <span class="op">=</span> gradient_descent_two_variables([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="fl">9.5</span>], </span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>                                              f_example_4, dfdx_example_4, dfdy_example_4, </span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                                              gradient_descent, num_iterations, learning_rate, </span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                                              x_initial, y_initial, </span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>                                              [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">6</span>], <span class="fl">0.5</span>, [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">63</span>], </span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>                                              cmap<span class="op">=</span><span class="st">'terrain'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">63</span>,<span class="st">'elev'</span>:<span class="dv">21</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="gradien-descent-2-variables_files/figure-html/cell-17-output-1.png" width="815" height="403" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
 
 <!-- -->
@@ -604,18 +778,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -647,7 +810,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -706,7 +889,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -803,7 +986,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1029,114 +1211,224 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb13" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Otimização usando Gradient Descent em duas variáveis usando Python"</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ../../Vida-Academica/images/calculo/07-gradiente-descida.png</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados"</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Wellington Santos Souza"</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-08-04"</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-copy: true</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["curso", "coursera", "Algebra Linear", "calculo", "Machine Learning", "Data Science", "Deep Learning", "Python", "R", "Algebra Linear"]</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>Método de **Gradient Descent** otimizando algumas funções em duas variáveis.</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>Vamos carregar os pacotes que utilizaremos aqui:</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> w2_tools <span class="im">import</span> (plot_f_cont_and_surf, gradient_descent_two_variables, </span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>                      f_example_3, dfdx_example_3, dfdy_example_3, </span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>                      f_example_4, dfdx_example_4, dfdy_example_4)</span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>Agora vamos explorar um exemplo simples de uma função em duas variáveis $f(x,y)$ com um mínimo global.</span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">74</span>, <span class="dv">85</span>], f_example_3, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">60</span>,<span class="st">'elev'</span>:<span class="dv">28</span>})</span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>Para encontrarmos o mínimo, você podemos implementar a **gradient descent** a partir do ponto inicial $(x_0,y_0)$ e realizar etapas iteração por iteração usando as seguintes equações:</span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>x_1 = x_0 - \alpha \frac{\partial f}{\partial x}(x_0, y_0),</span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}</span>
-<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>em que $\alpha&gt;0$ é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:</span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gradient_descent(dfdx, dfdy, x, y, learning_rate <span class="op">=</span> <span class="fl">0.1</span>, num_iterations <span class="op">=</span> <span class="dv">100</span>):</span>
-<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(num_iterations):</span>
-<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>        x, y <span class="op">=</span> x <span class="op">-</span> learning_rate <span class="op">*</span> dfdx(x, y), y <span class="op">-</span> learning_rate <span class="op">*</span> dfdy(x, y)</span>
-<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x, y</span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>Agora, para otimizar a função, configuramos os parâmetros <span class="in">`num_iterations`</span>, <span class="in">`learning_rate`</span>, <span class="in">`x_initial`</span>, <span class="in">`y_initial`</span> e executar o **gradient descent**:</span>
-<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
-<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gradient descent result: x_min, y_min ="</span>, </span>
-<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>      gradient_descent(dfdx_example_3, dfdy_example_3, x_initial, y_initial, learning_rate, num_iterations)) </span>
-<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente $\begin{bmatrix}\frac{\partial f}{\partial x}(x_0, y_0) <span class="sc">\\</span> \frac{\partial f}{\partial y}(x_0, y_0)\end{bmatrix}$ com a taxa de aprendizado $\alpha$ como um fator de escala.</span>
-<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
-<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
-<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.15</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
-<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.15</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">3.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">3.6</span></span>
-<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>gd_example_3 <span class="op">=</span> gradient_descent_two_variables([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">74</span>, <span class="dv">85</span>], </span>
-<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>                                              f_example_3, dfdx_example_3, dfdy_example_3, </span>
-<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a>                                              gradient_descent, num_iterations, learning_rate, </span>
-<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a>                                              x_initial, y_initial, </span>
-<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a>                                              [<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">81.5</span>], <span class="dv">2</span>, [<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">171</span>], </span>
-<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a>                                              cmap<span class="op">=</span><span class="st">'coolwarm'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">60</span>,<span class="st">'elev'</span>:<span class="dv">28</span>})</span>
-<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a>Vamos dar uma olhada nessa outra função</span>
-<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="fl">9.5</span>], f_example_4, cmap<span class="op">=</span><span class="st">'terrain'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">63</span>,<span class="st">'elev'</span>:<span class="dv">21</span>})</span>
-<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>Podemos encontrar o mínimo global com:</span>
-<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gradient descent result: x_min, y_min ="</span>, </span>
-<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>      gradient_descent(dfdx_example_4, dfdy_example_4, x_initial, y_initial, learning_rate, num_iterations)) </span>
-<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a>Visualizando</span>
-<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to the global minimum point.</span></span>
-<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to a local minimum point.</span></span>
-<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a><span class="co"># num_iterations = 20; learning_rate = 0.2; x_initial = 2; y_initial = 3</span></span>
-<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to another local minimum point.</span></span>
-<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a><span class="co"># num_iterations = 20; learning_rate = 0.2; x_initial = 4; y_initial = 0.5</span></span>
-<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>gd_example_4 <span class="op">=</span> gradient_descent_two_variables([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="fl">9.5</span>], </span>
-<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a>                                              f_example_4, dfdx_example_4, dfdy_example_4, </span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>                                              gradient_descent, num_iterations, learning_rate, </span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>                                              x_initial, y_initial, </span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>                                              [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">6</span>], <span class="fl">0.5</span>, [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">63</span>], </span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>                                              cmap<span class="op">=</span><span class="st">'terrain'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">63</span>,<span class="st">'elev'</span>:<span class="dv">21</span>})</span>
-<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>title: "Otimização usando Gradient Descent em duas variáveis usando Python"</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>image: ../../Vida-Academica/images/calculo/07-gradiente-descida.png</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>description: "Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados"</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>author: "Wellington Santos Souza"</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>date: "2024-08-04"</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>format: </span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    code-fold: true</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    code-copy: true</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    code-tools: true</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>categories: <span class="co">[</span><span class="ot">"curso", "coursera", "Algebra Linear", "calculo", "Machine Learning", "Data Science", "Deep Learning", "Python", "R", "Algebra Linear"</span><span class="co">]</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>Método de **Gradient Descent** otimizando algumas funções em duas variáveis.</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>Vamos carregar os pacotes que utilizaremos aqui:</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> w2_tools <span class="im">import</span> (plot_f_cont_and_surf, gradient_descent_two_variables, </span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>                      f_example_3, dfdx_example_3, dfdy_example_3, </span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>                      f_example_4, dfdx_example_4, dfdy_example_4)</span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>Agora vamos explorar um exemplo simples de uma função em duas variáveis $f(x,y)$ com um mínimo global.</span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">74</span>, <span class="dv">85</span>], f_example_3, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">60</span>,<span class="st">'elev'</span>:<span class="dv">28</span>})</span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>Para encontrarmos o mínimo, você podemos implementar a **gradient descent** a partir do ponto inicial $(x_0,y_0)$ e realizar etapas iteração por iteração usando as seguintes equações:</span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>x_1 = x_0 - \alpha \frac{\partial f}{\partial x}(x_0, y_0),</span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}</span>
+<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>em que $\alpha&gt;0$ é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:</span>
+<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gradient_descent(dfdx, dfdy, x, y, learning_rate <span class="op">=</span> <span class="fl">0.1</span>, num_iterations <span class="op">=</span> <span class="dv">100</span>):</span>
+<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(num_iterations):</span>
+<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>        x, y <span class="op">=</span> x <span class="op">-</span> learning_rate <span class="op">*</span> dfdx(x, y), y <span class="op">-</span> learning_rate <span class="op">*</span> dfdy(x, y)</span>
+<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x, y</span>
+<span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a>Agora, para otimizar a função, configuramos os parâmetros <span class="in">`num_iterations`</span>, <span class="in">`learning_rate`</span>, <span class="in">`x_initial`</span>, <span class="in">`y_initial`</span> e executar o **gradient descent**:</span>
+<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-63"><a href="#cb25-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-64"><a href="#cb25-64" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb25-65"><a href="#cb25-65" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gradient descent result: x_min, y_min ="</span>, </span>
+<span id="cb25-66"><a href="#cb25-66" aria-hidden="true" tabindex="-1"></a>      gradient_descent(dfdx_example_3, dfdy_example_3, x_initial, y_initial, learning_rate, num_iterations)) </span>
+<span id="cb25-67"><a href="#cb25-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-68"><a href="#cb25-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-69"><a href="#cb25-69" aria-hidden="true" tabindex="-1"></a>Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente $\begin{bmatrix}\frac{\partial f}{\partial x}(x_0, y_0) <span class="sc">\\</span> \frac{\partial f}{\partial y}(x_0, y_0)\end{bmatrix}$ com a taxa de aprendizado $\alpha$ como um fator de escala.</span>
+<span id="cb25-70"><a href="#cb25-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-73"><a href="#cb25-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-74"><a href="#cb25-74" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb25-75"><a href="#cb25-75" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb25-76"><a href="#cb25-76" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.15</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb25-77"><a href="#cb25-77" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.15</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">3.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">3.6</span></span>
+<span id="cb25-78"><a href="#cb25-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-79"><a href="#cb25-79" aria-hidden="true" tabindex="-1"></a>gd_example_3 <span class="op">=</span> gradient_descent_two_variables([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">74</span>, <span class="dv">85</span>], </span>
+<span id="cb25-80"><a href="#cb25-80" aria-hidden="true" tabindex="-1"></a>                                              f_example_3, dfdx_example_3, dfdy_example_3, </span>
+<span id="cb25-81"><a href="#cb25-81" aria-hidden="true" tabindex="-1"></a>                                              gradient_descent, num_iterations, learning_rate, </span>
+<span id="cb25-82"><a href="#cb25-82" aria-hidden="true" tabindex="-1"></a>                                              x_initial, y_initial, </span>
+<span id="cb25-83"><a href="#cb25-83" aria-hidden="true" tabindex="-1"></a>                                              [<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">81.5</span>], <span class="dv">2</span>, [<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">171</span>], </span>
+<span id="cb25-84"><a href="#cb25-84" aria-hidden="true" tabindex="-1"></a>                                              cmap<span class="op">=</span><span class="st">'coolwarm'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">60</span>,<span class="st">'elev'</span>:<span class="dv">28</span>})</span>
+<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-86"><a href="#cb25-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-87"><a href="#cb25-87" aria-hidden="true" tabindex="-1"></a>Vamos dar uma olhada nessa outra função</span>
+<span id="cb25-88"><a href="#cb25-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-91"><a href="#cb25-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-92"><a href="#cb25-92" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="fl">9.5</span>], f_example_4, cmap<span class="op">=</span><span class="st">'terrain'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">63</span>,<span class="st">'elev'</span>:<span class="dv">21</span>})</span>
+<span id="cb25-93"><a href="#cb25-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-94"><a href="#cb25-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-95"><a href="#cb25-95" aria-hidden="true" tabindex="-1"></a>Podemos encontrar o mínimo global com:</span>
+<span id="cb25-96"><a href="#cb25-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-99"><a href="#cb25-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-100"><a href="#cb25-100" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb25-101"><a href="#cb25-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-102"><a href="#cb25-102" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gradient descent result: x_min, y_min ="</span>, </span>
+<span id="cb25-103"><a href="#cb25-103" aria-hidden="true" tabindex="-1"></a>      gradient_descent(dfdx_example_4, dfdy_example_4, x_initial, y_initial, learning_rate, num_iterations)) </span>
+<span id="cb25-104"><a href="#cb25-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-105"><a href="#cb25-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-106"><a href="#cb25-106" aria-hidden="true" tabindex="-1"></a>Visualizando</span>
+<span id="cb25-107"><a href="#cb25-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-110"><a href="#cb25-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-111"><a href="#cb25-111" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to the global minimum point.</span></span>
+<span id="cb25-112"><a href="#cb25-112" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb25-113"><a href="#cb25-113" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to a local minimum point.</span></span>
+<span id="cb25-114"><a href="#cb25-114" aria-hidden="true" tabindex="-1"></a><span class="co"># num_iterations = 20; learning_rate = 0.2; x_initial = 2; y_initial = 3</span></span>
+<span id="cb25-115"><a href="#cb25-115" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to another local minimum point.</span></span>
+<span id="cb25-116"><a href="#cb25-116" aria-hidden="true" tabindex="-1"></a><span class="co"># num_iterations = 20; learning_rate = 0.2; x_initial = 4; y_initial = 0.5</span></span>
+<span id="cb25-117"><a href="#cb25-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-118"><a href="#cb25-118" aria-hidden="true" tabindex="-1"></a>gd_example_4 <span class="op">=</span> gradient_descent_two_variables([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="fl">9.5</span>], </span>
+<span id="cb25-119"><a href="#cb25-119" aria-hidden="true" tabindex="-1"></a>                                              f_example_4, dfdx_example_4, dfdy_example_4, </span>
+<span id="cb25-120"><a href="#cb25-120" aria-hidden="true" tabindex="-1"></a>                                              gradient_descent, num_iterations, learning_rate, </span>
+<span id="cb25-121"><a href="#cb25-121" aria-hidden="true" tabindex="-1"></a>                                              x_initial, y_initial, </span>
+<span id="cb25-122"><a href="#cb25-122" aria-hidden="true" tabindex="-1"></a>                                              [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">6</span>], <span class="fl">0.5</span>, [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">63</span>], </span>
+<span id="cb25-123"><a href="#cb25-123" aria-hidden="true" tabindex="-1"></a>                                              cmap<span class="op">=</span><span class="st">'terrain'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">63</span>,<span class="st">'elev'</span>:<span class="dv">21</span>})</span>
+<span id="cb25-124"><a href="#cb25-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-125"><a href="#cb25-125" aria-hidden="true" tabindex="-1"></a><span class="fu">=======</span></span>
+<span id="cb25-126"><a href="#cb25-126" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb25-127"><a href="#cb25-127" aria-hidden="true" tabindex="-1"></a>title: "Otimização usando Gradient Descent em duas variáveis usando Python"</span>
+<span id="cb25-128"><a href="#cb25-128" aria-hidden="true" tabindex="-1"></a>image: ../../Vida-Academica/images/calculo/07-gradiente-descida.png</span>
+<span id="cb25-129"><a href="#cb25-129" aria-hidden="true" tabindex="-1"></a>description: "Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados"</span>
+<span id="cb25-130"><a href="#cb25-130" aria-hidden="true" tabindex="-1"></a>author: "Wellington Santos Souza"</span>
+<span id="cb25-131"><a href="#cb25-131" aria-hidden="true" tabindex="-1"></a>date: "2024-08-04"</span>
+<span id="cb25-132"><a href="#cb25-132" aria-hidden="true" tabindex="-1"></a>format: </span>
+<span id="cb25-133"><a href="#cb25-133" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb25-134"><a href="#cb25-134" aria-hidden="true" tabindex="-1"></a>    code-fold: true</span>
+<span id="cb25-135"><a href="#cb25-135" aria-hidden="true" tabindex="-1"></a>    code-copy: true</span>
+<span id="cb25-136"><a href="#cb25-136" aria-hidden="true" tabindex="-1"></a>    code-tools: true</span>
+<span id="cb25-137"><a href="#cb25-137" aria-hidden="true" tabindex="-1"></a>categories: <span class="co">[</span><span class="ot">"curso", "coursera", "Algebra Linear", "calculo", "Machine Learning", "Data Science", "Deep Learning", "Python", "R", "Algebra Linear"</span><span class="co">]</span></span>
+<span id="cb25-138"><a href="#cb25-138" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb25-139"><a href="#cb25-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-140"><a href="#cb25-140" aria-hidden="true" tabindex="-1"></a>Método de **Gradient Descent** otimizando algumas funções em duas variáveis.</span>
+<span id="cb25-141"><a href="#cb25-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-142"><a href="#cb25-142" aria-hidden="true" tabindex="-1"></a>Vamos carregar os pacotes que utilizaremos aqui:</span>
+<span id="cb25-143"><a href="#cb25-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-146"><a href="#cb25-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-147"><a href="#cb25-147" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb25-148"><a href="#cb25-148" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb25-149"><a href="#cb25-149" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> w2_tools <span class="im">import</span> (plot_f_cont_and_surf, gradient_descent_two_variables, </span>
+<span id="cb25-150"><a href="#cb25-150" aria-hidden="true" tabindex="-1"></a>                      f_example_3, dfdx_example_3, dfdy_example_3, </span>
+<span id="cb25-151"><a href="#cb25-151" aria-hidden="true" tabindex="-1"></a>                      f_example_4, dfdx_example_4, dfdy_example_4)</span>
+<span id="cb25-152"><a href="#cb25-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-153"><a href="#cb25-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-154"><a href="#cb25-154" aria-hidden="true" tabindex="-1"></a>Agora vamos explorar um exemplo simples de uma função em duas variáveis $f(x,y)$ com um mínimo global.</span>
+<span id="cb25-155"><a href="#cb25-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-158"><a href="#cb25-158" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-159"><a href="#cb25-159" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">74</span>, <span class="dv">85</span>], f_example_3, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">60</span>,<span class="st">'elev'</span>:<span class="dv">28</span>})</span>
+<span id="cb25-160"><a href="#cb25-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-161"><a href="#cb25-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-162"><a href="#cb25-162" aria-hidden="true" tabindex="-1"></a>Para encontrarmos o mínimo, você podemos implementar a **gradient descent** a partir do ponto inicial $(x_0,y_0)$ e realizar etapas iteração por iteração usando as seguintes equações:</span>
+<span id="cb25-163"><a href="#cb25-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-164"><a href="#cb25-164" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb25-165"><a href="#cb25-165" aria-hidden="true" tabindex="-1"></a>x_1 = x_0 - \alpha \frac{\partial f}{\partial x}(x_0, y_0),</span>
+<span id="cb25-166"><a href="#cb25-166" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb25-167"><a href="#cb25-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-168"><a href="#cb25-168" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb25-169"><a href="#cb25-169" aria-hidden="true" tabindex="-1"></a>y_1 = y_0 - \alpha \frac{\partial f}{\partial y}(x_0, y_0),\tag{1}</span>
+<span id="cb25-170"><a href="#cb25-170" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb25-171"><a href="#cb25-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-172"><a href="#cb25-172" aria-hidden="true" tabindex="-1"></a>em que $\alpha&gt;0$ é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:</span>
+<span id="cb25-173"><a href="#cb25-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-176"><a href="#cb25-176" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-177"><a href="#cb25-177" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gradient_descent(dfdx, dfdy, x, y, learning_rate <span class="op">=</span> <span class="fl">0.1</span>, num_iterations <span class="op">=</span> <span class="dv">100</span>):</span>
+<span id="cb25-178"><a href="#cb25-178" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(num_iterations):</span>
+<span id="cb25-179"><a href="#cb25-179" aria-hidden="true" tabindex="-1"></a>        x, y <span class="op">=</span> x <span class="op">-</span> learning_rate <span class="op">*</span> dfdx(x, y), y <span class="op">-</span> learning_rate <span class="op">*</span> dfdy(x, y)</span>
+<span id="cb25-180"><a href="#cb25-180" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x, y</span>
+<span id="cb25-181"><a href="#cb25-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-182"><a href="#cb25-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-183"><a href="#cb25-183" aria-hidden="true" tabindex="-1"></a>Agora, para otimizar a função, configuramos os parâmetros <span class="in">`num_iterations`</span>, <span class="in">`learning_rate`</span>, <span class="in">`x_initial`</span>, <span class="in">`y_initial`</span> e executar o **gradient descent**:</span>
+<span id="cb25-184"><a href="#cb25-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-187"><a href="#cb25-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-188"><a href="#cb25-188" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb25-189"><a href="#cb25-189" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gradient descent result: x_min, y_min ="</span>, </span>
+<span id="cb25-190"><a href="#cb25-190" aria-hidden="true" tabindex="-1"></a>      gradient_descent(dfdx_example_3, dfdy_example_3, x_initial, y_initial, learning_rate, num_iterations)) </span>
+<span id="cb25-191"><a href="#cb25-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-192"><a href="#cb25-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-193"><a href="#cb25-193" aria-hidden="true" tabindex="-1"></a>Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente $\begin{bmatrix}\frac{\partial f}{\partial x}(x_0, y_0) <span class="sc">\\</span> \frac{\partial f}{\partial y}(x_0, y_0)\end{bmatrix}$ com a taxa de aprendizado $\alpha$ como um fator de escala.</span>
+<span id="cb25-194"><a href="#cb25-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-197"><a href="#cb25-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-198"><a href="#cb25-198" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb25-199"><a href="#cb25-199" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb25-200"><a href="#cb25-200" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.15</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">0.6</span></span>
+<span id="cb25-201"><a href="#cb25-201" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">20</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.15</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">3.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="fl">3.6</span></span>
+<span id="cb25-202"><a href="#cb25-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-203"><a href="#cb25-203" aria-hidden="true" tabindex="-1"></a>gd_example_3 <span class="op">=</span> gradient_descent_two_variables([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">74</span>, <span class="dv">85</span>], </span>
+<span id="cb25-204"><a href="#cb25-204" aria-hidden="true" tabindex="-1"></a>                                              f_example_3, dfdx_example_3, dfdy_example_3, </span>
+<span id="cb25-205"><a href="#cb25-205" aria-hidden="true" tabindex="-1"></a>                                              gradient_descent, num_iterations, learning_rate, </span>
+<span id="cb25-206"><a href="#cb25-206" aria-hidden="true" tabindex="-1"></a>                                              x_initial, y_initial, </span>
+<span id="cb25-207"><a href="#cb25-207" aria-hidden="true" tabindex="-1"></a>                                              [<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">81.5</span>], <span class="dv">2</span>, [<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">171</span>], </span>
+<span id="cb25-208"><a href="#cb25-208" aria-hidden="true" tabindex="-1"></a>                                              cmap<span class="op">=</span><span class="st">'coolwarm'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">60</span>,<span class="st">'elev'</span>:<span class="dv">28</span>})</span>
+<span id="cb25-209"><a href="#cb25-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-210"><a href="#cb25-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-211"><a href="#cb25-211" aria-hidden="true" tabindex="-1"></a>Vamos dar uma olhada nessa outra função</span>
+<span id="cb25-212"><a href="#cb25-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-215"><a href="#cb25-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-216"><a href="#cb25-216" aria-hidden="true" tabindex="-1"></a>plot_f_cont_and_surf([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="fl">9.5</span>], f_example_4, cmap<span class="op">=</span><span class="st">'terrain'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">63</span>,<span class="st">'elev'</span>:<span class="dv">21</span>})</span>
+<span id="cb25-217"><a href="#cb25-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-218"><a href="#cb25-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-219"><a href="#cb25-219" aria-hidden="true" tabindex="-1"></a>Podemos encontrar o mínimo global com:</span>
+<span id="cb25-220"><a href="#cb25-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-223"><a href="#cb25-223" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-224"><a href="#cb25-224" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb25-225"><a href="#cb25-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-226"><a href="#cb25-226" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gradient descent result: x_min, y_min ="</span>, </span>
+<span id="cb25-227"><a href="#cb25-227" aria-hidden="true" tabindex="-1"></a>      gradient_descent(dfdx_example_4, dfdy_example_4, x_initial, y_initial, learning_rate, num_iterations)) </span>
+<span id="cb25-228"><a href="#cb25-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-229"><a href="#cb25-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-230"><a href="#cb25-230" aria-hidden="true" tabindex="-1"></a>Visualizando</span>
+<span id="cb25-231"><a href="#cb25-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-234"><a href="#cb25-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb25-235"><a href="#cb25-235" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to the global minimum point.</span></span>
+<span id="cb25-236"><a href="#cb25-236" aria-hidden="true" tabindex="-1"></a>num_iterations <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> learning_rate <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> x_initial <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> y_initial <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb25-237"><a href="#cb25-237" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to a local minimum point.</span></span>
+<span id="cb25-238"><a href="#cb25-238" aria-hidden="true" tabindex="-1"></a><span class="co"># num_iterations = 20; learning_rate = 0.2; x_initial = 2; y_initial = 3</span></span>
+<span id="cb25-239"><a href="#cb25-239" aria-hidden="true" tabindex="-1"></a><span class="co"># Converges to another local minimum point.</span></span>
+<span id="cb25-240"><a href="#cb25-240" aria-hidden="true" tabindex="-1"></a><span class="co"># num_iterations = 20; learning_rate = 0.2; x_initial = 4; y_initial = 0.5</span></span>
+<span id="cb25-241"><a href="#cb25-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-242"><a href="#cb25-242" aria-hidden="true" tabindex="-1"></a>gd_example_4 <span class="op">=</span> gradient_descent_two_variables([<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="fl">9.5</span>], </span>
+<span id="cb25-243"><a href="#cb25-243" aria-hidden="true" tabindex="-1"></a>                                              f_example_4, dfdx_example_4, dfdy_example_4, </span>
+<span id="cb25-244"><a href="#cb25-244" aria-hidden="true" tabindex="-1"></a>                                              gradient_descent, num_iterations, learning_rate, </span>
+<span id="cb25-245"><a href="#cb25-245" aria-hidden="true" tabindex="-1"></a>                                              x_initial, y_initial, </span>
+<span id="cb25-246"><a href="#cb25-246" aria-hidden="true" tabindex="-1"></a>                                              [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">6</span>], <span class="fl">0.5</span>, [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">63</span>], </span>
+<span id="cb25-247"><a href="#cb25-247" aria-hidden="true" tabindex="-1"></a>                                              cmap<span class="op">=</span><span class="st">'terrain'</span>, view<span class="op">=</span>{<span class="st">'azim'</span>:<span class="op">-</span><span class="dv">63</span>,<span class="st">'elev'</span>:<span class="dv">21</span>})</span>
+<span id="cb25-248"><a href="#cb25-248" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-249"><a href="#cb25-249" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;&gt;&gt;&gt;&gt;&gt;&gt; 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

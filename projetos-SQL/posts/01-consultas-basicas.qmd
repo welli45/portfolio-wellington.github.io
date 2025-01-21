@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: "Consultas Básicas em SQL"  
 subtitle: "Introdução ao SQL"
@@ -121,30 +120,7 @@ SELECT * FROM employees ORDER BY salary ASC;
 SELECT name, salary FROM employees ORDER BY salary DESC;
 ```
 
-=======
----
-title: "Consultas Básicas em SQL"  
-subtitle: "Introdução ao SQL"
-description: "Este tutorial é uma introdução a consultas básicas em SQL. Aqui você aprenderá a realizar consultas simples em um banco de dados relacional."
-author: "Wellington Santos Souza"
-date: "2024-11-29"
-format: 
-  html:
-    code-fold: true
-    code-copy: true
-    code-tools: true
-categories: [SQL, Banco de Dados, Tutorial]
-open-graph:
-  description: "Em constru..."
-  image: ../images/sql_01.png
-twitter-card:
-  description: "Em constru..."
-  image: ../images/sql_01.png
----
 
-*Este artigo foi reescrito em Sexta, 29 de novembro de 2024.*
-
-![](../images/sql_01.png){fig-alt="Gráfico" width="50%"}
 
 # Introdução
 
@@ -243,5 +219,3 @@ SELECT * FROM employees ORDER BY salary ASC;
 -- Selecionar apenas o nome e o salário dos funcionários ordenados por salário em ordem decrescente
 SELECT name, salary FROM employees ORDER BY salary DESC;
 ```
-
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d

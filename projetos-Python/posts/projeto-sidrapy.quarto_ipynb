@@ -12,7 +12,7 @@
         "date: \"2024-02-12\"\n",
         "format: \n",
         "  html:\n",
-        "    code-fold: true\n",
+        "    code-fold: false\n",
         "categories: [sidrapy, Python]\n",
         "open-graph:\n",
         "  description: \"IPC\"\n",
@@ -33,11 +33,7 @@
         "\n",
         "O segundo passo será importar essa biblioteca para isso faça;"
       ],
-<<<<<<< HEAD
-      "id": "4b5c8223"
-=======
-      "id": "fbe39a64"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "77d70913"
     },
     {
       "cell_type": "code",
@@ -47,11 +43,7 @@
       "source": [
         "import sidrapy"
       ],
-<<<<<<< HEAD
-      "id": "41ed66f8",
-=======
-      "id": "3dd45f90",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "bca8f06f",
       "execution_count": null,
       "outputs": []
     },
@@ -61,11 +53,7 @@
       "source": [
         "Agora que temos nossa biblioteca instalada vamos baixar nossos dados."
       ],
-<<<<<<< HEAD
-      "id": "077f0582"
-=======
-      "id": "d12497df"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "67cd65ab"
     },
     {
       "cell_type": "code",
@@ -81,11 +69,7 @@
         "# Checamos a importação\n",
         "pib_sa_raw.head()"
       ],
-<<<<<<< HEAD
-      "id": "51f6f509",
-=======
-      "id": "002f4a04",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "5aefc1d0",
       "execution_count": null,
       "outputs": []
     },
@@ -103,11 +87,7 @@
         "pib_sa_raw['Valor'] = pib_sa_raw['Valor'].astype(float)\n",
         "pib_sa_raw.head()"
       ],
-<<<<<<< HEAD
-      "id": "fc645970",
-=======
-      "id": "6c5bd786",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "082a347c",
       "execution_count": null,
       "outputs": []
     }

@@ -35,11 +35,7 @@
         "Com o pandas instalado, podemos carrega-lo com o comando `import pandas as pd`. \n",
         "Vamos importar a biblioteca seaborn para plotar gráficos com o comando `import seaborn as sns`.\n"
       ],
-<<<<<<< HEAD
-      "id": "12efa3c9"
-=======
-      "id": "60edf594"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "e901772c"
     },
     {
       "cell_type": "code",
@@ -48,11 +44,7 @@
         "import pandas as pd\n",
         "import seaborn as sns"
       ],
-<<<<<<< HEAD
-      "id": "af4f8ba5",
-=======
-      "id": "65e2af02",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "8b3f1c24",
       "execution_count": null,
       "outputs": []
     },
@@ -62,23 +54,15 @@
       "source": [
         "Agora que temos o pandas carregado podemos importar um arquivo CSV para análise. Além disso, podemos usar o pandas para coletar dados em diversos formatos, como JSON, HTML, SQL, Excel, entre outros. Para mais informações sobre como carregar dados com o pandas, clique [aqui!](https://pandas.pydata.org/pandas-docs/stable/reference/io.html).\n"
       ],
-<<<<<<< HEAD
-      "id": "ed0359bd"
-=======
-      "id": "b236741e"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "0d323de0"
     },
     {
       "cell_type": "code",
       "metadata": {},
       "source": [
-        "df = pd.read_csv('../dados/world_happiness.csv')"
+        "df = pd.read_csv('../dados/world_happiness.csv', delimiter=',')  # ou ';' ou '\\t'"
       ],
-<<<<<<< HEAD
-      "id": "1eecb528",
-=======
-      "id": "c51e5fb4",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "71ce2b9e",
       "execution_count": null,
       "outputs": []
     },
@@ -90,11 +74,7 @@
         "\n",
         "Podemos visualizar as primeiras linhas do nosso DataFrame com o comando `df.head()`. Para visualizar as últimas linhas, basta usar o comando `df.tail()`."
       ],
-<<<<<<< HEAD
-      "id": "e32a3ff7"
-=======
-      "id": "9638ad45"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "d92a312b"
     },
     {
       "cell_type": "code",
@@ -103,11 +83,7 @@
         "# Visualizando as primeiras linhas do DataFrame\n",
         "df.head()"
       ],
-<<<<<<< HEAD
-      "id": "af845b2f",
-=======
-      "id": "06e4eb3e",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "a7bf21e9",
       "execution_count": null,
       "outputs": []
     },
@@ -118,11 +94,7 @@
         "# Visualizando as últimas linhas do DataFrame\n",
         "df.tail()"
       ],
-<<<<<<< HEAD
-      "id": "f502422f",
-=======
-      "id": "c832dddd",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "9ef60dee",
       "execution_count": null,
       "outputs": []
     },
@@ -132,11 +104,7 @@
       "source": [
         "Podemos visualizar os índices e nome das colunas do DataFrame com os comandos `df.index` e `df.columns`, respectivamente."
       ],
-<<<<<<< HEAD
-      "id": "f90f9901"
-=======
-      "id": "9b781d82"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "d47eccbe"
     },
     {
       "cell_type": "code",
@@ -145,11 +113,7 @@
         "# Visualizando os índices do DataFrame\n",
         "df.index"
       ],
-<<<<<<< HEAD
-      "id": "da3a01ec",
-=======
-      "id": "b93334a1",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "ac8a7b3d",
       "execution_count": null,
       "outputs": []
     },
@@ -160,11 +124,7 @@
         "# Visualizando os nomes das colunas do DataFrame\n",
         "df.columns"
       ],
-<<<<<<< HEAD
-      "id": "c8485f24",
-=======
-      "id": "89811c23",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "c5fba670",
       "execution_count": null,
       "outputs": []
     },
@@ -174,11 +134,7 @@
       "source": [
         "Como vimos as colunas possuem espaços em seus nomes, para remover esses espaços podemos usar o comando `df.columns = df.columns.str.replace(' ', '_')`."
       ],
-<<<<<<< HEAD
-      "id": "8861b4eb"
-=======
-      "id": "36883da5"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "da990a90"
     },
     {
       "cell_type": "code",
@@ -187,11 +143,7 @@
         "# Removendo os espaços dos nomes das colunas\n",
         "df.columns = df.columns.str.replace(' ', '_')"
       ],
-<<<<<<< HEAD
-      "id": "5cae72aa",
-=======
-      "id": "b75880c0",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "dc869236",
       "execution_count": null,
       "outputs": []
     },
@@ -201,11 +153,7 @@
       "source": [
         "Além disso, podemos colocar os nomes das colunas em minúsculo."
       ],
-<<<<<<< HEAD
-      "id": "b78be423"
-=======
-      "id": "46c1380c"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "19c08c99"
     },
     {
       "cell_type": "code",
@@ -214,11 +162,7 @@
         "# Colocando os nomes das colunas em minúsculo\n",
         "df.columns = df.columns.str.lower()"
       ],
-<<<<<<< HEAD
-      "id": "9deb0902",
-=======
-      "id": "cee5381c",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "ceba6e7b",
       "execution_count": null,
       "outputs": []
     },
@@ -229,11 +173,7 @@
         "# Visualizando os nomes das colunas do DataFrame\n",
         "df.columns"
       ],
-<<<<<<< HEAD
-      "id": "00cf0001",
-=======
-      "id": "69a80ec5",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "a78ccb10",
       "execution_count": null,
       "outputs": []
     },
@@ -243,11 +183,7 @@
       "source": [
         "Podemos visualizar as informações do DataFrame com o comando `df.info()`. Além disso, podemos visualizar o tipo dos dados de cada coluna com o comando `df.dtypes`."
       ],
-<<<<<<< HEAD
-      "id": "0fbf0a73"
-=======
-      "id": "7c54bf79"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "49586ad6"
     },
     {
       "cell_type": "code",
@@ -256,11 +192,7 @@
         "# Visualizando as informações do DataFrame\n",
         "df.info()"
       ],
-<<<<<<< HEAD
-      "id": "b94ba4d9",
-=======
-      "id": "bcb110a5",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "7d322888",
       "execution_count": null,
       "outputs": []
     },
@@ -271,11 +203,7 @@
         "# Visualizando o tipo dos dados de cada coluna\n",
         "df.dtypes"
       ],
-<<<<<<< HEAD
-      "id": "db68a8a0",
-=======
-      "id": "e94e8d4e",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "08535aba",
       "execution_count": null,
       "outputs": []
     },
@@ -289,11 +217,7 @@
         "\n",
         "Podemos selecionar a coluna `life_ladder` do DataFrame com o comando `df.life_ladder`. Além disso, podemos selecionar mais de uma coluna passando uma lista com os nomes das colunas desejadas."
       ],
-<<<<<<< HEAD
-      "id": "24818fe0"
-=======
-      "id": "ece1f685"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "7f09249f"
     },
     {
       "cell_type": "code",
@@ -303,11 +227,7 @@
         "x = df.life_ladder\n",
         "print(x)"
       ],
-<<<<<<< HEAD
-      "id": "bad5c045",
-=======
-      "id": "14fcc242",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "4f1fcda2",
       "execution_count": null,
       "outputs": []
     },
@@ -317,11 +237,7 @@
       "source": [
         "Uma outra forma é passar o nome da coluna entre colchetes, como no exemplo abaixo."
       ],
-<<<<<<< HEAD
-      "id": "a8d16a63"
-=======
-      "id": "71d5cefc"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "1463c49d"
     },
     {
       "cell_type": "code",
@@ -331,11 +247,7 @@
         "x = df['life_ladder']\n",
         "print(x)"
       ],
-<<<<<<< HEAD
-      "id": "c014629f",
-=======
-      "id": "9c450907",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "e42e8450",
       "execution_count": null,
       "outputs": []
     },
@@ -347,11 +259,7 @@
         "\n",
         "Podemos selecionar as linhas de um DataFrame com o comando `df[1:5]`. "
       ],
-<<<<<<< HEAD
-      "id": "2164288b"
-=======
-      "id": "0e20c50d"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "23136abc"
     },
     {
       "cell_type": "code",
@@ -361,11 +269,7 @@
         "x = df[1:5]\n",
         "print(x)"
       ],
-<<<<<<< HEAD
-      "id": "5067c601",
-=======
-      "id": "6938bb74",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "9d32d7cb",
       "execution_count": null,
       "outputs": []
     },
@@ -377,11 +281,7 @@
         "\n",
         "Podemos usar operadores lógicos para selecionar linhas do DataFrame. Por exemplo, podemos selecionar as linhas onde o valor da coluna `year` é igual a 2018."
       ],
-<<<<<<< HEAD
-      "id": "a60d55ef"
-=======
-      "id": "c08f51be"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "e4b43b94"
     },
     {
       "cell_type": "code",
@@ -391,11 +291,7 @@
         "x = df[df.year == 2018]\n",
         "print(x)"
       ],
-<<<<<<< HEAD
-      "id": "19dcb0d1",
-=======
-      "id": "357191c1",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "5f677889",
       "execution_count": null,
       "outputs": []
     },
@@ -405,11 +301,7 @@
       "source": [
         "Selecioando linhas onde life_ladder é maior que 5."
       ],
-<<<<<<< HEAD
-      "id": "4c62a1e4"
-=======
-      "id": "fad025ea"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "cb4b20ea"
     },
     {
       "cell_type": "code",
@@ -419,11 +311,7 @@
         "x = df[df.life_ladder > 5]\n",
         "x"
       ],
-<<<<<<< HEAD
-      "id": "955c056a",
-=======
-      "id": "69fbbf21",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "767abb80",
       "execution_count": null,
       "outputs": []
     },
@@ -433,11 +321,7 @@
       "source": [
         "Resetando o índice do DataFrame filtrado."
       ],
-<<<<<<< HEAD
-      "id": "1111586e"
-=======
-      "id": "7ec86530"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "8b7d3c65"
     },
     {
       "cell_type": "code",
@@ -447,11 +331,7 @@
         "new_df = new_df.reset_index(drop=True)\n",
         "new_df"
       ],
-<<<<<<< HEAD
-      "id": "d702539a",
-=======
-      "id": "9bdd7ce3",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "e0ec667b",
       "execution_count": null,
       "outputs": []
     },
@@ -462,11 +342,7 @@
         "# Visualizando dados faltantes\n",
         "Podemos visualizar os dados faltantes do DataFrame com o comando `df.isnull().sum()`."
       ],
-<<<<<<< HEAD
-      "id": "345299fd"
-=======
-      "id": "138b6b8a"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "0d2552b3"
     },
     {
       "cell_type": "code",
@@ -474,11 +350,7 @@
       "source": [
         "df.isnull().sum()"
       ],
-<<<<<<< HEAD
-      "id": "81fdca8e",
-=======
-      "id": "59993941",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "3e87b603",
       "execution_count": null,
       "outputs": []
     },
@@ -489,11 +361,7 @@
         "# Estatísticas descritivas\n",
         "Podemos visualizar as estatísticas descritivas do DataFrame com o comando `df.describe()`."
       ],
-<<<<<<< HEAD
-      "id": "f230db15"
-=======
-      "id": "15d3d735"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "b451426c"
     },
     {
       "cell_type": "code",
@@ -501,11 +369,7 @@
       "source": [
         "df.describe()"
       ],
-<<<<<<< HEAD
-      "id": "fa2e68a9",
-=======
-      "id": "1fd17057",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "7b2d1890",
       "execution_count": null,
       "outputs": []
     },
@@ -515,11 +379,7 @@
       "source": [
         "# Plotando gráficos\n"
       ],
-<<<<<<< HEAD
-      "id": "043ff0f5"
-=======
-      "id": "2d2e7f29"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "b8f2048c"
     },
     {
       "cell_type": "code",
@@ -527,11 +387,7 @@
       "source": [
         "df.plot()"
       ],
-<<<<<<< HEAD
-      "id": "5ff226b5",
-=======
-      "id": "b29f2b8a",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "9cb30cb1",
       "execution_count": null,
       "outputs": []
     },
@@ -541,11 +397,7 @@
       "source": [
         "Como pudemos notar a plotagem do gráfico não ficou muito legível. Podemos melhorar a visualização do gráfico. Para isso, vamos plotar um gráfico de dispersão com a coluna `log_gdp_per_capita` no eixo x e a coluna `life_ladder` no eixo y."
       ],
-<<<<<<< HEAD
-      "id": "a62e719d"
-=======
-      "id": "82a2a913"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "c6251adb"
     },
     {
       "cell_type": "code",
@@ -553,11 +405,7 @@
       "source": [
         "df.plot(kind='scatter', x='log_gdp_per_capita', y='life_ladder')"
       ],
-<<<<<<< HEAD
-      "id": "c261b455",
-=======
-      "id": "809d9136",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "0bd156bf",
       "execution_count": null,
       "outputs": []
     },
@@ -567,11 +415,7 @@
       "source": [
         "Podemos melhorar a visualização do gráfico adicionando cores e alterando o tamanho dos pontos. Para isso, vamos criar um dicionário com as cores que queremos usar e passar esse dicionário para o parâmetro `c` do método `plot`."
       ],
-<<<<<<< HEAD
-      "id": "1a12ac7c"
-=======
-      "id": "b4376526"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "d4ea1f7d"
     },
     {
       "cell_type": "code",
@@ -591,11 +435,7 @@
         "    s=2 # Set the size of the points\n",
         "    )"
       ],
-<<<<<<< HEAD
-      "id": "763fa828",
-=======
-      "id": "93b44bf9",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "5df7fa06",
       "execution_count": null,
       "outputs": []
     },
@@ -605,11 +445,7 @@
       "source": [
         "Podemos plotar um histograma da coluna `life_ladder` com o comando `df.hist(\"life_ladder\")`."
       ],
-<<<<<<< HEAD
-      "id": "a01c6097"
-=======
-      "id": "94dfdc9d"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "e67bf710"
     },
     {
       "cell_type": "code",
@@ -617,11 +453,7 @@
       "source": [
         "df.hist(\"life_ladder\")"
       ],
-<<<<<<< HEAD
-      "id": "7b30ec7b",
-=======
-      "id": "f541f23e",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "912462cc",
       "execution_count": null,
       "outputs": []
     },
@@ -631,11 +463,7 @@
       "source": [
         "Além disso podemos criar gráficos com o seaborn. Por exemplo, podemos criar um gráfico de dispersão com a coluna `log_gdp_per_capita` no eixo x e a coluna `life_ladder` no eixo y."
       ],
-<<<<<<< HEAD
-      "id": "4d08234b"
-=======
-      "id": "33c70035"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "ead53ab6"
     },
     {
       "cell_type": "code",
@@ -643,11 +471,7 @@
       "source": [
         "sns.scatterplot(data=df, x='log_gdp_per_capita', y='life_ladder')"
       ],
-<<<<<<< HEAD
-      "id": "f7f7ee8d",
-=======
-      "id": "b40008f0",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "38bc80fb",
       "execution_count": null,
       "outputs": []
     },
@@ -657,11 +481,7 @@
       "source": [
         "Podemos plotar vários gráficos ao mesmo tempo com o seaborn. "
       ],
-<<<<<<< HEAD
-      "id": "def88ae7"
-=======
-      "id": "c20570cb"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "2c5c68f0"
     },
     {
       "cell_type": "code",
@@ -669,11 +489,7 @@
       "source": [
         "sns.pairplot(df)"
       ],
-<<<<<<< HEAD
-      "id": "44594d23",
-=======
-      "id": "9b9393bd",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "a1bfda2c",
       "execution_count": null,
       "outputs": []
     },
@@ -685,11 +501,7 @@
         "\n",
         "Podemos criar uma nova coluna no DataFrame com o comando `df['nova_coluna'] = df['coluna1'] + df['coluna2']`."
       ],
-<<<<<<< HEAD
-      "id": "cafc423b"
-=======
-      "id": "bb3fa030"
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "75527928"
     },
     {
       "cell_type": "code",
@@ -700,11 +512,7 @@
         "\n",
         "df.head()"
       ],
-<<<<<<< HEAD
-      "id": "0ff6dec8",
-=======
-      "id": "bc92dd7c",
->>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d
+      "id": "fe6c26c1",
       "execution_count": null,
       "outputs": []
     }
