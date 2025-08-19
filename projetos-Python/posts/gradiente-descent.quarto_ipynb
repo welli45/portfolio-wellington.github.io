@@ -1,0 +1,482 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "<<<<<<< HEAD"
+      ],
+      "id": "6ce150f3"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Otimização usando Gradient Descent em uma variável Usando Python\"\n",
+        "image: ../../Vida-Academica/images/calculo/07-gradiente-descida.png\n",
+        "description: \"Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados\"\n",
+        "author: \"Wellington Santos Souza\"\n",
+        "date: \"2024-08-04\"\n",
+        "format: \n",
+        "  html:\n",
+        "    code-fold: true\n",
+        "    code-copy: true\n",
+        "    code-tools: true\n",
+        "categories: [\"curso\", \"coursera\", \"Algebra Linear\", \"calculo\", \"Machine Learning\", \"Data Science\", \"Deep Learning\", \"Python\", \"R\", \"Algebra Linear\"]\n",
+        "---\n",
+        "\n",
+        "![](../../Vida-Academica/images/calculo/07-gradiente-descida.png){fig-alt=\"Capa\" fig-title=\"Capa\"}\n",
+        "Para entendermos como otimizar funções usando **Gradient Descent,** vamos começar com uma exemplo simples: funções de uma única variável. \n",
+        "\n",
+        "Para isso vamos utilizar os pacotes `numpy` e `matplotlib`."
+      ],
+      "id": "f14d3e55"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "from w2_tools import plot_f, gradient_descent_one_variable, f_example_2, dfdx_example_2"
+      ],
+      "id": "0360059c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "A função $f(x) = e^x - log(x)$ (definida para $x>0$) é uma função de uma variável que tem apenas um ponto mínimo (chamado de mínimo global). No entanto, às vezes esse ponto mínimo não pode ser encontrado analiticamente - resolvendo a derivada dessa equação $\\dfrac{df}{dx}=0$. Isso pode ser feito usando um método de **Gradient Descent**.\n",
+        "\n",
+        "Para implementar a **Gradient Descent**, você precisa partir de algum ponto inicial $x_0$. Com o objetivo de encontrar um ponto em que a derivada seja igual a zero, você deseja \"descer na curva\". Calcule a derivada $\\dfrac{df}{dx}(x)$ (chamado de gradiente) e avance para o próximo ponto usando a expressão:\n",
+        "\n",
+        "$$\n",
+        "x_1 = x_0 - \\alpha \\frac{df}{dx}(x_0),\\tag{1}\n",
+        "$$\n",
+        "\n",
+        "em que $a>0$ é um parâmetro chamado de **taxa de aprendizado**. Repita o processo iterativamente. O número de iterações $n$ geralmente também é um parâmetro.\n",
+        "\n",
+        "Subtraindo $\\dfrac{df}{dx}(x_0)$ você desce a na curva contra o aumento da função - em direção ao ponto mínimo. Portanto, $\\dfrac{df}{dx}(x_0)$ geralmente define a direção do movimento. O parâmetro $a$ serve como um fator de escala.\n",
+        "\n",
+        "Agora é hora de implementar o método de **Gradient Descent** e fazer experimentos com os parâmetros!\n",
+        "\n",
+        "Primeiro, defina a função $f(x)=e^2-log(x)$ e sua derivada $\\dfrac{df}{dx}=e^x-\\dfrac{1}{x}$:"
+      ],
+      "id": "b112e222"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def f_example_1(x):\n",
+        "    return np.exp(x) - np.log(x)\n",
+        "\n",
+        "def dfdx_example_1(x):\n",
+        "    return np.exp(x) - 1/x"
+      ],
+      "id": "9e3e0c87",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "A função $f(x)$ tem um mínimo global. Vamos traçar o gráfico da função:"
+      ],
+      "id": "d6a989f3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "plot_f([0.001, 2.5], [-0.3, 13], f_example_1, 0.0)"
+      ],
+      "id": "8ac72c0a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "O Gradient Descent pode ser implementado da seguinte forma:"
+      ],
+      "id": "66065017"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def gradient_descent(dfdx, x, learning_rate = 0.1, num_iterations = 100):\n",
+        "    for iteration in range(num_iterations):\n",
+        "        x = x - learning_rate * dfdx(x)\n",
+        "    return x"
+      ],
+      "id": "90c35466",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Observe que há três parâmetros nessa implementação: num_iterations, learning_rate, ponto inicial x_initial. Para otimizar a função, configure os parâmetros e chame a função definida gradient_descent:"
+      ],
+      "id": "0c588be3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 1.6\n",
+        "print(\"Gradient descent result: x_min =\", gradient_descent(dfdx_example_1, x_initial, learning_rate, num_iterations)) "
+      ],
+      "id": "b72f6cf6",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "O código na célula a seguir o ajudará a visualizar e entender melhor o método de descida de gradiente."
+      ],
+      "id": "ea3f0cd6"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 1.6\n",
+        "num_iterations = 25; learning_rate = 0.3; x_initial = 1.6\n",
+        "num_iterations = 25; learning_rate = 0.5; x_initial = 1.6\n",
+        "num_iterations = 25; learning_rate = 0.04; x_initial = 1.6\n",
+        "num_iterations = 75; learning_rate = 0.04; x_initial = 1.6\n",
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 0.05\n",
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 0.03\n",
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 0.02\n",
+        "\n",
+        "gd_example_1 = gradient_descent_one_variable([0.001, 2.5], [-0.3, 13], f_example_1, dfdx_example_1, \n",
+        "                                   gradient_descent, num_iterations, learning_rate, x_initial, 0.0, [0.35, 9.5])"
+      ],
+      "id": "ff976962",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Função com vários mínimos\n",
+        "\n",
+        "Plotando a função"
+      ],
+      "id": "9d83d0fa"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "plot_f([0.001, 2], [-6.3, 5], f_example_2, -6)"
+      ],
+      "id": "047dfaca",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Rodando o gradient descent"
+      ],
+      "id": "b6e98554"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(\"Gradient descent results\")\n",
+        "print(\"Global minimum: x_min =\", gradient_descent(dfdx_example_2, x=1.3, learning_rate=0.005, num_iterations=35)) \n",
+        "print(\"Local minimum: x_min =\", gradient_descent(dfdx_example_2, x=0.25, learning_rate=0.005, num_iterations=35)) "
+      ],
+      "id": "c8987b5f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Testando diferentes pontos:"
+      ],
+      "id": "81c5e465"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "num_iterations = 35; learning_rate = 0.005; x_initial = 1.3\n",
+        "num_iterations = 35; learning_rate = 0.005; x_initial = 0.25\n",
+        "num_iterations = 35; learning_rate = 0.01; x_initial = 1.3\n",
+        "\n",
+        "gd_example_2 = gradient_descent_one_variable([0.001, 2], [-6.3, 5], f_example_2, dfdx_example_2, \n",
+        "                                      gradient_descent, num_iterations, learning_rate, x_initial, -6, [0.1, -0.5])"
+      ],
+      "id": "e243f5cd",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "raw",
+      "metadata": {},
+      "source": [
+        "=======\n",
+        "---"
+      ],
+      "id": "95c7cef0"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "title: \"Otimização usando Gradient Descent em uma variável Usando Python\"\n",
+        "image: ../../Vida-Academica/images/calculo/07-gradiente-descida.png\n",
+        "description: \"Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados\"\n",
+        "author: \"Wellington Santos Souza\"\n",
+        "date: \"2024-08-04\"\n",
+        "format: \n",
+        "  html:\n",
+        "    code-fold: true\n",
+        "    code-copy: true\n",
+        "    code-tools: true\n",
+        "categories: [\"curso\", \"coursera\", \"Algebra Linear\", \"calculo\", \"Machine Learning\", \"Data Science\", \"Deep Learning\", \"Python\", \"R\", \"Algebra Linear\"]\n",
+        "---\n",
+        "\n",
+        "![](../../Vida-Academica/images/calculo/07-gradiente-descida.png){fig-alt=\"Capa\" fig-title=\"Capa\"}\n",
+        "Para entendermos como otimizar funções usando **Gradient Descent,** vamos começar com uma exemplo simples: funções de uma única variável. \n",
+        "\n",
+        "Para isso vamos utilizar os pacotes `numpy` e `matplotlib`."
+      ],
+      "id": "ea2d1c7e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "from w2_tools import plot_f, gradient_descent_one_variable, f_example_2, dfdx_example_2"
+      ],
+      "id": "4bf6df98",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "A função $f(x) = e^x - log(x)$ (definida para $x>0$) é uma função de uma variável que tem apenas um ponto mínimo (chamado de mínimo global). No entanto, às vezes esse ponto mínimo não pode ser encontrado analiticamente - resolvendo a derivada dessa equação $\\dfrac{df}{dx}=0$. Isso pode ser feito usando um método de **Gradient Descent**.\n",
+        "\n",
+        "Para implementar a **Gradient Descent**, você precisa partir de algum ponto inicial $x_0$. Com o objetivo de encontrar um ponto em que a derivada seja igual a zero, você deseja \"descer na curva\". Calcule a derivada $\\dfrac{df}{dx}(x)$ (chamado de gradiente) e avance para o próximo ponto usando a expressão:\n",
+        "\n",
+        "$$\n",
+        "x_1 = x_0 - \\alpha \\frac{df}{dx}(x_0),\\tag{1}\n",
+        "$$\n",
+        "\n",
+        "em que $a>0$ é um parâmetro chamado de **taxa de aprendizado**. Repita o processo iterativamente. O número de iterações $n$ geralmente também é um parâmetro.\n",
+        "\n",
+        "Subtraindo $\\dfrac{df}{dx}(x_0)$ você desce a na curva contra o aumento da função - em direção ao ponto mínimo. Portanto, $\\dfrac{df}{dx}(x_0)$ geralmente define a direção do movimento. O parâmetro $a$ serve como um fator de escala.\n",
+        "\n",
+        "Agora é hora de implementar o método de **Gradient Descent** e fazer experimentos com os parâmetros!\n",
+        "\n",
+        "Primeiro, defina a função $f(x)=e^2-log(x)$ e sua derivada $\\dfrac{df}{dx}=e^x-\\dfrac{1}{x}$:"
+      ],
+      "id": "5e3f18ed"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def f_example_1(x):\n",
+        "    return np.exp(x) - np.log(x)\n",
+        "\n",
+        "def dfdx_example_1(x):\n",
+        "    return np.exp(x) - 1/x"
+      ],
+      "id": "879bf7c9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "A função $f(x)$ tem um mínimo global. Vamos traçar o gráfico da função:"
+      ],
+      "id": "869cfc39"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "plot_f([0.001, 2.5], [-0.3, 13], f_example_1, 0.0)"
+      ],
+      "id": "fdcd447b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "O Gradient Descent pode ser implementado da seguinte forma:"
+      ],
+      "id": "1a65022d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def gradient_descent(dfdx, x, learning_rate = 0.1, num_iterations = 100):\n",
+        "    for iteration in range(num_iterations):\n",
+        "        x = x - learning_rate * dfdx(x)\n",
+        "    return x"
+      ],
+      "id": "860eb73a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Observe que há três parâmetros nessa implementação: num_iterations, learning_rate, ponto inicial x_initial. Para otimizar a função, configure os parâmetros e chame a função definida gradient_descent:"
+      ],
+      "id": "37ff243b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 1.6\n",
+        "print(\"Gradient descent result: x_min =\", gradient_descent(dfdx_example_1, x_initial, learning_rate, num_iterations)) "
+      ],
+      "id": "38deec7d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "O código na célula a seguir o ajudará a visualizar e entender melhor o método de descida de gradiente."
+      ],
+      "id": "36e8f552"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 1.6\n",
+        "num_iterations = 25; learning_rate = 0.3; x_initial = 1.6\n",
+        "num_iterations = 25; learning_rate = 0.5; x_initial = 1.6\n",
+        "num_iterations = 25; learning_rate = 0.04; x_initial = 1.6\n",
+        "num_iterations = 75; learning_rate = 0.04; x_initial = 1.6\n",
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 0.05\n",
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 0.03\n",
+        "num_iterations = 25; learning_rate = 0.1; x_initial = 0.02\n",
+        "\n",
+        "gd_example_1 = gradient_descent_one_variable([0.001, 2.5], [-0.3, 13], f_example_1, dfdx_example_1, \n",
+        "                                   gradient_descent, num_iterations, learning_rate, x_initial, 0.0, [0.35, 9.5])"
+      ],
+      "id": "22c7af81",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Função com vários mínimos\n",
+        "\n",
+        "Plotando a função"
+      ],
+      "id": "5cf71775"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "plot_f([0.001, 2], [-6.3, 5], f_example_2, -6)"
+      ],
+      "id": "daf34ecc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Rodando o gradient descent"
+      ],
+      "id": "64201625"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(\"Gradient descent results\")\n",
+        "print(\"Global minimum: x_min =\", gradient_descent(dfdx_example_2, x=1.3, learning_rate=0.005, num_iterations=35)) \n",
+        "print(\"Local minimum: x_min =\", gradient_descent(dfdx_example_2, x=0.25, learning_rate=0.005, num_iterations=35)) "
+      ],
+      "id": "9b064715",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Testando diferentes pontos:"
+      ],
+      "id": "69692219"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "num_iterations = 35; learning_rate = 0.005; x_initial = 1.3\n",
+        "num_iterations = 35; learning_rate = 0.005; x_initial = 0.25\n",
+        "num_iterations = 35; learning_rate = 0.01; x_initial = 1.3\n",
+        "\n",
+        "gd_example_2 = gradient_descent_one_variable([0.001, 2], [-6.3, 5], f_example_2, dfdx_example_2, \n",
+        "                                      gradient_descent, num_iterations, learning_rate, x_initial, -6, [0.1, -0.5])"
+      ],
+      "id": "eb038e74",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        ">>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d"
+      ],
+      "id": "bdf77bc9"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\welli\\AppData\\Local\\Programs\\Python\\Python313\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

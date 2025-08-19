@@ -53,7 +53,6 @@ Carregando os pacotes utilizados na análise
 #| message: false
 if(!require(tidyverse)) install.packages("tidyverse");library(tidyverse)
 if(!require(readxl)) install.packages("readxl");library(readxl)
-if(!require(highcharter)) install.packages("highcharter");library(highcharter)
 ```
 
 Carregando a base de dados

@@ -14,7 +14,7 @@
 <title>Portifólio de Dados</title>
 <link>https://welli45.github.io/portifolio-dados.github.io/projetos-Python/</link>
 </image>
-<generator>quarto-1.6.39</generator>
+<generator>quarto-1.7.32</generator>
 <lastBuildDate>Thu, 12 Sep 2024 03:00:00 GMT</lastBuildDate>
 <item>
   <title>Análise exploratória de dados</title>
@@ -25,13 +25,14 @@
 
 
 
+
 <p><em>Este artigo foi reescrito em Domingo, 08 de Setembro de 2024.</em></p>
 <p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/images/03.pandas/pandas.svg" class="img-fluid" data-fig-title="Pandas" alt="Pandas"></p>
 <section id="introdução" class="level1">
 <h1>Introdução</h1>
 <p>O pandas é uma ferramenta de análise e manipulação de dados de código aberto rápida, poderosa, flexível e fácil de usar, desenvolvida com base na linguagem de programação Python. Clique <a href="https://pandas.pydata.org/docs/index.html">aqui!</a> para acessar a documentação oficial do Pandas.</p>
 <p>Para instalar o Pandas, basta executar o comando: <code>pip install pandas</code> no terminal. Com o pandas instalado, podemos carrega-lo com o comando <code>import pandas as pd</code>. Vamos importar a biblioteca seaborn para plotar gráficos com o comando <code>import seaborn as sns</code>.</p>
-<div id="c8b41f00" class="cell" data-execution_count="1">
+<div id="7b219a07" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
@@ -44,7 +45,7 @@ background-color: null;
 font-style: inherit;">as</span> sns</span></code></pre></div>
 </div>
 <p>Agora que temos o pandas carregado podemos importar um arquivo CSV para análise. Além disso, podemos usar o pandas para coletar dados em diversos formatos, como JSON, HTML, SQL, Excel, entre outros. Para mais informações sobre como carregar dados com o pandas, clique <a href="https://pandas.pydata.org/pandas-docs/stable/reference/io.html">aqui!</a>.</p>
-<div id="f5826a9d" class="cell" data-execution_count="2">
+<div id="3bcbfc81" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
@@ -60,7 +61,7 @@ font-style: inherit;"># ou ';' ou '\t'</span></span></code></pre></div>
 <section id="operações-básicas-com-o-pandas" class="level2">
 <h2 class="anchored" data-anchor-id="operações-básicas-com-o-pandas">Operações básicas com o Pandas</h2>
 <p>Podemos visualizar as primeiras linhas do nosso DataFrame com o comando <code>df.head()</code>. Para visualizar as últimas linhas, basta usar o comando <code>df.tail()</code>.</p>
-<div id="fad3d1bb" class="cell" data-execution_count="3">
+<div id="8332daf0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Visualizando as primeiras linhas do DataFrame</span></span>
@@ -163,7 +164,7 @@ font-style: inherit;"># Visualizando as primeiras linhas do DataFrame</span></sp
 </div>
 </div>
 </div>
-<div id="3a004d9e" class="cell" data-execution_count="4">
+<div id="9c842d8c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Visualizando as últimas linhas do DataFrame</span></span>
@@ -267,7 +268,7 @@ font-style: inherit;"># Visualizando as últimas linhas do DataFrame</span></spa
 </div>
 </div>
 <p>Podemos visualizar os índices e nome das colunas do DataFrame com os comandos <code>df.index</code> e <code>df.columns</code>, respectivamente.</p>
-<div id="f76e49d0" class="cell" data-execution_count="5">
+<div id="d4e906f9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Visualizando os índices do DataFrame</span></span>
@@ -276,7 +277,7 @@ font-style: inherit;"># Visualizando os índices do DataFrame</span></span>
 <pre><code>RangeIndex(start=0, stop=2199, step=1)</code></pre>
 </div>
 </div>
-<div id="d0bcddda" class="cell" data-execution_count="6">
+<div id="3cb53f34" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Visualizando os nomes das colunas do DataFrame</span></span>
@@ -290,7 +291,7 @@ font-style: inherit;"># Visualizando os nomes das colunas do DataFrame</span></s
 </div>
 </div>
 <p>Como vimos as colunas possuem espaços em seus nomes, para remover esses espaços podemos usar o comando <code>df.columns = df.columns.str.replace(' ', '_')</code>.</p>
-<div id="532fdc2b" class="cell" data-execution_count="7">
+<div id="0fff3107" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Removendo os espaços dos nomes das colunas</span></span>
@@ -305,7 +306,7 @@ background-color: null;
 font-style: inherit;">'_'</span>)</span></code></pre></div>
 </div>
 <p>Além disso, podemos colocar os nomes das colunas em minúsculo.</p>
-<div id="65474055" class="cell" data-execution_count="8">
+<div id="625ec0c4" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Colocando os nomes das colunas em minúsculo</span></span>
@@ -315,7 +316,7 @@ font-style: inherit;">=</span> df.columns.<span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">str</span>.lower()</span></code></pre></div>
 </div>
-<div id="f3ad95fd" class="cell" data-execution_count="9">
+<div id="d307b0c8" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Visualizando os nomes das colunas do DataFrame</span></span>
@@ -329,7 +330,7 @@ font-style: inherit;"># Visualizando os nomes das colunas do DataFrame</span></s
 </div>
 </div>
 <p>Podemos visualizar as informações do DataFrame com o comando <code>df.info()</code>. Além disso, podemos visualizar o tipo dos dados de cada coluna com o comando <code>df.dtypes</code>.</p>
-<div id="92e4a28f" class="cell" data-execution_count="10">
+<div id="b0cbc62c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Visualizando as informações do DataFrame</span></span>
@@ -355,7 +356,7 @@ dtypes: float64(9), int64(1), object(1)
 memory usage: 189.1+ KB</code></pre>
 </div>
 </div>
-<div id="67ead7e7" class="cell" data-execution_count="11">
+<div id="30d659d7" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Visualizando o tipo dos dados de cada coluna</span></span>
@@ -382,7 +383,7 @@ dtype: object</code></pre>
 <section id="selecionando-colunas-do-dataframe" class="level2">
 <h2 class="anchored" data-anchor-id="selecionando-colunas-do-dataframe">Selecionando colunas do DataFrame</h2>
 <p>Podemos selecionar a coluna <code>life_ladder</code> do DataFrame com o comando <code>df.life_ladder</code>. Além disso, podemos selecionar mais de uma coluna passando uma lista com os nomes das colunas desejadas.</p>
-<div id="866bdd9c" class="cell" data-execution_count="12">
+<div id="81181464" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Selecionando a coluna life_ladder</span></span>
@@ -408,7 +409,7 @@ Name: life_ladder, Length: 2199, dtype: float64</code></pre>
 </div>
 </div>
 <p>Uma outra forma é passar o nome da coluna entre colchetes, como no exemplo abaixo.</p>
-<div id="70abea8c" class="cell" data-execution_count="13">
+<div id="ddca1575" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Selecionando a coluna life_ladder</span></span>
@@ -439,7 +440,7 @@ Name: life_ladder, Length: 2199, dtype: float64</code></pre>
 <section id="selecionando-linhas-do-dataframe" class="level2">
 <h2 class="anchored" data-anchor-id="selecionando-linhas-do-dataframe">Selecionando linhas do DataFrame</h2>
 <p>Podemos selecionar as linhas de um DataFrame com o comando <code>df[1:5]</code>.</p>
-<div id="b4cc1847" class="cell" data-execution_count="14">
+<div id="9b6055fb" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Selecionando as linhas de 1 a 5</span></span>
@@ -478,7 +479,7 @@ font-style: inherit;">print</span>(x)</span></code></pre></div>
 <section id="operadores-lógicos" class="level1">
 <h1>Operadores lógicos</h1>
 <p>Podemos usar operadores lógicos para selecionar linhas do DataFrame. Por exemplo, podemos selecionar as linhas onde o valor da coluna <code>year</code> é igual a 2018.</p>
-<div id="31187532" class="cell" data-execution_count="15">
+<div id="3c6881f1" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Selecionando as linhas onde o valor da coluna year é igual a 2018</span></span>
@@ -536,7 +537,7 @@ font-style: inherit;">print</span>(x)</span></code></pre></div>
 </div>
 </div>
 <p>Selecioando linhas onde life_ladder é maior que 5.</p>
-<div id="e0b95a06" class="cell" data-execution_count="16">
+<div id="3fe746c5" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Selecionando as linhas onde o valor da coluna life_ladder é maior que 5</span></span>
@@ -732,7 +733,7 @@ font-style: inherit;">5</span>]</span>
 </div>
 </div>
 <p>Resetando o índice do DataFrame filtrado.</p>
-<div id="d1d3aa94" class="cell" data-execution_count="17">
+<div id="b75f60f6" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1">new_df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> df[df[<span class="st" style="color: #20794D;
@@ -937,7 +938,7 @@ font-style: inherit;">True</span>)</span>
 <section id="visualizando-dados-faltantes" class="level1">
 <h1>Visualizando dados faltantes</h1>
 <p>Podemos visualizar os dados faltantes do DataFrame com o comando <code>df.isnull().sum()</code>.</p>
-<div id="e3b2459a" class="cell" data-execution_count="18">
+<div id="c93bdee3" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1">df.isnull().<span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>()</span></code></pre></div>
@@ -960,7 +961,7 @@ dtype: int64</code></pre>
 <section id="estatísticas-descritivas" class="level1">
 <h1>Estatísticas descritivas</h1>
 <p>Podemos visualizar as estatísticas descritivas do DataFrame com o comando <code>df.describe()</code>.</p>
-<div id="93a6f1cc" class="cell" data-execution_count="19">
+<div id="70984b11" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1">df.describe()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <div>
@@ -1096,18 +1097,18 @@ dtype: int64</code></pre>
 </section>
 <section id="plotando-gráficos" class="level1">
 <h1>Plotando gráficos</h1>
-<div id="fa08ded5" class="cell" data-execution_count="20">
+<div id="5e5106f9" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1">df.plot()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-21-output-1.png" width="583" height="411" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Como pudemos notar a plotagem do gráfico não ficou muito legível. Podemos melhorar a visualização do gráfico. Para isso, vamos plotar um gráfico de dispersão com a coluna <code>log_gdp_per_capita</code> no eixo x e a coluna <code>life_ladder</code> no eixo y.</p>
-<div id="41e8a00c" class="cell" data-execution_count="21">
+<div id="205c7cbf" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1">df.plot(kind<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
@@ -1124,13 +1125,13 @@ font-style: inherit;">'life_ladder'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-22-output-1.png" width="576" height="429" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Podemos melhorar a visualização do gráfico adicionando cores e alterando o tamanho dos pontos. Para isso, vamos criar um dicionário com as cores que queremos usar e passar esse dicionário para o parâmetro <code>c</code> do método <code>plot</code>.</p>
-<div id="a19ed539" class="cell" data-execution_count="22">
+<div id="1b8bbff8" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1">cmap <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
@@ -1191,13 +1192,13 @@ font-style: inherit;"># Set the size of the points</span></span>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-23-output-1.png" width="576" height="429" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Podemos plotar um histograma da coluna <code>life_ladder</code> com o comando <code>df.hist("life_ladder")</code>.</p>
-<div id="8afd4e06" class="cell" data-execution_count="23">
+<div id="a747c38e" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1">df.hist(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"life_ladder"</span>)</span></code></pre></div>
@@ -1207,13 +1208,13 @@ font-style: inherit;">"life_ladder"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-24-output-2.png" width="575" height="431" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-24-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Além disso podemos criar gráficos com o seaborn. Por exemplo, podemos criar um gráfico de dispersão com a coluna <code>log_gdp_per_capita</code> no eixo x e a coluna <code>life_ladder</code> no eixo y.</p>
-<div id="b36eab43" class="cell" data-execution_count="24">
+<div id="5f40b949" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1">sns.scatterplot(data<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>df, x<span class="op" style="color: #5E5E5E;
@@ -1228,18 +1229,18 @@ font-style: inherit;">'life_ladder'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-25-output-1.png" width="576" height="429" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-25-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Podemos plotar vários gráficos ao mesmo tempo com o seaborn.</p>
-<div id="19b124f7" class="cell" data-execution_count="25">
+<div id="1288c29c" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1">sns.pairplot(df)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-26-output-1.png" width="2370" height="2359" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/introducao-pandas_files/figure-html/cell-26-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1248,7 +1249,7 @@ font-style: inherit;">'life_ladder'</span>)</span></code></pre></div>
 <section id="operações-com-colunas" class="level1">
 <h1>Operações com colunas</h1>
 <p>Podemos criar uma nova coluna no DataFrame com o comando <code>df['nova_coluna'] = df['coluna1'] + df['coluna2']</code>.</p>
-<div id="2084e783" class="cell" data-execution_count="26">
+<div id="2299c4fe" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1">df[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'this_column_makes_no_sense'</span>] <span class="op" style="color: #5E5E5E;
@@ -1402,6 +1403,7 @@ font-style: inherit;">"negative_affect"</span>]</span>
 
 
 
+
 <p><em>Este artigo foi reescrito em Sexta, 23 de Agosto de 2024.</em></p>
 <p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/images/02.calculo_python/derivadas.jpeg" class="img-fluid" data-fig-title="Derivadas Usando Python" alt="Python"></p>
 <section id="funções-usando-python" class="level3">
@@ -1412,7 +1414,7 @@ font-style: inherit;">"negative_affect"</span>]</span>
 <ul>
 <li>Se quisermos definir a função <img src="https://latex.codecogs.com/png.latex?f(x)%20=%20x%5E2"></li>
 </ul>
-<div id="e272adac" class="cell" data-execution_count="1">
+<div id="a215aac5" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="kw" style="color: #003B4F;
@@ -1428,7 +1430,8 @@ font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span></span>
 <span id="cb1-3"></span>
-<span id="cb1-4"><span class="bu" style="color: null;
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">print</span>(f(<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1439,7 +1442,7 @@ font-style: inherit;">3</span>))</span></code></pre></div>
 </div>
 </div>
 <p>Podemos encontrar a derivada dessa função facilmente usando:</p>
-<div id="e1bc3438" class="cell" data-execution_count="2">
+<div id="edfb4e51" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="kw" style="color: #003B4F;
@@ -1466,7 +1469,7 @@ font-style: inherit;">3</span>))</span></code></pre></div>
 </div>
 </div>
 <p>Além disso, podemos aplicar essa função e calcular a derivada para cada elemento de uma array criada com Numpy:</p>
-<div id="34ef6515" class="cell" data-execution_count="3">
+<div id="fbbc7e4b" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
@@ -1533,7 +1536,7 @@ f'(x) = 2x:
 </div>
 </div>
 <p>Podemos também aplicar as funções f e dfdx para arrays maiores, além disso podemos plotar os gráficos de f e dfdx</p>
-<div id="64ae0c96" class="cell" data-execution_count="4">
+<div id="b9b85580" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
@@ -1663,7 +1666,7 @@ font-style: inherit;">=</span>label2)</span>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-5-output-1.png" width="540" height="389" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1676,7 +1679,7 @@ font-style: inherit;">=</span>label2)</span>
 <li><p>Derivadas simbólicas em <code>Python</code> usando a biblioteca <code>SymPy</code>.</p></li>
 <li><p>Podemos calcular o valor decimal aproximado de <img src="https://latex.codecogs.com/png.latex?%5Csqrt%7B18%7D"></p></li>
 </ul>
-<div id="d8377d44" class="cell" data-execution_count="5">
+<div id="054c5686" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;
@@ -1696,7 +1699,7 @@ font-style: inherit;">18</span>)</span></code></pre></div>
 <li>O valor obtido é: <img src="https://latex.codecogs.com/png.latex?4.242640687119285"></li>
 </ul>
 <p>Agora se quisermos calcular: <img src="https://latex.codecogs.com/png.latex?%5Csqrt%7B18%7D%20=%20%5Csqrt%7B9%20%5Ccdot%202%7D%20=%203%5Csqrt%7B2%7D"></p>
-<div id="3e79240b" class="cell" data-execution_count="6">
+<div id="aa856f05" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="co" style="color: #5E5E5E;
@@ -1728,7 +1731,7 @@ font-style: inherit;">18</span>)</span></code></pre></div>
 </div>
 </div>
 <p>Para obtermos o valor aproximado fazemos</p>
-<div id="0d4b02ff" class="cell" data-execution_count="7">
+<div id="a5da0f8f" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">N(sqrt(<span class="dv" style="color: #AD0000;
@@ -1740,7 +1743,7 @@ font-style: inherit;">18</span>))</span></code></pre></div>
 </div>
 </div>
 <p>No SymPy, as variáveis são definidas usando símbolos. Nesta biblioteca específica, elas precisam ser pré-definidas (uma lista delas deve ser fornecida). Veja na célula abaixo como a expressão simbólica, correspondente à expressão matemática <img src="https://latex.codecogs.com/png.latex?2x%5E2%20-%20xy">, é definida:</p>
-<div id="b043d673" class="cell" data-execution_count="8">
+<div id="7d8b856e" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
@@ -1776,7 +1779,7 @@ font-style: inherit;">*</span> y</span>
 </div>
 </div>
 <p>Pode realizar várias manipulações com essa expressão: adicionar ou subtrair alguns termos, multiplicar por outras expressões, etc., assim como se estivesse fazendo isso manualmente:</p>
-<div id="c52874f6" class="cell" data-execution_count="9">
+<div id="d552781b" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">expr_manip <span class="op" style="color: #5E5E5E;
@@ -1801,7 +1804,7 @@ font-style: inherit;">3</span>)</span>
 </div>
 </div>
 <p>Agora, vamos calcular a derivada da expressão <img src="https://latex.codecogs.com/png.latex?2x%5E2%20-%20xy"> em relação a <img src="https://latex.codecogs.com/png.latex?x">:</p>
-<div id="1877ee13" class="cell" data-execution_count="10">
+<div id="c1180059" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><span class="co" style="color: #5E5E5E;
@@ -1814,7 +1817,7 @@ font-style: inherit;"># Derivada da expressão em relação a x.</span></span>
 </div>
 </div>
 <p>Podemos expandir a função expr_manipulada para obter a expressão completa:</p>
-<div id="71c174d6" class="cell" data-execution_count="11">
+<div id="66251f42" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">expand(expr_manip)</span></code></pre></div>
@@ -1824,7 +1827,7 @@ font-style: inherit;"># Derivada da expressão em relação a x.</span></span>
 </div>
 </div>
 <p>Podemos também simplificar a expressão:</p>
-<div id="c715e19e" class="cell" data-execution_count="12">
+<div id="adc9123d" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">simplify(expr_manip)</span></code></pre></div>
@@ -1834,7 +1837,7 @@ font-style: inherit;"># Derivada da expressão em relação a x.</span></span>
 </div>
 </div>
 <p>Também podemos fatorear a expressão:</p>
-<div id="667907e7" class="cell" data-execution_count="13">
+<div id="a9340bed" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">factor(expr_manip)</span></code></pre></div>
@@ -1844,7 +1847,7 @@ font-style: inherit;"># Derivada da expressão em relação a x.</span></span>
 </div>
 </div>
 <p>Podemos também resolver equações simbolicamente:</p>
-<div id="6dfcfe10" class="cell" data-execution_count="14">
+<div id="1cebb3b9" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><span class="co" style="color: #5E5E5E;
@@ -1865,7 +1868,7 @@ font-style: inherit;">1</span>, x)</span></code></pre></div>
 </div>
 </div>
 <p>Podemos substituir valores específicos para as variáveis na expressão</p>
-<div id="cdf2d6a7" class="cell" data-execution_count="15">
+<div id="353b44cb" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1">expr.evalf(subs<span class="op" style="color: #5E5E5E;
@@ -1883,7 +1886,7 @@ font-style: inherit;">2</span>})</span></code></pre></div>
 </div>
 </div>
 <p>Isso pode ser usado para avaliar uma função <img src="https://latex.codecogs.com/png.latex?f%5Cleft(x%5Cright)%20=%20x%5E2">:</p>
-<div id="fbe72848" class="cell" data-execution_count="16">
+<div id="4a137dab" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1">f_symb <span class="op" style="color: #5E5E5E;
@@ -1904,7 +1907,7 @@ font-style: inherit;">3</span>})</span></code></pre></div>
 </div>
 </div>
 <p>Podemos avaliar uma função simbólica para cada elemento de uma matriz:</p>
-<div id="ac802c9f" class="cell" data-execution_count="17">
+<div id="dc7718ab" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><span class="co" style="color: #5E5E5E;
@@ -1983,7 +1986,7 @@ f(x) = x**2:
 <section id="derivadas-simbólicas-com-sympy" class="level2">
 <h2 class="anchored" data-anchor-id="derivadas-simbólicas-com-sympy">Derivadas Simbólicas com <code>SymPy</code></h2>
 <p>Se quisermos calcular a derivada da função <img src="https://latex.codecogs.com/png.latex?f(x)%20=%20x%5E2"> simbolicamente, podemos fazer isso com o <code>SymPy</code>:</p>
-<div id="16205213" class="cell" data-execution_count="18">
+<div id="cd5a5a78" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><span class="co" style="color: #5E5E5E;
@@ -2009,7 +2012,7 @@ font-style: inherit;">=</span> diff(f_symb, x)</span>
 </div>
 </div>
 <p>O Sympy aplica todas as regras de derivação para obter a derivada da função <img src="https://latex.codecogs.com/png.latex?(exp(-2x)%20+%203sin(3x),%20x)">:</p>
-<div id="1d83b805" class="cell" data-execution_count="19">
+<div id="6a7ba68b" class="cell" data-execution_count="19">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1">f_symb <span class="op" style="color: #5E5E5E;
@@ -2041,7 +2044,7 @@ font-style: inherit;">=</span> diff(f_symb, x)</span>
 </div>
 </div>
 <p>Agora vamos plotar a função e sua derivada:</p>
-<div id="e01bea00" class="cell" data-execution_count="20">
+<div id="1b5b7e49" class="cell" data-execution_count="20">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1">f_symb_numpy <span class="op" style="color: #5E5E5E;
@@ -2060,13 +2063,13 @@ font-style: inherit;">'numpy'</span>)</span>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-21-output-1.png" width="540" height="389" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Agora vamos calcular a derivada da função <img src="https://latex.codecogs.com/png.latex?f(x)%20=%202x"> simbolicamente:</p>
-<div id="40ebfd4e" class="cell" data-execution_count="21">
+<div id="12724a5b" class="cell" data-execution_count="21">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1">f_symb_numpy <span class="op" style="color: #5E5E5E;
@@ -2108,7 +2111,7 @@ f'(x) = 2x:
 </div>
 </div>
 <p>Agora vamos plotar a função e sua derivada:</p>
-<div id="4f9d8228" class="cell" data-execution_count="22">
+<div id="481f9486" class="cell" data-execution_count="22">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><span class="co" style="color: #5E5E5E;
@@ -2119,7 +2122,7 @@ font-style: inherit;"># plote a função e sua derivada</span></span>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-23-output-1.png" width="540" height="389" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2131,7 +2134,7 @@ font-style: inherit;"># plote a função e sua derivada</span></span>
 <li>Às vezes, as expressões de saída são muito complicadas e até mesmo impossíveis de serem avaliadas. Por exemplo, encontrar a derivada da função.</li>
 </ul>
 <p><img src="https://latex.codecogs.com/png.latex?%5Cleft%7Cx%5Cright%7C%20=%20%5Cbegin%7Bcases%7D%20x,%20%5C%20%5Ctext%7Bif%7D%5C%20x%20%3E%200%5C%5C%20%20-x,%20%5C%20%5Ctext%7Bif%7D%5C%20x%20%3C%200%20%5C%5C%200,%20%5C%20%5Ctext%7Bif%7D%5C%20x%20=%200%5Cend%7Bcases%7D"> Analiticamente, anderivada é: <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bd%7D%7Bdx%7D%5Cleft(%5Cleft%7Cx%5Cright%7C%5Cright)%20=%20%5Cbegin%7Bcases%7D%201,%20%5C%20%5Ctext%7Bif%7D%5C%20x%20%3E%200%5C%5C%20%20-1,%20%5C%20%5Ctext%7Bif%7D%5C%20x%20%3C%200%5C%5C%5C%20%5Ctext%7Bdoes%20not%20exist%7D,%20%5C%20%5Ctext%7Bif%7D%5C%20x%20=%200%5Cend%7Bcases%7D"> Podemos calcular a derivada da função <img src="https://latex.codecogs.com/png.latex?f(x)%20=%20%5Cleft%7Cx%5Cright%7C"> simbolicamente:</p>
-<div id="518efa18" class="cell" data-execution_count="23">
+<div id="7096934c" class="cell" data-execution_count="23">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1">dfdx_abs <span class="op" style="color: #5E5E5E;
@@ -2146,7 +2149,7 @@ font-style: inherit;">abs</span>(x),x)</span>
 </div>
 </div>
 <p>Outro exemplo <img src="https://latex.codecogs.com/png.latex?x=-2">:</p>
-<div id="ae1c3a11" class="cell" data-execution_count="24">
+<div id="0fd67c3e" class="cell" data-execution_count="24">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1">dfdx_abs.evalf(subs<span class="op" style="color: #5E5E5E;
@@ -2169,7 +2172,7 @@ font-style: inherit;">2</span>})</span></code></pre></div>
 <p><strong>Derivadas Numéricas</strong> são calculadas numericamente, ou seja, aproximadamente. Isso significa que a derivada é calculada para um valor específico de <img src="https://latex.codecogs.com/png.latex?x"> e é uma aproximação do valor real da derivada. A precisão da derivada numérica depende do valor de <img src="https://latex.codecogs.com/png.latex?h"> (o passo de Derivada). Quanto menor o valor de <img src="https://latex.codecogs.com/png.latex?h">, mais precisa será a derivada, mas também mais lenta será a computação.</p>
 <section id="derivadas-numéricas-em-python-usando-a-biblioteca-numpy." class="level4">
 <h4 class="anchored" data-anchor-id="derivadas-numéricas-em-python-usando-a-biblioteca-numpy.">Derivadas numéricas em <code>Python</code> usando a biblioteca <code>NumPy</code>.</h4>
-<div id="28f22541" class="cell" data-execution_count="25">
+<div id="19762201" class="cell" data-execution_count="25">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1">x_array_2 <span class="op" style="color: #5E5E5E;
@@ -2200,12 +2203,12 @@ font-style: inherit;">"f'(x) approximate"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-26-output-1.png" width="540" height="389" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-26-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="72ed4eab" class="cell" data-execution_count="26">
+<div id="f2b3aaa4" class="cell" data-execution_count="26">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1">dfdx_composed <span class="op" style="color: #5E5E5E;
@@ -2276,14 +2279,14 @@ font-style: inherit;">"f'(x) approximate"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-27-output-1.png" width="540" height="389" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Obviamente, a primeira desvantagem da Derivada numérica é que ela não é exata. No entanto, sua precisão normalmente é suficiente para aplicativos de aprendizado de máquina. Nesse estágio, não há necessidade de avaliar os erros da Derivada numérica.</p>
 <p>Outro problema é semelhante ao que apareceu na Derivada simbólica: ela é imprecisa nos pontos em que há “saltos” da derivada. Vamos comparar a derivada exata da função de valor absoluto e a aproximação numérica:</p>
-<div id="28295234" class="cell" data-execution_count="27">
+<div id="9df8d2f1" class="cell" data-execution_count="27">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><span class="kw" style="color: #003B4F;
@@ -2342,7 +2345,7 @@ font-style: inherit;">abs</span>(x_array_2), x_array_2))</span></code></pre></di
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-28-output-1.png" width="540" height="389" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/Derivadas-Python_files/figure-html/cell-28-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2369,18 +2372,19 @@ font-style: inherit;">abs</span>(x_array_2), x_array_2))</span></code></pre></di
 
 
 
+
 <p><em>Este artigo foi reescrito em Segunda, 25 de Março de 2024.</em></p>
 <p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/images/01.sidrar/sidra.png" class="img-fluid" data-fig-title="Acessando dados disponíveis no SIDRA IBGE com o pacote sidrar" alt="SIDRAr"></p>
 <p>COLETANDO DADOS DO SIDRA COM O PYTHON</p>
 <p>O primeiro passo será instalar a biblioteca sidrapy, se estiver usando o VSCode pode digitar o código <code>pip install sidrapy</code> no termianl que você irá instalar a biblioteca usada para fazer o download dos dados.</p>
 <p>O segundo passo será importar essa biblioteca para isso faça;</p>
-<div id="204e4a68" class="cell" data-message="false" data-execution_count="1">
+<div id="ee724971" class="cell" data-message="false" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> sidrapy</span></code></pre></div>
 </div>
 <p>Agora que temos nossa biblioteca instalada vamos baixar nossos dados.</p>
-<div id="7e6b8bd0" class="cell" data-execution_count="2">
+<div id="79024ebc" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Importa os dados do SIDRA</span></span>
@@ -2462,7 +2466,7 @@ font-style: inherit;"># Checamos a importação</span></span>
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>99.40</td>
+<td>99.41</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199601</td>
@@ -2478,7 +2482,7 @@ font-style: inherit;"># Checamos a importação</span></span>
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>100.66</td>
+<td>100.59</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199602</td>
@@ -2494,7 +2498,7 @@ font-style: inherit;"># Checamos a importação</span></span>
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>104.15</td>
+<td>104.31</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199603</td>
@@ -2510,7 +2514,7 @@ font-style: inherit;"># Checamos a importação</span></span>
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>103.38</td>
+<td>103.31</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199604</td>
@@ -2526,7 +2530,7 @@ font-style: inherit;"># Checamos a importação</span></span>
 </div>
 </div>
 </div>
-<div id="25d914f3" class="cell" data-execution_count="3">
+<div id="e64e7eee" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Substitui as colunas pela primeira observação</span></span>
@@ -2588,7 +2592,7 @@ font-style: inherit;">float</span>)</span>
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>99.40</td>
+<td>99.41</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199601</td>
@@ -2604,7 +2608,7 @@ font-style: inherit;">float</span>)</span>
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>100.66</td>
+<td>100.59</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199602</td>
@@ -2620,7 +2624,7 @@ font-style: inherit;">float</span>)</span>
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>104.15</td>
+<td>104.31</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199603</td>
@@ -2636,7 +2640,7 @@ font-style: inherit;">float</span>)</span>
 <td>Brasil</td>
 <td>30</td>
 <td>Número-índice</td>
-<td>103.38</td>
+<td>103.31</td>
 <td>1</td>
 <td>Brasil</td>
 <td>199604</td>
@@ -2685,10 +2689,11 @@ font-style: inherit;">float</span>)</span>
 
 
 
+
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>Método de <strong>Gradient Descent</strong> otimizando algumas funções em duas variáveis.</p>
 <p>Vamos carregar os pacotes que utilizaremos aqui:</p>
-<div id="dc4020f7" class="cell" data-execution_count="1">
+<div id="f6522343" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -2711,7 +2716,7 @@ font-style: inherit;">import</span> (plot_f_cont_and_surf, gradient_descent_two_
 </details>
 </div>
 <p>Agora vamos explorar um exemplo simples de uma função em duas variáveis <img src="https://latex.codecogs.com/png.latex?f(x,y)"> com um mínimo global.</p>
-<div id="76323d74" class="cell" data-execution_count="2">
+<div id="20a4df06" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">plot_f_cont_and_surf([<span class="dv" style="color: #AD0000;
@@ -2752,7 +2757,7 @@ font-style: inherit;">28</span>})</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-3-output-2.png" width="817" height="403" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-3-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2761,7 +2766,7 @@ font-style: inherit;">28</span>})</span></code></pre></div>
 <p><img src="https://latex.codecogs.com/png.latex?%0Ax_1%20=%20x_0%20-%20%5Calpha%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D(x_0,%20y_0),%0A"></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0Ay_1%20=%20y_0%20-%20%5Calpha%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20y%7D(x_0,%20y_0),%5Ctag%7B1%7D%0A"></p>
 <p>em que <img src="https://latex.codecogs.com/png.latex?%5Calpha%3E0"> é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:</p>
-<div id="8b6e6c69" class="cell" data-execution_count="3">
+<div id="cf59b599" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="kw" style="color: #003B4F;
@@ -2803,7 +2808,7 @@ font-style: inherit;">return</span> x, y</span></code></pre></div>
 </details>
 </div>
 <p>Agora, para otimizar a função, configuramos os parâmetros <code>num_iterations</code>, <code>learning_rate</code>, <code>x_initial</code>, <code>y_initial</code> e executar o <strong>gradient descent</strong>:</p>
-<div id="ba0b6880" class="cell" data-execution_count="4">
+<div id="72cdd3f8" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -2841,7 +2846,7 @@ font-style: inherit;">"Gradient descent result: x_min, y_min ="</span>, </span>
 </div>
 </div>
 <p>Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bbmatrix%7D%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D(x_0,%20y_0)%20%5C%5C%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20y%7D(x_0,%20y_0)%5Cend%7Bbmatrix%7D"> com a taxa de aprendizado <img src="https://latex.codecogs.com/png.latex?%5Calpha"> como um fator de escala.</p>
-<div id="57e1849c" class="cell" data-execution_count="5">
+<div id="a323ea51" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -2991,13 +2996,13 @@ font-style: inherit;">28</span>})</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-6-output-1.png" width="817" height="403" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Vamos dar uma olhada nessa outra função</p>
-<div id="e3451010" class="cell" data-execution_count="6">
+<div id="523c341a" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">plot_f_cont_and_surf([<span class="dv" style="color: #AD0000;
@@ -3038,13 +3043,13 @@ font-style: inherit;">21</span>})</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-7-output-2.png" width="815" height="403" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-7-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Podemos encontrar o mínimo global com:</p>
-<div id="bd3fc0ea" class="cell" data-execution_count="7">
+<div id="3bf938de" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -3083,7 +3088,7 @@ font-style: inherit;">"Gradient descent result: x_min, y_min ="</span>, </span>
 </div>
 </div>
 <p>Visualizando</p>
-<div id="15d3e47e" class="cell" data-execution_count="8">
+<div id="6b1bdcf7" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
@@ -3179,18 +3184,17 @@ font-style: inherit;">21</span>})</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-9-output-1.png" width="815" height="403" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>=======</p>
-<hr>
-<p>title: “Otimização usando Gradient Descent em duas variáveis usando Python” image: ../../Vida-Academica/images/calculo/07-gradiente-descida.png description: “Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados” author: “Wellington Santos Souza” date: “2024-08-04” format: html: code-fold: true code-copy: true code-tools: true categories: [“curso”, “coursera”, “Algebra Linear”, “calculo”, “Machine Learning”, “Data Science”, “Deep Learning”, “Python”, “R”, “Algebra Linear”]</p>
-<hr>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">=======</h2>
+<p>title: “Otimização usando Gradient Descent em duas variáveis usando Python” image: ../../Vida-Academica/images/calculo/07-gradiente-descida.png description: “Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados” author: “Wellington Santos Souza” date: “2024-08-04” format: html: code-fold: true code-copy: true code-tools: true categories: [“curso”, “coursera”, “Algebra Linear”, “calculo”, “Machine Learning”, “Data Science”, “Deep Learning”, “Python”, “R”, “Algebra Linear”] —</p>
 <p>Método de <strong>Gradient Descent</strong> otimizando algumas funções em duas variáveis.</p>
 <p>Vamos carregar os pacotes que utilizaremos aqui:</p>
-<div id="14acbe58" class="cell" data-execution_count="9">
+<div id="9b33e434" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="im" style="color: #00769E;
@@ -3213,7 +3217,7 @@ font-style: inherit;">import</span> (plot_f_cont_and_surf, gradient_descent_two_
 </details>
 </div>
 <p>Agora vamos explorar um exemplo simples de uma função em duas variáveis <img src="https://latex.codecogs.com/png.latex?f(x,y)"> com um mínimo global.</p>
-<div id="0a212f93" class="cell" data-execution_count="10">
+<div id="5bb17481" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">plot_f_cont_and_surf([<span class="dv" style="color: #AD0000;
@@ -3254,7 +3258,7 @@ font-style: inherit;">28</span>})</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-11-output-2.png" width="817" height="403" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -3263,7 +3267,7 @@ font-style: inherit;">28</span>})</span></code></pre></div>
 <p><img src="https://latex.codecogs.com/png.latex?%0Ax_1%20=%20x_0%20-%20%5Calpha%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D(x_0,%20y_0),%0A"></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0Ay_1%20=%20y_0%20-%20%5Calpha%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20y%7D(x_0,%20y_0),%5Ctag%7B1%7D%0A"></p>
 <p>em que <img src="https://latex.codecogs.com/png.latex?%5Calpha%3E0"> é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:</p>
-<div id="d1019d73" class="cell" data-execution_count="11">
+<div id="a1a2997d" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="kw" style="color: #003B4F;
@@ -3305,7 +3309,7 @@ font-style: inherit;">return</span> x, y</span></code></pre></div>
 </details>
 </div>
 <p>Agora, para otimizar a função, configuramos os parâmetros <code>num_iterations</code>, <code>learning_rate</code>, <code>x_initial</code>, <code>y_initial</code> e executar o <strong>gradient descent</strong>:</p>
-<div id="8bfab86b" class="cell" data-execution_count="12">
+<div id="8811a9c8" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -3343,7 +3347,7 @@ font-style: inherit;">"Gradient descent result: x_min, y_min ="</span>, </span>
 </div>
 </div>
 <p>Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bbmatrix%7D%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20x%7D(x_0,%20y_0)%20%5C%5C%20%5Cfrac%7B%5Cpartial%20f%7D%7B%5Cpartial%20y%7D(x_0,%20y_0)%5Cend%7Bbmatrix%7D"> com a taxa de aprendizado <img src="https://latex.codecogs.com/png.latex?%5Calpha"> como um fator de escala.</p>
-<div id="062f59ac" class="cell" data-execution_count="13">
+<div id="ea443ea9" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -3493,13 +3497,13 @@ font-style: inherit;">28</span>})</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-14-output-1.png" width="817" height="403" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Vamos dar uma olhada nessa outra função</p>
-<div id="724e38e5" class="cell" data-execution_count="14">
+<div id="bbcc083c" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1">plot_f_cont_and_surf([<span class="dv" style="color: #AD0000;
@@ -3540,13 +3544,13 @@ font-style: inherit;">21</span>})</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-15-output-2.png" width="815" height="403" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-15-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Podemos encontrar o mínimo global com:</p>
-<div id="72824f76" class="cell" data-execution_count="15">
+<div id="cdcecde2" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -3585,7 +3589,7 @@ font-style: inherit;">"Gradient descent result: x_min, y_min ="</span>, </span>
 </div>
 </div>
 <p>Visualizando</p>
-<div id="367a3b21" class="cell" data-execution_count="16">
+<div id="907a9f49" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><span class="co" style="color: #5E5E5E;
@@ -3681,7 +3685,7 @@ font-style: inherit;">21</span>})</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-17-output-1.png" width="815" height="403" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -3705,10 +3709,11 @@ font-style: inherit;">21</span>})</span></code></pre></div>
 
 <!-- -->
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradien-descent-2-variables.html</guid>
-  <pubDate>Tue, 21 Jan 2025 19:17:45 GMT</pubDate>
+  <pubDate>Tue, 19 Aug 2025 21:03:33 GMT</pubDate>
 </item>
 <item>
   <title>Otimização usando Gradient Descent em uma variável Usando Python</title>
@@ -3718,10 +3723,11 @@ font-style: inherit;">21</span>})</span></code></pre></div>
 
 
 
+
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p><img src="https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/images/calculo/07-gradiente-descida.png" class="img-fluid" data-fig-title="Capa" alt="Capa"> Para entendermos como otimizar funções usando <strong>Gradient Descent,</strong> vamos começar com uma exemplo simples: funções de uma única variável.</p>
 <p>Para isso vamos utilizar os pacotes <code>numpy</code> e <code>matplotlib</code>.</p>
-<div id="96d92e9c" class="cell" data-execution_count="1">
+<div id="9a8031c1" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -3748,7 +3754,7 @@ font-style: inherit;">import</span> plot_f, gradient_descent_one_variable, f_exa
 <p>Subtraindo <img src="https://latex.codecogs.com/png.latex?%5Cdfrac%7Bdf%7D%7Bdx%7D(x_0)"> você desce a na curva contra o aumento da função - em direção ao ponto mínimo. Portanto, <img src="https://latex.codecogs.com/png.latex?%5Cdfrac%7Bdf%7D%7Bdx%7D(x_0)"> geralmente define a direção do movimento. O parâmetro <img src="https://latex.codecogs.com/png.latex?a"> serve como um fator de escala.</p>
 <p>Agora é hora de implementar o método de <strong>Gradient Descent</strong> e fazer experimentos com os parâmetros!</p>
 <p>Primeiro, defina a função <img src="https://latex.codecogs.com/png.latex?f(x)=e%5E2-log(x)"> e sua derivada <img src="https://latex.codecogs.com/png.latex?%5Cdfrac%7Bdf%7D%7Bdx%7D=e%5Ex-%5Cdfrac%7B1%7D%7Bx%7D">:</p>
-<div id="d8fed811" class="cell" data-execution_count="2">
+<div id="08db3bd6" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="kw" style="color: #003B4F;
@@ -3779,7 +3785,7 @@ font-style: inherit;">/</span>x</span></code></pre></div>
 </details>
 </div>
 <p>A função <img src="https://latex.codecogs.com/png.latex?f(x)"> tem um mínimo global. Vamos traçar o gráfico da função:</p>
-<div id="64454216" class="cell" data-execution_count="3">
+<div id="0b0298d9" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">plot_f([<span class="fl" style="color: #AD0000;
@@ -3799,13 +3805,13 @@ font-style: inherit;">0.0</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-4-output-1.png" width="670" height="349" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>O Gradient Descent pode ser implementado da seguinte forma:</p>
-<div id="1786963c" class="cell" data-execution_count="4">
+<div id="c7c05ee2" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="kw" style="color: #003B4F;
@@ -3843,7 +3849,7 @@ font-style: inherit;">return</span> x</span></code></pre></div>
 </details>
 </div>
 <p>Observe que há três parâmetros nessa implementação: num_iterations, learning_rate, ponto inicial x_initial. Para otimizar a função, configure os parâmetros e chame a função definida gradient_descent:</p>
-<div id="b21c01d1" class="cell" data-execution_count="5">
+<div id="aba222e2" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -3874,7 +3880,7 @@ font-style: inherit;">"Gradient descent result: x_min ="</span>, gradient_descen
 </div>
 </div>
 <p>O código na célula a seguir o ajudará a visualizar e entender melhor o método de descida de gradiente.</p>
-<div id="10e47a72" class="cell" data-execution_count="6">
+<div id="49be3969" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -4038,7 +4044,7 @@ font-style: inherit;">9.5</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-7-output-1.png" width="670" height="349" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -4046,7 +4052,7 @@ font-style: inherit;">9.5</span>])</span></code></pre></div>
 <section id="função-com-vários-mínimos" class="level3">
 <h3 class="anchored" data-anchor-id="função-com-vários-mínimos">Função com vários mínimos</h3>
 <p>Plotando a função</p>
-<div id="93750597" class="cell" data-execution_count="7">
+<div id="b0510909" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">plot_f([<span class="fl" style="color: #AD0000;
@@ -4068,13 +4074,13 @@ font-style: inherit;">6</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-8-output-1.png" width="677" height="348" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Rodando o gradient descent</p>
-<div id="bc7c6c7c" class="cell" data-execution_count="8">
+<div id="aa8de539" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="bu" style="color: null;
@@ -4124,7 +4130,7 @@ Local minimum: x_min = 0.7585728671820583</code></pre>
 </div>
 </div>
 <p>Testando diferentes pontos:</p>
-<div id="3379219e" class="cell" data-execution_count="9">
+<div id="80f47796" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -4207,18 +4213,18 @@ font-style: inherit;">0.5</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-10-output-1.png" width="677" height="348" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>=======</p>
-<hr>
-<p>title: “Otimização usando Gradient Descent em uma variável Usando Python” image: ../../Vida-Academica/images/calculo/07-gradiente-descida.png description: “Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados” author: “Wellington Santos Souza” date: “2024-08-04” format: html: code-fold: true code-copy: true code-tools: true categories: [“curso”, “coursera”, “Algebra Linear”, “calculo”, “Machine Learning”, “Data Science”, “Deep Learning”, “Python”, “R”, “Algebra Linear”]</p>
-<hr>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">=======</h2>
+<p>title: “Otimização usando Gradient Descent em uma variável Usando Python” image: ../../Vida-Academica/images/calculo/07-gradiente-descida.png description: “Anotações do módulo 2 do curso de Cálculo para aprendizado de máquina e ciência de dados” author: “Wellington Santos Souza” date: “2024-08-04” format: html: code-fold: true code-copy: true code-tools: true categories: [“curso”, “coursera”, “Algebra Linear”, “calculo”, “Machine Learning”, “Data Science”, “Deep Learning”, “Python”, “R”, “Algebra Linear”] —</p>
 <p><img src="https://welli45.github.io/portifolio-dados.github.io/Vida-Academica/images/calculo/07-gradiente-descida.png" class="img-fluid" data-fig-title="Capa" alt="Capa"> Para entendermos como otimizar funções usando <strong>Gradient Descent,</strong> vamos começar com uma exemplo simples: funções de uma única variável.</p>
 <p>Para isso vamos utilizar os pacotes <code>numpy</code> e <code>matplotlib</code>.</p>
-<div id="f43e729b" class="cell" data-execution_count="10">
+<div id="d653e608" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="im" style="color: #00769E;
@@ -4245,7 +4251,7 @@ font-style: inherit;">import</span> plot_f, gradient_descent_one_variable, f_exa
 <p>Subtraindo <img src="https://latex.codecogs.com/png.latex?%5Cdfrac%7Bdf%7D%7Bdx%7D(x_0)"> você desce a na curva contra o aumento da função - em direção ao ponto mínimo. Portanto, <img src="https://latex.codecogs.com/png.latex?%5Cdfrac%7Bdf%7D%7Bdx%7D(x_0)"> geralmente define a direção do movimento. O parâmetro <img src="https://latex.codecogs.com/png.latex?a"> serve como um fator de escala.</p>
 <p>Agora é hora de implementar o método de <strong>Gradient Descent</strong> e fazer experimentos com os parâmetros!</p>
 <p>Primeiro, defina a função <img src="https://latex.codecogs.com/png.latex?f(x)=e%5E2-log(x)"> e sua derivada <img src="https://latex.codecogs.com/png.latex?%5Cdfrac%7Bdf%7D%7Bdx%7D=e%5Ex-%5Cdfrac%7B1%7D%7Bx%7D">:</p>
-<div id="d94b34e8" class="cell" data-execution_count="11">
+<div id="b8757d6f" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="kw" style="color: #003B4F;
@@ -4276,7 +4282,7 @@ font-style: inherit;">/</span>x</span></code></pre></div>
 </details>
 </div>
 <p>A função <img src="https://latex.codecogs.com/png.latex?f(x)"> tem um mínimo global. Vamos traçar o gráfico da função:</p>
-<div id="e01ad352" class="cell" data-execution_count="12">
+<div id="1a8146d7" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">plot_f([<span class="fl" style="color: #AD0000;
@@ -4296,13 +4302,13 @@ font-style: inherit;">0.0</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-13-output-1.png" width="670" height="349" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>O Gradient Descent pode ser implementado da seguinte forma:</p>
-<div id="13426c23" class="cell" data-execution_count="13">
+<div id="5d11a54e" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><span class="kw" style="color: #003B4F;
@@ -4340,7 +4346,7 @@ font-style: inherit;">return</span> x</span></code></pre></div>
 </details>
 </div>
 <p>Observe que há três parâmetros nessa implementação: num_iterations, learning_rate, ponto inicial x_initial. Para otimizar a função, configure os parâmetros e chame a função definida gradient_descent:</p>
-<div id="5e611cab" class="cell" data-execution_count="14">
+<div id="0215b6a7" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -4371,7 +4377,7 @@ font-style: inherit;">"Gradient descent result: x_min ="</span>, gradient_descen
 </div>
 </div>
 <p>O código na célula a seguir o ajudará a visualizar e entender melhor o método de descida de gradiente.</p>
-<div id="863081b5" class="cell" data-execution_count="15">
+<div id="fa22e494" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -4535,16 +4541,15 @@ font-style: inherit;">9.5</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-16-output-1.png" width="670" height="349" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
 <section id="função-com-vários-mínimos-1" class="level3">
 <h3 class="anchored" data-anchor-id="função-com-vários-mínimos-1">Função com vários mínimos</h3>
 <p>Plotando a função</p>
-<div id="6b5dc681" class="cell" data-execution_count="16">
+<div id="e58dfcbc" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">plot_f([<span class="fl" style="color: #AD0000;
@@ -4566,13 +4571,13 @@ font-style: inherit;">6</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-17-output-1.png" width="677" height="348" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Rodando o gradient descent</p>
-<div id="20204bfa" class="cell" data-execution_count="17">
+<div id="b18c9131" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="bu" style="color: null;
@@ -4622,7 +4627,7 @@ Local minimum: x_min = 0.7585728671820583</code></pre>
 </div>
 </div>
 <p>Testando diferentes pontos:</p>
-<div id="15c1952b" class="cell" data-execution_count="18">
+<div id="b329d798" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">num_iterations <span class="op" style="color: #5E5E5E;
@@ -4705,7 +4710,7 @@ font-style: inherit;">0.5</span>])</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-19-output-1.png" width="677" height="348" class="figure-img"></p>
+<p><img src="https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -4730,10 +4735,11 @@ font-style: inherit;">0.5</span>])</span></code></pre></div>
 <!-- -->
 
 </section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://welli45.github.io/portifolio-dados.github.io/projetos-Python/posts/gradiente-descent.html</guid>
-  <pubDate>Tue, 21 Jan 2025 19:17:45 GMT</pubDate>
+  <pubDate>Tue, 19 Aug 2025 21:03:33 GMT</pubDate>
 </item>
 </channel>
 </rss>

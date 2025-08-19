@@ -36,6 +36,7 @@ Usaremos as bibliotecas `Sympy`, `Numpy` e `JAX`
 def f(x):
     return x**2
 
+
 print(f(3))
 
 ```

@@ -41,32 +41,37 @@ Para isso, usaremos a base de dados `pinguins` do pacote `dados`. Caso ainda nã
 ```{r}
 #| result: hide
 #| message: false
-if(!require('dados')){
+if (!require('dados')) {
   install.packages("dados")
-}; library(dados)
+}
+library(dados)
 
-if(!require('kableExtra')){
+if (!require('kableExtra')) {
   install.packages("kableExtra")
-}; library(kableExtra)
+}
+library(kableExtra)
 
-if(!require('tidyverse')){
+if (!require('tidyverse')) {
   install.packages("tidyverse")
-}; library(tidyverse)
+}
+library(tidyverse)
 
-if(!require(report)){
+if (!require(report)) {
   install.packages("report")
-  }; library(report)
+}
+library(report)
 
-if(!require(ggstatsplot)){
+if (!require(ggstatsplot)) {
   install.packages("ggstatsplot")
-}; library(ggstatsplot)
+}
+library(ggstatsplot)
 ```
 
 Depois de carregar o pacote, basta acessar a base:
 ```{r}
 pinguins <- pinguins
 
-head(pinguins) |> 
+head(pinguins) |>
   kable()
 ```
 
@@ -79,23 +84,20 @@ E listar as variáveis disponíveis:
 ```{r}
 names(pinguins)
 ```
+
 Removendo NA´s da coluna comprimento do bico
 ```{r}
 pinguins <- data.frame(pinguins)
-pinguins <- pinguins |> 
+pinguins <- pinguins |>
   filter(!is.na(comprimento_bico))
 
 ```
 
 Agora, que tal explorar um pouco os dados? Vamos criar um histograma para o comprimento do bico:
 ```{r}
-hist(pinguins$comprimento_bico,
-     prob = T,
-     col = "lightblue")
+hist(pinguins$comprimento_bico, prob = T, col = "lightblue")
 
-lines(density(x = pinguins$comprimento_bico, adjust = 3),
-      lwd = 2,
-      col = 'red')
+lines(density(x = pinguins$comprimento_bico, adjust = 3), lwd = 2, col = 'red')
 
 ```
 
@@ -111,9 +113,10 @@ mod_01 <- aov(comprimento_bico ~ especie, data = pinguins)
 Agora, vamos verificar se os pressupostos são atendidos. Para isso, criamos alguns gráficos:
 
 ```{r}
-par(mfrow = c(2,2))
+par(mfrow = c(2, 2))
 plot(mod_01)
 ```
+
 #### Linearidade
 
 O gráfico `Residuals vs Fitted` mostra que a linha pontilhada vermelha está bem reta, indicando que o pressuposto foi atendido. 
@@ -136,13 +139,13 @@ Os pressupostos da ANOVA são como os pilares de uma casa. Se não forem atendid
 
 Queremos descobrir se o comprimento do bico varia entre as espécies. Para isso, analisamos o resultado da ANOVA:
 ```{r}
-anova(test = F, mod_01) |> 
+anova(test = F, mod_01) |>
   kable()
 ```
 
 E, com o pacote `report`, obtemos uma descrição mais completa:
 ```{r}
-mod_01 |> 
+mod_01 |>
   report()
 ```
 
@@ -159,28 +162,28 @@ ggbetweenstats(
   data = pinguins,
   x = especie,
   y = comprimento_bico
-) + 
+) +
   labs(
     x = "Espécies",
     y = "Comprimento do Bico",
     title = "Disitribuição do tamanho do bico por espécie"
-  ) + 
+  ) +
   theme(
     text = element_text(size = 8, color = "black"),
-    plot.title = element_text( 
+    plot.title = element_text(
       size = 20,
       face = "bold",
       color = "#2a475e"
     ),
-    plot.subtitle = element_text( 
-      size = 15, 
+    plot.subtitle = element_text(
+      size = 15,
       face = "bold",
-      color="#1b2838"
+      color = "#1b2838"
     ),
-    plot.title.position = "plot", 
+    plot.title.position = "plot",
     axis.text = element_text(size = 10, color = "black"),
     axis.title = element_text(size = 12)
-  )+
+  ) +
   theme(
     axis.ticks = element_blank(),
     axis.line = element_line(colour = "grey50"),

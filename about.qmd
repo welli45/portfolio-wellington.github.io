@@ -28,17 +28,26 @@ comments: false
 page-layout: full
 ---
 
-
 Atualmente, estou cursando o mestrado em Sociologia na Universidade Federal de Minas Gerais, na linha de Sociologia Econômica e das Organizações. Sou também Licenciado em Ciências Sociais, com uma Formação Complementar Aberta em Estatística pela mesma universidade. Ao longo da graduação, participei ativamente do projeto Pescarte, onde desenvolvi minha Iniciação Científica, colaborando com uma equipe multidisciplinar composta por sociólogos, antropólogos, estatísticos e educadores ambientais.
 
 Além disso, faço parte do GIARS - Grupo Interdisciplinar de Pesquisa em Análise de Redes Sociais, vinculado à FAFICH da UFMG. Meu interesse profissional e acadêmico se concentra na análise de dados, pesquisa científica, meio ambiente, políticas públicas para redução das desigualdades sociais, geração de emprego e renda, tecnologia e aplicação de ferramentas como linguagem de programação R, Microsoft Power BI, estatística e suas diversas aplicações.s.
 
 Minha experiência abrange a condução de análises de dados de saúde, elaboração de relatórios detalhados e a criação de dashboards interativos no Power BI. As certificações recentes, incluindo SQL, Git e Google Data Analytics, demonstram meu comprometimento com a aprendizagem contínua. Possuo habilidades avançadas em R e Power BI.
 
-
-:::{.panel-tabset}
-
+::: panel-tabset
 # Experiência
+
+**Assistente de Pesquisa e Ciência de Dados JR \| Instituto de Pesquisa Econômica Aplicada (Ipea)**
+
+Junho de 2025 – Presente
+
+-   Atuando como Assistente de Pesquisa e Ciência de Dados JR (Mestrando) no IPEA no projeto Acompanhamento e Análise de Políticas de Assistência Social, focado em estudos e análises de políticas públicas para a população em situação de rua, incluindo coleta, sistematização e análise de dados.
+
+**Analista de Dados Jr \| DigitalBot**
+
+Março de 2025 – Junho de 2025
+
+-   Na DigitalBot, desenvolvi dashboards estratégicos personalizados e conduzi análises diagnósticas em bots existentes. Meu foco era otimizar a performance dos bots, utilizando insights de dados para aprimorar os fluxos conversacionais.
 
 **Analista de Dados \| Governo do Estado de Minas Gerais**
 
@@ -103,11 +112,9 @@ Microsoft Power BI, Tableau, Google Data Studio, Microsoft Excel, Google Sheets,
 **Espanhol** \| (intermediário) – leitura e conversação.
 
 **Português** \| Fluente
-
 :::
 
-:::{.panel-tabset}
-
+::: panel-tabset
 # Formação
 
 **Mestrado em Sociologia Econômica**
@@ -153,33 +160,29 @@ Período: Janeiro de 2021 - Janeiro de 2024
 -   Elaboração de relatórios de pesquisa detalhados, consolidando os resultados e insights obtidos ao longo do projeto.
 
 # Certificações/Cursos
-- 11/2024: Probability & Statistics for Machine Learning & Data Science
-- 11/2024: Mathematics for Machine Learning and Data Science
-- 09/2024: Calculus for Machine Learning and Data Science - DeepLearning.AI
-- 08/2024: Linear Algebra for Machine Learning and Data Science - DeepLearning.AI
-- 01/2024: SQL para Análise de Dados – Udemy
-- 07/2024: Regressão Linear – MQ – UFMG
-- 08/2023: Master DAX – Power BI Orientado ao Projeto – Udemy
-- 08/2023: Data Storytelling – Udemy 
-- 06/2023: Certificado Profissional de Análise de Dados do Google – Coursera.
-- 02/2023: Power BI Data Modeling with DAX – LinkedIn.
-- 02/2023: SQL for Data Science – Coursera.
-- 02/2023: Cleaning Bad Data in R – LinkedIn.
-- 01/2023: Introdução às Competências Essenciais para a Análise de Dados – LinkedIn.
-- 01/2023: Master Power BI - De A à Z – Udemy.
-- 03/2022: Microsoft Power BI Para Data Science, Versão 2.0 – Data Science Academy.
-- 03/2022: Dashboards com Google Data Studio – IBPAD.
-- 01/2022: Análise de Redes com R – IBPAD.
-- 01/2022: Análise de Dados em Linguagem R – Enap. 
-- 11/2021: R Intermediário – Meios – Empresa Júnior de Ciências Sociais.
-- 06/2021: Descubra a Linguagem de Programação R – Linkedin Learning. 
-- 10/2020: Metodologia de Survey – Meios – Empresa Júnior de Ciências Sociais – UFMG.
-- 04/2020: Ciência de Dados com R – Udemy.
 
+-   11/2024: Probability & Statistics for Machine Learning & Data Science
+-   11/2024: Mathematics for Machine Learning and Data Science
+-   09/2024: Calculus for Machine Learning and Data Science - DeepLearning.AI
+-   08/2024: Linear Algebra for Machine Learning and Data Science - DeepLearning.AI
+-   01/2024: SQL para Análise de Dados – Udemy
+-   07/2024: Regressão Linear – MQ – UFMG
+-   08/2023: Master DAX – Power BI Orientado ao Projeto – Udemy
+-   08/2023: Data Storytelling – Udemy
+-   06/2023: Certificado Profissional de Análise de Dados do Google – Coursera.
+-   02/2023: Power BI Data Modeling with DAX – LinkedIn.
+-   02/2023: SQL for Data Science – Coursera.
+-   02/2023: Cleaning Bad Data in R – LinkedIn.
+-   01/2023: Introdução às Competências Essenciais para a Análise de Dados – LinkedIn.
+-   01/2023: Master Power BI - De A à Z – Udemy.
+-   03/2022: Microsoft Power BI Para Data Science, Versão 2.0 – Data Science Academy.
+-   03/2022: Dashboards com Google Data Studio – IBPAD.
+-   01/2022: Análise de Redes com R – IBPAD.
+-   01/2022: Análise de Dados em Linguagem R – Enap.
+-   11/2021: R Intermediário – Meios – Empresa Júnior de Ciências Sociais.
+-   06/2021: Descubra a Linguagem de Programação R – Linkedin Learning.
+-   10/2020: Metodologia de Survey – Meios – Empresa Júnior de Ciências Sociais – UFMG.
+-   04/2020: Ciência de Dados com R – Udemy.
+:::
 
-
-::::
-
-<br></br>
-<br></br>
-
+<br></br> <br></br>

@@ -148,6 +148,7 @@ dados_PNADc_srvyr <- dados_PNADc_srvyr |>
          "Num_pesoas_dom" = V2001,
          "Concluiu_ou_nao_graduacao" = V3007)
 ```
+
 6. Criando variável Região
 ```{r}
 dados_PNADc_srvyr <- dados_PNADc_srvyr |> 
@@ -170,6 +171,7 @@ Sexo <- dados_PNADc_srvyr |>
 Sexo |> 
   knitr::kable(col.names = c("Sexo", "N", "Erro Amostral"))
 ```
+
 Podemos melhorar a visualização das estimativas de Sexo, que indicavam 105.595.187 homens e 110.528.146 mulheres, usando um gráfico de pizza para destacar essas proporções.
 ```{r}
 # Calcular proporções
@@ -185,6 +187,7 @@ ggplot(Sexo, aes(x = "", y = n, fill = Sexo)) +
   theme(axis.text.x = element_blank(),
         axis.title.x = element_blank())   
 ```
+
 ```{r}
 Concluiu_ou_nao_graduacao <- dados_PNADc_srvyr |> 
   group_by(Concluiu_ou_nao_graduacao) |> 
@@ -217,6 +220,7 @@ Cor_Raca <- dados_PNADc_srvyr |>
 Cor_Raca |> 
   knitr::kable(col.names = c("Cor/Raça", "N", "Erro Amostral"))
 ```
+
 Gráfico de Barras 
 ```{r}
 ggplot(Cor_Raca, aes(x = Cor_Raca, y = n, label = round(n))) +

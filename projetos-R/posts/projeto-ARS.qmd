@@ -78,12 +78,14 @@ Plotandoo Grafo
 ```{r}
 plot(aidsblog)
 ```
+
 Esse grafo ficou um pouco confuso, vamos tentar melhorar a visualização.
 
 Primeiro vamos remover os labels dos vértices.
 ```{r}
 plot(aidsblog, vertex.label=NA)
 ```
+
 Ainda assim está confuso, vamos tentar melhorar a visualização.
 
 Vamos reduzir o tamanho dos vértices e mudar o layout do grafo para *Kamala Kawai*
@@ -91,6 +93,7 @@ Vamos reduzir o tamanho dos vértices e mudar o layout do grafo para *Kamala Kaw
 plot(aidsblog, vertex.label=NA, vertex.size=5, layout=layout.kamada.kawai)
 
 ```
+
 Melhrou, mas mesmo assim ainda está confuso. Vamos tentar melhorar a visualização.
 Agora vamos diminuir o tamanho das setas.
 ```{r}
@@ -112,6 +115,7 @@ ggraph(grafo, layout = "kk") +
   theme_void()
 
 ```
+
 Ficou legal, mas vamos melhorar essa visualização.
 ```{r message=FALSE}
 grafo_data <- as_long_data_frame(aidsblog)
