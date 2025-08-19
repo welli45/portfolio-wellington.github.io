@@ -18,6 +18,7 @@ twitter-card:
   description: "Curva-Normal"
   image: ../images/09-anova/anova.png
 ---
+- Diagrama de Ishikawa, também conhecido como diagrama de espinha de peixe ou diagrama de causa e efeito, é uma ferramenta visual usada para identificar e analisar as causas de um problema específico. Ele ajuda a organizar as informações de forma estruturada, permitindo que equipes identifiquem as causas raízes de um problema.
 
 
 

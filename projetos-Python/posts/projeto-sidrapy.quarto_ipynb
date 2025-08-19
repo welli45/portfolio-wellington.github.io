@@ -32,7 +32,7 @@
         "\n",
         "O segundo passo será importar essa biblioteca para isso faça;"
       ],
-      "id": "e70ceae7"
+      "id": "93fd334c"
     },
     {
       "cell_type": "code",
@@ -42,7 +42,7 @@
       "source": [
         "import sidrapy"
       ],
-      "id": "139ea454",
+      "id": "bac888f3",
       "execution_count": null,
       "outputs": []
     },
@@ -52,7 +52,7 @@
       "source": [
         "Agora que temos nossa biblioteca instalada vamos baixar nossos dados."
       ],
-      "id": "b60f454e"
+      "id": "70546574"
     },
     {
       "cell_type": "code",
@@ -68,7 +68,7 @@
         "# Checamos a importação\n",
         "pib_sa_raw.head()"
       ],
-      "id": "9a59c17e",
+      "id": "9c7f906e",
       "execution_count": null,
       "outputs": []
     },
@@ -86,7 +86,7 @@
         "pib_sa_raw['Valor'] = pib_sa_raw['Valor'].astype(float)\n",
         "pib_sa_raw.head()"
       ],
-      "id": "cfa9defb",
+      "id": "648f8595",
       "execution_count": null,
       "outputs": []
     }

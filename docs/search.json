@@ -922,5 +922,12 @@
     "title": "Acessando dados da PNADC disponíveis no site do IBGE com o pacote PNADcIBGE",
     "section": "Regressão Linear",
     "text": "Regressão Linear\n\nmod &lt;- svyglm(formula = VD4035 ~ V3007 + V2010, design = dados_PNADc)\nsummary(mod)\n\n\nCall:\nsvyglm(formula = VD4035 ~ V3007 + V2010, design = dados_PNADc)\n\nSurvey design:\nsvrepdesign.default(data = data_pnadc, weight = ~V1032, type = \"bootstrap\", \n    repweights = \"V1032[0-9]+\", mse = TRUE, replicates = length(sprintf(\"V1032%03d\", \n        seq(1:200))), df = length(sprintf(\"V1032%03d\", seq(1:200))))\n\nCoefficients:\n              Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept)    38.1318     0.5898  64.648 &lt; 0.0000000000000002 ***\nV3007Não       -1.7193     0.5553  -3.096              0.00225 ** \nV2010Preta      0.4499     0.5901   0.762              0.44677    \nV2010Amarela    1.7782     2.2502   0.790              0.43036    \nV2010Parda      0.3756     0.3996   0.940              0.34841    \nV2010Indígena   5.8057     3.2301   1.797              0.07384 .  \nV2010Ignorado -23.0088     8.9240  -2.578              0.01067 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 204.6414)\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "projetos-R/posts/causa-efeito.html",
+    "href": "projetos-R/posts/causa-efeito.html",
+    "title": "Diagram de Ishikawa",
+    "section": "",
+    "text": "Diagrama de Ishikawa, também conhecido como diagrama de espinha de peixe ou diagrama de causa e efeito, é uma ferramenta visual usada para identificar e analisar as causas de um problema específico. Ele ajuda a organizar as informações de forma estruturada, permitindo que equipes identifiquem as causas raízes de um problema.\n\n\n\n\n Back to top"
   }
 ]

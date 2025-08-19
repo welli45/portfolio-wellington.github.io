@@ -6,7 +6,7 @@
       "source": [
         "<<<<<<< HEAD"
       ],
-      "id": "df8f1c35"
+      "id": "b57aba76"
     },
     {
       "cell_type": "markdown",
@@ -30,7 +30,7 @@
         "\n",
         "Vamos carregar os pacotes que utilizaremos aqui:"
       ],
-      "id": "8dbc5f8d"
+      "id": "1b5790ba"
     },
     {
       "cell_type": "code",
@@ -42,7 +42,7 @@
         "                      f_example_3, dfdx_example_3, dfdy_example_3, \n",
         "                      f_example_4, dfdx_example_4, dfdy_example_4)"
       ],
-      "id": "5986362e",
+      "id": "6cc94472",
       "execution_count": null,
       "outputs": []
     },
@@ -52,7 +52,7 @@
       "source": [
         "Agora vamos explorar um exemplo simples de uma função em duas variáveis $f(x,y)$ com um mínimo global."
       ],
-      "id": "204c8bd6"
+      "id": "d0d2346c"
     },
     {
       "cell_type": "code",
@@ -60,7 +60,7 @@
       "source": [
         "plot_f_cont_and_surf([0, 5], [0, 5], [74, 85], f_example_3, cmap='coolwarm', view={'azim':-60,'elev':28})"
       ],
-      "id": "e6083fd6",
+      "id": "c294f511",
       "execution_count": null,
       "outputs": []
     },
@@ -80,7 +80,7 @@
         "\n",
         "em que $\\alpha>0$ é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:"
       ],
-      "id": "c78c0e6f"
+      "id": "caf94014"
     },
     {
       "cell_type": "code",
@@ -91,7 +91,7 @@
         "        x, y = x - learning_rate * dfdx(x, y), y - learning_rate * dfdy(x, y)\n",
         "    return x, y"
       ],
-      "id": "7473fdd5",
+      "id": "96846315",
       "execution_count": null,
       "outputs": []
     },
@@ -101,7 +101,7 @@
       "source": [
         "Agora, para otimizar a função, configuramos os parâmetros `num_iterations`, `learning_rate`, `x_initial`, `y_initial` e executar o **gradient descent**:"
       ],
-      "id": "53fda0c4"
+      "id": "81594dea"
     },
     {
       "cell_type": "code",
@@ -111,7 +111,7 @@
         "print(\"Gradient descent result: x_min, y_min =\", \n",
         "      gradient_descent(dfdx_example_3, dfdy_example_3, x_initial, y_initial, learning_rate, num_iterations)) "
       ],
-      "id": "1318528e",
+      "id": "6a9877b3",
       "execution_count": null,
       "outputs": []
     },
@@ -121,7 +121,7 @@
       "source": [
         "Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente $\\begin{bmatrix}\\frac{\\partial f}{\\partial x}(x_0, y_0) \\\\ \\frac{\\partial f}{\\partial y}(x_0, y_0)\\end{bmatrix}$ com a taxa de aprendizado $\\alpha$ como um fator de escala."
       ],
-      "id": "4a510a42"
+      "id": "145e0f13"
     },
     {
       "cell_type": "code",
@@ -139,7 +139,7 @@
         "                                              [0.1, 0.1, 81.5], 2, [4, 1, 171], \n",
         "                                              cmap='coolwarm', view={'azim':-60,'elev':28})"
       ],
-      "id": "c3923324",
+      "id": "3111d96b",
       "execution_count": null,
       "outputs": []
     },
@@ -149,7 +149,7 @@
       "source": [
         "Vamos dar uma olhada nessa outra função"
       ],
-      "id": "251be10e"
+      "id": "5989e9f3"
     },
     {
       "cell_type": "code",
@@ -157,7 +157,7 @@
       "source": [
         "plot_f_cont_and_surf([0, 5], [0, 5], [6, 9.5], f_example_4, cmap='terrain', view={'azim':-63,'elev':21})"
       ],
-      "id": "c8bb2dd9",
+      "id": "e48b5626",
       "execution_count": null,
       "outputs": []
     },
@@ -167,7 +167,7 @@
       "source": [
         "Podemos encontrar o mínimo global com:"
       ],
-      "id": "889cc195"
+      "id": "73615357"
     },
     {
       "cell_type": "code",
@@ -178,7 +178,7 @@
         "print(\"Gradient descent result: x_min, y_min =\", \n",
         "      gradient_descent(dfdx_example_4, dfdy_example_4, x_initial, y_initial, learning_rate, num_iterations)) "
       ],
-      "id": "89dd9b0f",
+      "id": "0e41efd1",
       "execution_count": null,
       "outputs": []
     },
@@ -188,7 +188,7 @@
       "source": [
         "Visualizando"
       ],
-      "id": "45b06764"
+      "id": "99218b25"
     },
     {
       "cell_type": "code",
@@ -208,7 +208,7 @@
         "                                              [2, 2, 6], 0.5, [2, 1, 63], \n",
         "                                              cmap='terrain', view={'azim':-63,'elev':21})"
       ],
-      "id": "633eff66",
+      "id": "fa375bc9",
       "execution_count": null,
       "outputs": []
     },
@@ -219,7 +219,7 @@
         "=======\n",
         "---"
       ],
-      "id": "bb8acc48"
+      "id": "9a95dd00"
     },
     {
       "cell_type": "markdown",
@@ -242,7 +242,7 @@
         "\n",
         "Vamos carregar os pacotes que utilizaremos aqui:"
       ],
-      "id": "9da8af93"
+      "id": "c0f06b75"
     },
     {
       "cell_type": "code",
@@ -254,7 +254,7 @@
         "                      f_example_3, dfdx_example_3, dfdy_example_3, \n",
         "                      f_example_4, dfdx_example_4, dfdy_example_4)"
       ],
-      "id": "ab8bb291",
+      "id": "c6eb9afc",
       "execution_count": null,
       "outputs": []
     },
@@ -264,7 +264,7 @@
       "source": [
         "Agora vamos explorar um exemplo simples de uma função em duas variáveis $f(x,y)$ com um mínimo global."
       ],
-      "id": "e331d54b"
+      "id": "72057fe3"
     },
     {
       "cell_type": "code",
@@ -272,7 +272,7 @@
       "source": [
         "plot_f_cont_and_surf([0, 5], [0, 5], [74, 85], f_example_3, cmap='coolwarm', view={'azim':-60,'elev':28})"
       ],
-      "id": "e3280406",
+      "id": "9f203ccc",
       "execution_count": null,
       "outputs": []
     },
@@ -292,7 +292,7 @@
         "\n",
         "em que $\\alpha>0$ é uma taxa de aprendizado. O número de iterações também é um parâmetro. O método é implementado com o seguinte código:"
       ],
-      "id": "9dc1db8d"
+      "id": "85e5b060"
     },
     {
       "cell_type": "code",
@@ -303,7 +303,7 @@
         "        x, y = x - learning_rate * dfdx(x, y), y - learning_rate * dfdy(x, y)\n",
         "    return x, y"
       ],
-      "id": "529e616f",
+      "id": "b980cce6",
       "execution_count": null,
       "outputs": []
     },
@@ -313,7 +313,7 @@
       "source": [
         "Agora, para otimizar a função, configuramos os parâmetros `num_iterations`, `learning_rate`, `x_initial`, `y_initial` e executar o **gradient descent**:"
       ],
-      "id": "9193f811"
+      "id": "380d374d"
     },
     {
       "cell_type": "code",
@@ -323,7 +323,7 @@
         "print(\"Gradient descent result: x_min, y_min =\", \n",
         "      gradient_descent(dfdx_example_3, dfdy_example_3, x_initial, y_initial, learning_rate, num_iterations)) "
       ],
-      "id": "46329260",
+      "id": "2a69a574",
       "execution_count": null,
       "outputs": []
     },
@@ -333,7 +333,7 @@
       "source": [
         "Pode ver a visualização executando o código a seguir. Observe que a descida de gradiente em duas variáveis executa etapas no plano, em uma direção oposta ao vetor de gradiente $\\begin{bmatrix}\\frac{\\partial f}{\\partial x}(x_0, y_0) \\\\ \\frac{\\partial f}{\\partial y}(x_0, y_0)\\end{bmatrix}$ com a taxa de aprendizado $\\alpha$ como um fator de escala."
       ],
-      "id": "fd7569ab"
+      "id": "4ce5dfe9"
     },
     {
       "cell_type": "code",
@@ -351,7 +351,7 @@
         "                                              [0.1, 0.1, 81.5], 2, [4, 1, 171], \n",
         "                                              cmap='coolwarm', view={'azim':-60,'elev':28})"
       ],
-      "id": "e5d7a4c9",
+      "id": "a367a18f",
       "execution_count": null,
       "outputs": []
     },
@@ -361,7 +361,7 @@
       "source": [
         "Vamos dar uma olhada nessa outra função"
       ],
-      "id": "7b777140"
+      "id": "5288d35d"
     },
     {
       "cell_type": "code",
@@ -369,7 +369,7 @@
       "source": [
         "plot_f_cont_and_surf([0, 5], [0, 5], [6, 9.5], f_example_4, cmap='terrain', view={'azim':-63,'elev':21})"
       ],
-      "id": "71303ab6",
+      "id": "e80a4871",
       "execution_count": null,
       "outputs": []
     },
@@ -379,7 +379,7 @@
       "source": [
         "Podemos encontrar o mínimo global com:"
       ],
-      "id": "d39118f0"
+      "id": "bccbb4a8"
     },
     {
       "cell_type": "code",
@@ -390,7 +390,7 @@
         "print(\"Gradient descent result: x_min, y_min =\", \n",
         "      gradient_descent(dfdx_example_4, dfdy_example_4, x_initial, y_initial, learning_rate, num_iterations)) "
       ],
-      "id": "36611a42",
+      "id": "b6571d6e",
       "execution_count": null,
       "outputs": []
     },
@@ -400,7 +400,7 @@
       "source": [
         "Visualizando"
       ],
-      "id": "57ee2f55"
+      "id": "e8f536a1"
     },
     {
       "cell_type": "code",
@@ -420,7 +420,7 @@
         "                                              [2, 2, 6], 0.5, [2, 1, 63], \n",
         "                                              cmap='terrain', view={'azim':-63,'elev':21})"
       ],
-      "id": "ce05c1f6",
+      "id": "9cc7f026",
       "execution_count": null,
       "outputs": []
     },
@@ -430,7 +430,7 @@
       "source": [
         ">>>>>>> 021b1e17f88b8fa0d99a6d41a52c0b3b9d2c6f5d"
       ],
-      "id": "1a0d6c8d"
+      "id": "a3e943e7"
     }
   ],
   "metadata": {

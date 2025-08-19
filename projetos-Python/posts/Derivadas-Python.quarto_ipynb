@@ -38,7 +38,7 @@
         "\n",
         "-   Se quisermos definir a função $f(x) = x^2$"
       ],
-      "id": "ef030676"
+      "id": "f83edc2d"
     },
     {
       "cell_type": "code",
@@ -50,7 +50,7 @@
         "\n",
         "print(f(3))"
       ],
-      "id": "80ba4302",
+      "id": "e0df342b",
       "execution_count": null,
       "outputs": []
     },
@@ -60,7 +60,7 @@
       "source": [
         "Podemos encontrar a derivada dessa função facilmente usando:"
       ],
-      "id": "7dc66562"
+      "id": "48da765f"
     },
     {
       "cell_type": "code",
@@ -71,7 +71,7 @@
         "\n",
         "print(dfdx(3))"
       ],
-      "id": "7cf0cb26",
+      "id": "1c85d172",
       "execution_count": null,
       "outputs": []
     },
@@ -81,7 +81,7 @@
       "source": [
         "Além disso, podemos aplicar essa função e calcular a derivada para cada elemento de uma array criada com Numpy:"
       ],
-      "id": "12db9458"
+      "id": "23078264"
     },
     {
       "cell_type": "code",
@@ -97,7 +97,7 @@
         "print(\"f(x) = x**2: \\n\", f(x_array))\n",
         "print(\"f'(x) = 2x: \\n\", dfdx(x_array))"
       ],
-      "id": "28341058",
+      "id": "6cacdf88",
       "execution_count": null,
       "outputs": []
     },
@@ -107,7 +107,7 @@
       "source": [
         "Podemos também aplicar as funções f e dfdx para arrays maiores, além disso podemos plotar os gráficos de f e dfdx"
       ],
-      "id": "482bba3d"
+      "id": "96433640"
     },
     {
       "cell_type": "code",
@@ -141,7 +141,7 @@
         "    \n",
         "plot_f1_and_f2(f, dfdx)"
       ],
-      "id": "5c8fa110",
+      "id": "91b8a7ab",
       "execution_count": null,
       "outputs": []
     },
@@ -157,7 +157,7 @@
         "\n",
         "-   Podemos calcular o valor decimal aproximado de $\\sqrt{18}$"
       ],
-      "id": "2ddaca55"
+      "id": "521b9623"
     },
     {
       "cell_type": "code",
@@ -167,7 +167,7 @@
         "\n",
         "math.sqrt(18)"
       ],
-      "id": "3f3f7f24",
+      "id": "eedb13ec",
       "execution_count": null,
       "outputs": []
     },
@@ -181,7 +181,7 @@
         "\n",
         "Agora se quisermos calcular: $\\sqrt{18} = \\sqrt{9 \\cdot 2} = 3\\sqrt{2}$"
       ],
-      "id": "298dbaa2"
+      "id": "9c6914b9"
     },
     {
       "cell_type": "code",
@@ -195,7 +195,7 @@
         "# mas o prefixo sympy. foi omitido.\n",
         "sqrt(18)"
       ],
-      "id": "ef5a8189",
+      "id": "d46a9af0",
       "execution_count": null,
       "outputs": []
     },
@@ -205,7 +205,7 @@
       "source": [
         "Para obtermos o valor aproximado fazemos"
       ],
-      "id": "a35713b8"
+      "id": "21b495c6"
     },
     {
       "cell_type": "code",
@@ -213,7 +213,7 @@
       "source": [
         "N(sqrt(18))"
       ],
-      "id": "ffd63ab8",
+      "id": "27cce9f8",
       "execution_count": null,
       "outputs": []
     },
@@ -223,7 +223,7 @@
       "source": [
         "No SymPy, as variáveis são definidas usando símbolos. Nesta biblioteca específica, elas precisam ser pré-definidas (uma lista delas deve ser fornecida). Veja na célula abaixo como a expressão simbólica, correspondente à expressão matemática $2x^2 - xy$, é definida:"
       ],
-      "id": "0671b35c"
+      "id": "246101a8"
     },
     {
       "cell_type": "code",
@@ -235,7 +235,7 @@
         "expr = 2 * x**2 - x * y\n",
         "expr"
       ],
-      "id": "653e2f8d",
+      "id": "7acc523e",
       "execution_count": null,
       "outputs": []
     },
@@ -245,7 +245,7 @@
       "source": [
         "Pode realizar várias manipulações com essa expressão: adicionar ou subtrair alguns termos, multiplicar por outras expressões, etc., assim como se estivesse fazendo isso manualmente:"
       ],
-      "id": "a4a2f0ba"
+      "id": "11cec7db"
     },
     {
       "cell_type": "code",
@@ -254,7 +254,7 @@
         "expr_manip = x * (expr + x * y + x**3)\n",
         "expr_manip"
       ],
-      "id": "850ca94d",
+      "id": "98f7eede",
       "execution_count": null,
       "outputs": []
     },
@@ -264,7 +264,7 @@
       "source": [
         "Agora, vamos calcular a derivada da expressão $2x^2 - xy$ em relação a $x$:"
       ],
-      "id": "4e5c95af"
+      "id": "704c1c77"
     },
     {
       "cell_type": "code",
@@ -273,7 +273,7 @@
         "# Derivada da expressão em relação a x.\n",
         "diff(expr, x)"
       ],
-      "id": "891bdcac",
+      "id": "11e635f3",
       "execution_count": null,
       "outputs": []
     },
@@ -283,7 +283,7 @@
       "source": [
         "Podemos expandir a função expr_manipulada para obter a expressão completa:"
       ],
-      "id": "5fba3d3f"
+      "id": "71c10c8f"
     },
     {
       "cell_type": "code",
@@ -291,7 +291,7 @@
       "source": [
         "expand(expr_manip)"
       ],
-      "id": "17aa75b1",
+      "id": "d7e23e2a",
       "execution_count": null,
       "outputs": []
     },
@@ -301,7 +301,7 @@
       "source": [
         "Podemos também simplificar a expressão:"
       ],
-      "id": "3acfc124"
+      "id": "c489dd9d"
     },
     {
       "cell_type": "code",
@@ -309,7 +309,7 @@
       "source": [
         "simplify(expr_manip)"
       ],
-      "id": "5f30d898",
+      "id": "56c1148a",
       "execution_count": null,
       "outputs": []
     },
@@ -319,7 +319,7 @@
       "source": [
         "Também podemos fatorear a expressão:"
       ],
-      "id": "3005f57b"
+      "id": "fdf8e876"
     },
     {
       "cell_type": "code",
@@ -327,7 +327,7 @@
       "source": [
         "factor(expr_manip)"
       ],
-      "id": "203a2c41",
+      "id": "65ff02bf",
       "execution_count": null,
       "outputs": []
     },
@@ -337,7 +337,7 @@
       "source": [
         "Podemos também resolver equações simbolicamente:"
       ],
-      "id": "fa93cd2b"
+      "id": "4a71c4da"
     },
     {
       "cell_type": "code",
@@ -346,7 +346,7 @@
         "# Resolvendo a equação x^2 - 1 = 0.\n",
         "solve(x**2 - 1, x)"
       ],
-      "id": "9e0f1f48",
+      "id": "a5cd9afc",
       "execution_count": null,
       "outputs": []
     },
@@ -356,7 +356,7 @@
       "source": [
         "Podemos substituir valores específicos para as variáveis na expressão"
       ],
-      "id": "efd1bca7"
+      "id": "de11e82a"
     },
     {
       "cell_type": "code",
@@ -364,7 +364,7 @@
       "source": [
         "expr.evalf(subs={x:-1, y:2})"
       ],
-      "id": "9db7d0b1",
+      "id": "31bd71bf",
       "execution_count": null,
       "outputs": []
     },
@@ -374,7 +374,7 @@
       "source": [
         "Isso pode ser usado para avaliar uma função $f\\left(x\\right) = x^2$:"
       ],
-      "id": "9a59bae5"
+      "id": "809045f3"
     },
     {
       "cell_type": "code",
@@ -383,7 +383,7 @@
         "f_symb = x ** 2\n",
         "f_symb.evalf(subs={x:3})"
       ],
-      "id": "ce6c2724",
+      "id": "62fbe1e8",
       "execution_count": null,
       "outputs": []
     },
@@ -393,7 +393,7 @@
       "source": [
         "Podemos avaliar uma função simbólica para cada elemento de uma matriz:"
       ],
-      "id": "284f31b5"
+      "id": "b0362168"
     },
     {
       "cell_type": "code",
@@ -415,7 +415,7 @@
         "print(\"x: \\n\", x_array)\n",
         "print(\"f(x) = x**2: \\n\", f_symb_numpy(x_array))"
       ],
-      "id": "2ec0630d",
+      "id": "d1353ede",
       "execution_count": null,
       "outputs": []
     },
@@ -427,7 +427,7 @@
         "\n",
         "Se quisermos calcular a derivada da função $f(x) = x^2$ simbolicamente, podemos fazer isso com o `SymPy`:"
       ],
-      "id": "8380d16c"
+      "id": "bc2f71a0"
     },
     {
       "cell_type": "code",
@@ -439,7 +439,7 @@
         "dfdx_symb = diff(f_symb, x)\n",
         "dfdx_symb"
       ],
-      "id": "685580c2",
+      "id": "688efdd2",
       "execution_count": null,
       "outputs": []
     },
@@ -449,7 +449,7 @@
       "source": [
         "O Sympy aplica todas as regras de derivação para obter a derivada da função $(exp(-2x) + 3sin(3x), x)$:"
       ],
-      "id": "a54b7534"
+      "id": "b048b38b"
     },
     {
       "cell_type": "code",
@@ -459,7 +459,7 @@
         "dfdx_symb = diff(f_symb, x)\n",
         "f_symb, dfdx_symb"
       ],
-      "id": "61ec7944",
+      "id": "a398f682",
       "execution_count": null,
       "outputs": []
     },
@@ -469,7 +469,7 @@
       "source": [
         "Agora vamos plotar a função e sua derivada:"
       ],
-      "id": "b6b4242a"
+      "id": "f4da823c"
     },
     {
       "cell_type": "code",
@@ -480,7 +480,7 @@
         "\n",
         "plot_f1_and_f2(f_symb_numpy, dfdx_symb_numpy)"
       ],
-      "id": "8c41f6c6",
+      "id": "f4c094a8",
       "execution_count": null,
       "outputs": []
     },
@@ -490,7 +490,7 @@
       "source": [
         "Agora vamos calcular a derivada da função $f(x) = 2x$ simbolicamente:"
       ],
-      "id": "1a9a993a"
+      "id": "cc880ba3"
     },
     {
       "cell_type": "code",
@@ -503,7 +503,7 @@
         "print(\"x: \\n\", x_array)\n",
         "print(\"f'(x) = 2x: \\n\", dfdx_symb_numpy(x_array))"
       ],
-      "id": "9a0f0da6",
+      "id": "413e5872",
       "execution_count": null,
       "outputs": []
     },
@@ -513,7 +513,7 @@
       "source": [
         "Agora vamos plotar a função e sua derivada:"
       ],
-      "id": "554327d3"
+      "id": "fd6882d0"
     },
     {
       "cell_type": "code",
@@ -522,7 +522,7 @@
         "# plote a função e sua derivada\n",
         "plot_f1_and_f2(f_symb_numpy, dfdx_symb_numpy)"
       ],
-      "id": "a30d0b43",
+      "id": "4d36b592",
       "execution_count": null,
       "outputs": []
     },
@@ -537,7 +537,7 @@
         "$$\\left|x\\right| = \\begin{cases} x, \\ \\text{if}\\ x > 0\\\\  -x, \\ \\text{if}\\ x < 0 \\\\ 0, \\ \\text{if}\\ x = 0\\end{cases}$$ Analiticamente, anderivada é: $$\\frac{d}{dx}\\left(\\left|x\\right|\\right) = \\begin{cases} 1, \\ \\text{if}\\ x > 0\\\\  -1, \\ \\text{if}\\ x < 0\\\\\\ \\text{does not exist}, \\ \\text{if}\\ x = 0\\end{cases}$$\n",
         "Podemos calcular a derivada da função $f(x) = \\left|x\\right|$ simbolicamente:"
       ],
-      "id": "fa6d8de6"
+      "id": "91a42721"
     },
     {
       "cell_type": "code",
@@ -546,7 +546,7 @@
         "dfdx_abs = diff(abs(x),x)\n",
         "dfdx_abs"
       ],
-      "id": "99a674ad",
+      "id": "b2435328",
       "execution_count": null,
       "outputs": []
     },
@@ -556,7 +556,7 @@
       "source": [
         "Outro exemplo $x=-2$:"
       ],
-      "id": "a2e5fd44"
+      "id": "1d5ceefb"
     },
     {
       "cell_type": "code",
@@ -564,7 +564,7 @@
       "source": [
         "dfdx_abs.evalf(subs={x:-2})"
       ],
-      "id": "a36c23b0",
+      "id": "b7d2b098",
       "execution_count": null,
       "outputs": []
     },
@@ -582,7 +582,7 @@
         "\n",
         "#### Derivadas numéricas em `Python` usando a biblioteca `NumPy`."
       ],
-      "id": "dc92acbe"
+      "id": "8fd39580"
     },
     {
       "cell_type": "code",
@@ -593,7 +593,7 @@
         "\n",
         "plot_f1_and_f2(dfdx_symb_numpy, dfdx_numerical, label1=\"f'(x) exact\", label2=\"f'(x) approximate\")"
       ],
-      "id": "c670ca91",
+      "id": "7b8d4687",
       "execution_count": null,
       "outputs": []
     },
@@ -610,7 +610,7 @@
         "plot_f1_and_f2(lambdify(x, dfdx_composed, 'numpy'), np.gradient(f_composed(x_array_2), x_array_2),\n",
         "              label1=\"f'(x) exact\", label2=\"f'(x) approximate\")"
       ],
-      "id": "537d7613",
+      "id": "14fb3954",
       "execution_count": null,
       "outputs": []
     },
@@ -622,7 +622,7 @@
         "\n",
         "Outro problema é semelhante ao que apareceu na Derivada simbólica: ela é imprecisa nos pontos em que há \"saltos\" da derivada. Vamos comparar a derivada exata da função de valor absoluto e a aproximação numérica:"
       ],
-      "id": "3061d25a"
+      "id": "d0297cf2"
     },
     {
       "cell_type": "code",
@@ -639,7 +639,7 @@
         "\n",
         "plot_f1_and_f2(np.vectorize(dfdx_abs), np.gradient(abs(x_array_2), x_array_2))"
       ],
-      "id": "e4ac0486",
+      "id": "54501169",
       "execution_count": null,
       "outputs": []
     }
